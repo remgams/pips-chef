@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mon Frigo Chef</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#c8553d">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20260%20180%22%20aria-hidden%3D%22true%22%3E%20%3Cellipse%20cx%3D%22135%22%20cy%3D%22166%22%20rx%3D%22100%22%20ry%3D%229%22%20fill%3D%22%23ebe2d6%22/%3E%20%3Cpath%20d%3D%22M40%20160c0-18%2020-26%2095-26s95%208%2095%2026c0%206-6%208-12%208H52c-6%200-12-2-12-8z%22%20fill%3D%22%23c8553d%22%20opacity%3D%22.9%22/%3E%20%3Cpath%20d%3D%22M52%20152h166%22%20stroke%3D%22%23fff%22%20stroke-opacity%3D%22.35%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-dasharray%3D%222%208%22/%3E%20%3Cg%20class%3D%22breathe%22%3E%20%3Cellipse%20cx%3D%22148%22%20cy%3D%22128%22%20rx%3D%2274%22%20ry%3D%2236%22%20fill%3D%22%23f2a65a%22/%3E%20%3Cpath%20d%3D%22M150%2094c-4%2010-4%2020%200%2030M175%2096c-4%2010-4%2020%200%2030M200%20104c-3%208-3%2016%200%2024%22%20stroke%3D%22%23d9803a%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%20%3Cpath%20d%3D%22M214%20132c18%2020-10%2034-60%2034-30%200-56-4-70-12%22%20stroke%3D%22%23f2a65a%22%20stroke-width%3D%2215%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%20%3Cpath%20d%3D%22M100%20160c-8-2-14-4-18-6%22%20stroke%3D%22%23d9803a%22%20stroke-width%3D%2215%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%20%3Cellipse%20cx%3D%22112%22%20cy%3D%22150%22%20rx%3D%2217%22%20ry%3D%229%22%20fill%3D%22%23fde6c8%22/%3E%20%3Cpath%20d%3D%22M106%20152v4M112%20153v4M118%20152v4%22%20stroke%3D%22%23d9a878%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22/%3E%20%3Cpath%20d%3D%22M48%20112l-12-32%2030%2012z%22%20fill%3D%22%23f2a65a%22/%3E%20%3Cpath%20d%3D%22M50%20106l-7-18%2015%207z%22%20fill%3D%22%23f7c6b0%22/%3E%20%3Cpath%20d%3D%22M110%20104l6-29-28%2012z%22%20fill%3D%22%23f2a65a%22/%3E%20%3Cpath%20d%3D%22M106%2099l3-14-13%206z%22%20fill%3D%22%23f7c6b0%22/%3E%20%3Cellipse%20cx%3D%2280%22%20cy%3D%22122%22%20rx%3D%2238%22%20ry%3D%2232%22%20fill%3D%22%23f2a65a%22/%3E%20%3Cpath%20d%3D%22M70%2092c2%206%202%2010%200%2014M82%2091c1%206%201%2010%200%2014%22%20stroke%3D%22%23d9803a%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22/%3E%20%3Cellipse%20cx%3D%2280%22%20cy%3D%22136%22%20rx%3D%2222%22%20ry%3D%2214%22%20fill%3D%22%23fde6c8%22/%3E%20%3Cpath%20d%3D%22M58%20122q7%206%2014%200M88%20122q7%206%2014%200%22%20stroke%3D%22%233b2a20%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%20%3Cellipse%20cx%3D%2257%22%20cy%3D%22133%22%20rx%3D%226%22%20ry%3D%223.5%22%20fill%3D%22%23f7a8a0%22%20opacity%3D%22.7%22/%3E%20%3Cellipse%20cx%3D%22103%22%20cy%3D%22133%22%20rx%3D%226%22%20ry%3D%223.5%22%20fill%3D%22%23f7a8a0%22%20opacity%3D%22.7%22/%3E%20%3Cpath%20d%3D%22M76%20130h8l-4%204z%22%20fill%3D%22%23e57a7a%22/%3E%20%3Cpath%20d%3D%22M80%20134q-3%204-7%202M80%20134q3%204%207%202%22%20stroke%3D%22%233b2a20%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%20%3Cpath%20d%3D%22M46%20132l-18-3M46%20137l-18%202M114%20132l18-3M114%20137l18%202%22%20stroke%3D%22%233b2a20%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.55%22/%3E%20%3Cg%20transform%3D%22translate%289%207%29%20rotate%28-8%2080%2086%29%20scale%28.9%29%22%20style%3D%22transform-box%3Aview-box%22%3E%20%3Crect%20x%3D%2256%22%20y%3D%2280%22%20width%3D%2248%22%20height%3D%2216%22%20rx%3D%224%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%23e3d8c8%22%20stroke-width%3D%222%22/%3E%20%3Cpath%20d%3D%22M62%2086v6M71%2086v6M80%2086v6M89%2086v6M98%2086v6%22%20stroke%3D%22%23ebe2d6%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22/%3E%20%3Cpath%20d%3D%22M56%2082c-12-2-16-16-6-24%202-12%2018-16%2026-8%206-10%2024-10%2028%202%2012-2%2020%2012%2010%2022-2%204-6%207-10%208z%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%23e3d8c8%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22/%3E%20%3Cpath%20d%3D%22M70%2062c2%206%201%2012-2%2016M88%2060c2%206%202%2012%200%2018%22%20stroke%3D%22%23ebe2d6%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%20%3C/g%3E%20%3C/g%3E%20%3Cg%20font-family%3D%22Fraunces%2C%20Georgia%2C%20serif%22%20font-weight%3D%22700%22%20fill%3D%22%237a6e64%22%3E%20%3Ctext%20class%3D%22zz%20z1%22%20x%3D%22128%22%20y%3D%2278%22%20font-size%3D%2218%22%3Ez%3C/text%3E%20%3Ctext%20class%3D%22zz%20z2%22%20x%3D%22144%22%20y%3D%2260%22%20font-size%3D%2224%22%3Ez%3C/text%3E%20%3Ctext%20class%3D%22zz%20z3%22%20x%3D%22164%22%20y%3D%2238%22%20font-size%3D%2230%22%3EZ%3C/text%3E%20%3C/g%3E%20%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf6ef; --card:#ffffff; --ink:#2b2420; --muted:#7a6e64; --line:#ebe2d6;
+    --accent:#c8553d; --accent-soft:#f6e0d9; --green:#4f7a4a; --green-soft:#e3eedf; --amber:#b7791f; --amber-soft:#fbefd9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#1c1917; --card:#26221f; --ink:#f3ede6; --muted:#a89d92; --line:#3a332e;
+      --accent:#e07a5f; --accent-soft:#3d2a24; --green:#8cbf85; --green-soft:#253323; --amber:#e3b05c; --amber-soft:#3a2f1c; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,sans-serif}
+  .wrap{max-width:900px;margin:0 auto;padding:32px 20px 60px}
+  h1{font-family:Fraunces,serif;font-size:38px;margin:0 0 4px;letter-spacing:-.5px}
+  h1 span{color:var(--accent)}
+  .sub{color:var(--muted);margin:0 0 28px}
+  .hero{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:8px}
+  .hero-art{width:230px;flex-shrink:0}
+  @media(max-width:600px){.hero{flex-direction:column-reverse;align-items:flex-start}.hero-art{width:170px}}
+  .breathe{transform-origin:140px 165px;animation:breathe 3.2s ease-in-out infinite}
+  @keyframes breathe{50%{transform:scaleY(1.035) scaleX(1.01)}}
+  .zz{opacity:0;animation:zz 3.6s ease-in-out infinite}
+  .z2{animation-delay:1.2s}.z3{animation-delay:2.4s}
+  @keyframes zz{0%{opacity:0;transform:translate(-6px,8px)}30%{opacity:.85}100%{opacity:0;transform:translate(8px,-10px)}}
+  @media (prefers-reduced-motion: reduce){.breathe{animation:none}.zz{animation:none;opacity:.7}}
+  .bob{animation:bob 2.4s ease-in-out infinite}
+  .b2{animation-delay:.4s}.b3{animation-delay:.8s}.b4{animation-delay:1.2s}
+  @keyframes bob{50%{transform:translateY(-7px)}}
+  .steam{animation:steam 3s ease-in-out infinite;opacity:.6}
+  .s2{animation-delay:.6s}.s3{animation-delay:1.2s}
+  @keyframes steam{0%,100%{opacity:.15;transform:translateY(4px)}50%{opacity:.7;transform:translateY(-4px)}}
+  @media (prefers-reduced-motion: reduce){.bob,.steam{animation:none}}
+  .h2ico{font-size:22px;margin-right:6px}
+  .chip .em{font-size:16px;margin-right:-2px}
+  .banner{height:120px;position:relative;overflow:hidden;cursor:pointer}
+  .banner .plate{position:absolute;left:50%;top:50%;width:150px;height:150px;transform:translate(-50%,-38%);border-radius:50%;background:rgba(255,255,255,.85);box-shadow:0 0 0 12px rgba(255,255,255,.35)}
+  .banner .main{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:58px;filter:drop-shadow(0 4px 6px rgba(0,0,0,.18))}
+  .banner .side{position:absolute;font-size:30px;opacity:.95;filter:drop-shadow(0 2px 3px rgba(0,0,0,.15))}
+  .banner .dot{position:absolute;border-radius:50%;background:rgba(255,255,255,.35)}
+  .banner .tag{position:absolute;left:14px;top:12px;background:rgba(255,255,255,.9);color:#2b2420;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px}
+  .photo-bar{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .pbtn{display:inline-flex;align-items:center;gap:6px;background:var(--bg);border:1px solid var(--line);color:var(--ink);padding:9px 14px;border-radius:10px;font-weight:600;font-size:14px;text-decoration:none}
+  .pbtn:hover{border-color:var(--accent);color:var(--accent)}
+  .pbtn:disabled{opacity:.6;cursor:default}
+  .loader{display:flex;flex-direction:column;align-items:center;padding:26px 10px 18px;background:var(--card);border:1px solid var(--line);border-radius:16px}
+  .loader svg{width:260px;max-width:80%}
+  .loader p{margin:6px 0 0;color:var(--muted);font-size:15px;font-family:Fraunces,serif}
+  .loader p span{display:inline-block;animation:fadeMsg 2.2s ease-in-out infinite}
+  @keyframes fadeMsg{0%,100%{opacity:.35}50%{opacity:1}}
+  .pan{transform-origin:150px 150px;animation:toss 1.6s ease-in-out infinite}
+  @keyframes toss{0%,100%{transform:rotate(0)}18%{transform:rotate(-9deg) translateY(4px)}32%{transform:rotate(4deg) translateY(-6px)}50%{transform:rotate(0)}}
+  .orbit{animation:orbit 1.6s cubic-bezier(.45,.05,.4,1) infinite backwards}
+  .o2{animation-delay:.12s}.o3{animation-delay:.24s}.o4{animation-delay:.36s}
+  @keyframes orbit{0%,15%{transform:rotate(0)}75%,100%{transform:rotate(360deg)}}
+  .spin{transform-box:fill-box;transform-origin:center;animation:spin2 1.4s linear infinite}
+  @keyframes spin2{to{transform:rotate(360deg)}}
+  .flame{transform-box:fill-box;transform-origin:50% 100%;animation:flick .5s ease-in-out infinite alternate}
+  .fl2{animation-delay:.15s}.fl3{animation-delay:.3s}
+  @keyframes flick{from{transform:scaleY(.75) scaleX(1.05)}to{transform:scaleY(1.15) scaleX(.9)}}
+  .vap,.spark{transform-box:fill-box;transform-origin:center}
+  .vap{animation:vap 2s ease-out infinite;opacity:0}
+  .v2{animation-delay:.7s}.v3{animation-delay:1.4s}
+  @keyframes vap{0%{opacity:0;transform:translateY(10px)}30%{opacity:.6}100%{opacity:0;transform:translateY(-30px)}}
+  .spark{animation:spark 1.4s ease-out infinite;opacity:0}
+  .sp2{animation-delay:.5s}.sp3{animation-delay:.9s}
+  @keyframes spark{0%{opacity:0;transform:scale(.3)}40%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.3)}}
+  @media (prefers-reduced-motion: reduce){.pan,.orbit,.spin,.flame,.vap,.spark,.loader p span{animation:none}.vap,.spark{opacity:.5}}
+  .saved-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+  .count{display:inline-block;min-width:24px;text-align:center;background:var(--accent);color:#fff;border-radius:999px;font:600 13px Inter,sans-serif;padding:2px 8px;vertical-align:3px;margin-left:4px}
+  .saved-list{display:flex;flex-wrap:wrap;gap:8px}
+  .saved-item{display:inline-flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-weight:500;font-size:14px;color:var(--ink)}
+  .saved-item:hover{border-color:var(--accent)}
+  .saved-item small{color:var(--muted);font-weight:400}
+  .rtitle{display:flex;align-items:flex-start;gap:10px}
+  .save{flex-shrink:0;background:var(--bg);border:1px solid var(--line);color:var(--accent);font-size:18px;line-height:1;padding:7px 10px;border-radius:999px}
+  .save:hover{border-color:var(--accent)}
+  .save.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .save.pop{animation:pop .35s ease}
+  @keyframes pop{50%{transform:scale(1.25)}}
+  .results-title{font-family:Fraunces,serif;font-size:22px;margin:4px 0 0;display:flex;justify-content:space-between;align-items:center}
+  .menu-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:5px;margin-bottom:12px}
+  .mtab{background:transparent;color:var(--muted);font-family:Fraunces,serif;font-size:18px;padding:10px;border-radius:10px}
+  .mtab span{font:600 12px Inter,sans-serif;background:var(--line);color:var(--muted);padding:2px 8px;border-radius:999px;vertical-align:2px;margin-left:4px}
+  .mtab.on{background:var(--card);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.08)}
+  .mtab.on span{background:var(--accent);color:#fff}
+  .subcats{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .sc{background:transparent;border:1px solid var(--line);color:var(--ink);padding:6px 12px;border-radius:999px;font-size:13px;font-weight:500}
+  .sc small{color:var(--muted);margin-left:3px}
+  .sc:hover{border-color:var(--accent)}
+  .sc.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .sc.on small{color:#fff;opacity:.8}
+  .sc:disabled{opacity:.4;cursor:default}
+  .lib-group{width:100%;background:transparent;color:var(--ink);font-family:Fraunces,serif;font-size:16px;font-weight:600;padding:12px 14px;display:flex;align-items:center;gap:8px;border-radius:0;text-align:left}
+  .lib-group:hover{background:var(--bg)}
+  .lib-group .chev{margin-left:auto;color:var(--muted);transition:transform .2s;font:400 24px/1 Inter,sans-serif;width:20px;text-align:center}
+  .lib-sec.open .lib-group .chev{transform:rotate(90deg)}
+  .lib-group small{font:500 12px Inter,sans-serif;color:var(--muted)}
+  .lib-tools{display:flex;gap:10px;flex-wrap:wrap}
+  .lib-tools input{flex:2;min-width:200px}
+  .lib-tools select{flex:1;min-width:150px;width:auto}
+  .lib-list{max-height:520px;overflow-y:auto;padding:2px;margin-top:4px}
+  .lib-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:8px}
+  .lib-sec{border:1px solid var(--line);border-radius:12px;margin-bottom:8px;background:var(--card);overflow:hidden}
+  .lib-sec .lib-grid{padding:0 10px 10px}
+  .lib-sec:not(.open) .lib-grid{display:none}
+  .lib-fold{display:flex;justify-content:flex-end;gap:4px;margin:-4px 0 6px}
+  .lib-item{display:flex;align-items:center;gap:10px;text-align:left;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:9px 12px;font-weight:500;font-size:14px;color:var(--ink)}
+  .lib-item:hover{border-color:var(--accent)}
+  .li-em{font-size:15px;white-space:nowrap;min-width:54px;text-align:center}
+  .li-t{flex:1;display:flex;flex-direction:column;line-height:1.3}
+  .li-t small{color:var(--muted);font-weight:400;font-size:12px}
+  .lb{font-size:11px;white-space:nowrap;padding:2px 7px;border-radius:999px;background:var(--amber-soft);color:var(--amber);font-weight:600}
+  .lb.ok{background:var(--green-soft);color:var(--green)}
+  .ing .em{width:22px;text-align:center}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:20px}
+  h2{font-family:Fraunces,serif;font-size:20px;margin:0 0 14px}
+  .row{display:flex;gap:10px}
+  input[type=text]{flex:1;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+  input[type=text]:focus{outline:2px solid var(--accent);border-color:transparent}
+  button{font:inherit;cursor:pointer;border:none;border-radius:10px;padding:12px 18px;font-weight:600}
+  .btn{background:var(--accent);color:#fff}
+  .btn:hover{filter:brightness(1.08)}
+  .btn:disabled{opacity:.5;cursor:default}
+  .ghost{background:transparent;color:var(--muted);padding:6px 10px;font-weight:500}
+  .ghost:hover{color:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;min-height:20px}
+  .chip{display:inline-flex;align-items:center;gap:6px;background:var(--accent-soft);color:var(--ink);padding:6px 8px 6px 12px;border-radius:999px;font-size:14px}
+  .chip button{background:none;padding:0 4px;color:var(--muted);font-size:16px;line-height:1}
+  .chip button:hover{color:var(--accent)}
+  .chip.avoid{background:var(--bg);border:1px solid var(--line);text-decoration:line-through;text-decoration-color:var(--accent)}
+  .empty{color:var(--muted);font-size:14px}
+  .quick{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .quick small{color:var(--muted);margin-right:4px}
+  .qbtn{background:transparent;border:1px dashed var(--line);color:var(--muted);padding:4px 10px;border-radius:999px;font-size:13px;font-weight:500}
+  .qbtn:hover{border-color:var(--accent);color:var(--accent)}
+  .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:16px}
+  label{font-size:13px;color:var(--muted);display:block;margin-bottom:4px}
+  select{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+  .check{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink);margin-bottom:16px}
+  .status{color:var(--muted);font-size:14px;margin-top:10px}
+  .recipes{display:grid;gap:16px}
+  .recipe{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .rhead{padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+  .rhead h3{font-family:Fraunces,serif;font-size:21px;margin:0 0 6px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--muted)}
+  .pill{background:var(--bg);border:1px solid var(--line);padding:2px 9px;border-radius:999px}
+  .score{flex-shrink:0;background:var(--green-soft);color:var(--green);font-weight:600;font-size:13px;padding:5px 10px;border-radius:999px;white-space:nowrap}
+  .score.mid{background:var(--amber-soft);color:var(--amber)}
+  .desc{color:var(--muted);margin:8px 0 0;font-size:14px}
+  .rbody{display:none;padding:0 22px 22px;border-top:1px solid var(--line)}
+  .recipe.open .rbody{display:block}
+  .cols{display:grid;grid-template-columns:1fr 1.6fr;gap:24px;margin-top:18px}
+  @media(max-width:640px){.cols{grid-template-columns:1fr}}
+  h4{font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin:0 0 10px}
+  ul.ing{list-style:none;padding:0;margin:0}
+  ul.ing li{padding:5px 0;border-bottom:1px dashed var(--line);font-size:14px;display:flex;gap:8px}
+  .have{color:var(--green)} .miss{color:var(--amber)}
+  ol.steps{margin:0;padding-left:20px}
+  ol.steps li{margin-bottom:10px;font-size:14px}
+  .tip{margin-top:14px;background:var(--accent-soft);padding:10px 14px;border-radius:10px;font-size:14px}
+  .spinner{display:inline-block;width:14px;height:14px;border:2px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;vertical-align:-2px;margin-right:6px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .badge{font-size:12px;color:var(--muted);margin-left:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <h1>Mon Frigo <span>Chef</span></h1>
+      <p class="sub">Ajoutez ce que vous avez sous la main, on s'occupe du menu.</p>
+    </div>
+    <svg class="hero-art" viewBox="0 0 260 180" aria-hidden="true">
+      <!-- ombre -->
+      <ellipse cx="135" cy="166" rx="100" ry="9" fill="var(--line)"/>
+      <!-- coussin -->
+      <path d="M40 160c0-18 20-26 95-26s95 8 95 26c0 6-6 8-12 8H52c-6 0-12-2-12-8z" fill="var(--accent)" opacity=".9"/>
+      <path d="M52 152h166" stroke="#fff" stroke-opacity=".35" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 8"/>
+      <g class="breathe">
+        <!-- corps enroulé -->
+        <ellipse cx="148" cy="128" rx="74" ry="36" fill="#f2a65a"/>
+        <path d="M150 94c-4 10-4 20 0 30M175 96c-4 10-4 20 0 30M200 104c-3 8-3 16 0 24" stroke="#d9803a" stroke-width="7" stroke-linecap="round" fill="none"/>
+        <!-- queue qui fait le tour -->
+        <path d="M214 132c18 20-10 34-60 34-30 0-56-4-70-12" stroke="#f2a65a" stroke-width="15" stroke-linecap="round" fill="none"/>
+        <path d="M100 160c-8-2-14-4-18-6" stroke="#d9803a" stroke-width="15" stroke-linecap="round" fill="none"/>
+        <!-- patte avant -->
+        <ellipse cx="112" cy="150" rx="17" ry="9" fill="#fde6c8"/>
+        <path d="M106 152v4M112 153v4M118 152v4" stroke="#d9a878" stroke-width="1.6" stroke-linecap="round"/>
+        <!-- oreilles -->
+        <path d="M48 112l-12-32 30 12z" fill="#f2a65a"/>
+        <path d="M50 106l-7-18 15 7z" fill="#f7c6b0"/>
+        <path d="M110 104l6-29-28 12z" fill="#f2a65a"/>
+        <path d="M106 99l3-14-13 6z" fill="#f7c6b0"/>
+        <!-- tête -->
+        <ellipse cx="80" cy="122" rx="38" ry="32" fill="#f2a65a"/>
+        <path d="M70 92c2 6 2 10 0 14M82 91c1 6 1 10 0 14" stroke="#d9803a" stroke-width="5" stroke-linecap="round"/>
+        <ellipse cx="80" cy="136" rx="22" ry="14" fill="#fde6c8"/>
+        <!-- yeux fermés -->
+        <path d="M58 122q7 6 14 0M88 122q7 6 14 0" stroke="#3b2a20" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <!-- joues -->
+        <ellipse cx="57" cy="133" rx="6" ry="3.5" fill="#f7a8a0" opacity=".7"/>
+        <ellipse cx="103" cy="133" rx="6" ry="3.5" fill="#f7a8a0" opacity=".7"/>
+        <!-- nez et bouche -->
+        <path d="M76 130h8l-4 4z" fill="#e57a7a"/>
+        <path d="M80 134q-3 4-7 2M80 134q3 4 7 2" stroke="#3b2a20" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        <!-- moustaches -->
+        <path d="M46 132l-18-3M46 137l-18 2M114 132l18-3M114 137l18 2" stroke="#3b2a20" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
+        <!-- toque -->
+        <g transform="translate(9 7) rotate(-8 80 86) scale(.9)" style="transform-box:view-box">
+          <rect x="56" y="80" width="48" height="16" rx="4" fill="#ffffff" stroke="#e3d8c8" stroke-width="2"/>
+          <path d="M62 86v6M71 86v6M80 86v6M89 86v6M98 86v6" stroke="#ebe2d6" stroke-width="2" stroke-linecap="round"/>
+          <path d="M56 82c-12-2-16-16-6-24 2-12 18-16 26-8 6-10 24-10 28 2 12-2 20 12 10 22-2 4-6 7-10 8z" fill="#ffffff" stroke="#e3d8c8" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M70 62c2 6 1 12-2 16M88 60c2 6 2 12 0 18" stroke="#ebe2d6" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </g>
+      </g>
+      <!-- Zzz -->
+      <g font-family="Fraunces, Georgia, serif" font-weight="700" fill="var(--muted)">
+        <text class="zz z1" x="128" y="78" font-size="18">z</text>
+        <text class="zz z2" x="144" y="60" font-size="24">z</text>
+        <text class="zz z3" x="164" y="38" font-size="30">Z</text>
+      </g>
+    </svg>
+  </header>
+
+  <div class="card">
+    <h2><span class="h2ico">🧺</span>Mes ingrédients</h2>
+    <form id="addForm" class="row">
+      <input id="ingInput" type="text" placeholder="Ex : tomates, œufs, riz… (séparez par des virgules)" autocomplete="off">
+      <button class="btn" type="submit">Ajouter</button>
+    </form>
+    <div class="chips" id="chips"></div>
+    <div class="quick" id="quick"><small>Ajout rapide :</small></div>
+    <div style="text-align:right;margin-top:6px"><button class="ghost" id="clearBtn" type="button">Tout effacer</button></div>
+  </div>
+
+  <div class="card">
+    <h2><span class="h2ico">🚫</span>Ingrédients à éviter</h2>
+    <p class="empty" style="margin:-6px 0 12px">Allergies, aliments que vous n'aimez pas… Ils ne seront jamais utilisés.</p>
+    <form id="avoidForm" class="row">
+      <input id="avoidInput" type="text" placeholder="Ex : arachides, coriandre, champignons…" autocomplete="off">
+      <button class="btn" type="submit" style="background:var(--ink);color:var(--bg)">Exclure</button>
+    </form>
+    <div class="chips" id="avoidChips"></div>
+    <div class="quick" id="avoidQuick"></div>
+  </div>
+
+  <div class="card">
+    <h2><span class="h2ico">✨</span>Mes envies</h2>
+    <div class="opts">
+      <div><label for="type">Type de plat</label>
+        <select id="type"><option value="">Peu importe</option><option>Entrée</option><option>Plat principal</option><option>Dessert</option><option>Petit-déjeuner</option><option>Snack</option></select></div>
+      <div><label for="time">Temps disponible</label>
+        <select id="time"><option value="">Peu importe</option><option value="15">15 min</option><option value="30">30 min</option><option value="60">1 heure</option></select></div>
+      <div><label for="people">Personnes</label>
+        <select id="people"><option>1</option><option selected>2</option><option>4</option><option>6</option></select></div>
+      <div><label for="diet">Régime</label>
+        <select id="diet"><option value="">Aucun</option><option>Végétarien</option><option>Vegan</option><option>Sans gluten</option><option>Sans lactose</option></select></div>
+    </div>
+    <label class="check"><input type="checkbox" id="strict"> Uniquement mes ingrédients (+ basiques : sel, poivre, huile, eau)</label>
+    <button class="btn" id="goBtn" type="button">🍳 Trouver des recettes</button>
+    <div class="status" id="status"></div>
+  </div>
+
+  <div class="card" id="libCard">
+    <div class="saved-head">
+      <h2 style="margin:0"><span class="h2ico">📚</span>Ma bibliothèque <span class="count" id="libCount">200</span></h2>
+    </div>
+    <p class="empty" style="margin:-4px 0 12px">200 recettes rangées en deux menus, salé et sucré, consultables même sans Claude.</p>
+    <div class="menu-tabs" id="menuTabs" role="tablist">
+      <button type="button" class="mtab on" data-m="sale" role="tab">🧂 Salé <span id="cntSale"></span></button>
+      <button type="button" class="mtab" data-m="sucre" role="tab">🍰 Sucré <span id="cntSucre"></span></button>
+    </div>
+    <div class="subcats" id="subcats"></div>
+    <div class="lib-tools">
+      <input id="libSearch" type="text" placeholder="Chercher une recette ou un ingrédient…" autocomplete="off">
+    </div>
+    <label class="check" style="margin:10px 0"><input type="checkbox" id="libOk"> Seulement les recettes réalisables avec mes ingrédients</label>
+    <div class="lib-fold" id="libFold"><button class="ghost" type="button" data-f="open">Tout déplier</button><button class="ghost" type="button" data-f="close">Tout replier</button></div>
+    <div class="lib-list" id="libList"></div>
+    <div class="status" id="libInfo"></div>
+  </div>
+
+  <div class="card" id="savedCard">
+    <div class="saved-head">
+      <h2 style="margin:0"><span class="h2ico">📖</span>Mes recettes sauvegardées <span class="count" id="savedCount">0</span></h2>
+      <button class="ghost" id="showAllSaved" type="button">Tout afficher</button>
+    </div>
+    <div class="saved-list" id="savedList"><span class="empty">Cliquez sur ♡ sur une recette pour la garder ici.</span></div>
+    <div class="status" id="savedNote"></div>
+  </div>
+
+  <div class="recipes" id="results"></div>
+</div>
+
+<script>
+const QUICK = ["Œufs","Pâtes","Riz","Tomates","Oignon","Ail","Poulet","Fromage","Pommes de terre","Lait","Beurre","Farine","Carottes","Courgette","Citron"];
+const BASICS = ["sel","poivre","huile","eau","huile d'olive"];
+const AVOID_QUICK = ["Arachides","Fruits à coque","Gluten","Lactose","Porc","Fruits de mer","Poisson","Champignons","Coriandre","Piment"];
+let ingredients = [];
+let avoid = [];
+
+function load(){
+  try{ ingredients = JSON.parse(localStorage.getItem("frigo-ings")||"[]"); }catch(e){ ingredients=[]; }
+  try{ avoid = JSON.parse(localStorage.getItem("frigo-avoid")||"[]"); }catch(e){ avoid=[]; }
+}
+function save(){ try{ localStorage.setItem("frigo-ings", JSON.stringify(ingredients)); localStorage.setItem("frigo-avoid", JSON.stringify(avoid)); }catch(e){} }
+const norm = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/œ/g,"oe").trim();
+const EMOJI = [
+ ["noix de coco","🥥"],["lait de coco","🥥"],["lait concentre","🥛"],["sucre","🍬"],["glace","🍨"],["pate brisee","🥧"],["pate sablee","🥧"],["pate feuilletee","🥐"],
+ ["chocolat","🍫"],["cacao","🍫"],["confiture","🍯"],["peche","🍑"],["myrtille","🫐"],["fruits rouges","🍓"],["framboise","🍓"],["pruneau","🫐"],["fruits secs","🌰"],
+ ["yaourt","🥛"],["mascarpone","🧀"],["biscuit","🍪"],["cafe","☕"],["vanille","🌼"],["cannelle","🪵"],["brioche","🍞"],["semoule","🌾"],["maizena","🌾"],["cereales","🥣"],["flocons","🥣"],["levure","🥄"],["gelatine","🥄"],
+ ["pommes de terre","🥔"],["patates douces","🍠"],["patate douce","🍠"],["butternut","🎃"],["curry","🍛"],["cumin","🌿"],["paprika","🌶️"],["bouillon","🥣"],
+ ["oeuf","🥚"],["pate","🍝"],["spaghetti","🍝"],["riz","🍚"],["tomate","🍅"],["oignon","🧅"],["ail","🧄"],["poulet","🍗"],["dinde","🍗"],
+ ["fromage","🧀"],["parmesan","🧀"],["pomme de terre","🥔"],["patate","🥔"],["lait","🥛"],["creme","🥛"],["beurre","🧈"],["farine","🌾"],["ble","🌾"],["gluten","🌾"],
+ ["carotte","🥕"],["courgette","🥒"],["concombre","🥒"],["citron","🍋"],["pomme","🍎"],["banane","🍌"],["fraise","🍓"],["poire","🍐"],["orange","🍊"],
+ ["boeuf","🥩"],["steak","🥩"],["viande","🥩"],["porc","🥓"],["lardon","🥓"],["jambon","🥓"],["bacon","🥓"],["poisson","🐟"],["saumon","🐟"],["thon","🐟"],
+ ["crevette","🦐"],["fruits de mer","🦐"],["moule","🦪"],["champignon","🍄"],["poivron","🫑"],["piment","🌶️"],["brocoli","🥦"],["salade","🥬"],["epinard","🥬"],["chou","🥬"],
+ ["aubergine","🍆"],["avocat","🥑"],["mais","🌽"],["pain","🥖"],["baguette","🥖"],["chocolat","🍫"],["sucre","🍬"],["miel","🍯"],["arachide","🥜"],["cacahuete","🥜"],
+ ["fruits a coque","🌰"],["noix","🌰"],["amande","🌰"],["noisette","🌰"],["haricot","🫘"],["lentille","🫘"],["pois","🫛"],["coriandre","🌿"],["basilic","🌿"],["persil","🌿"],
+ ["herbe","🌿"],["lactose","🥛"],["huile","🫒"],["olive","🫒"],["sel","🧂"],["poivre","🧂"],["eau","💧"],["vin","🍷"],["coco","🥥"],["ananas","🍍"],["mangue","🥭"],["cerise","🍒"],["raisin","🍇"],["tofu","🧊"]
+];
+function emojiFor(name){
+  const n = name.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/œ/g,"oe");
+  const hit = EMOJI.find(([k])=>n.includes(k));
+  return hit ? hit[1] : "🥄";
+}
+const TYPE_STYLE = {
+  "Entrée":["#a8d5a2","#5e9c5a","🥗"], "Plat principal":["#f4a582","#c8553d","🍲"], "Dessert":["#f7c6d9","#d16b9a","🍰"],
+  "Petit-déjeuner":["#ffe08a","#e0a020","🥐"], "Snack":["#b9d7f0","#4a86b8","🥪"]
+};
+const PALETTES = [["#f4a582","#c8553d"],["#a8d5a2","#5e9c5a"],["#ffe08a","#e0a020"],["#b9d7f0","#4a86b8"],["#d6c3f0","#8a63c2"],["#f7c6d9","#d16b9a"]];
+function bannerHTML(r, k){
+  const st = TYPE_STYLE[r.type] || null;
+  const [c1,c2] = st ? st : PALETTES[k % PALETTES.length];
+  let ems = (Array.isArray(r.emojis) && r.emojis.length) ? r.emojis.slice(0,5) : [];
+  if(!ems.length){
+    ems = [...new Set((r.ingredients||[]).map(i=>emojiFor(i.nom)).filter(e=>!["🧂","💧","🫒","🥄"].includes(e)))].slice(0,4);
+    ems.unshift(st ? st[2] : "🍽️");
+  }
+  const main = ems[0], sides = ems.slice(1,5);
+  const pos = [[10,58],[24,20],[72,22],[86,60]];
+  const dots = [[6,12,40],[92,80,56],[60,90,30],[30,85,22]].map(([x,y,s])=>`<span class="dot" style="left:${x}%;top:${y}%;width:${s}px;height:${s}px"></span>`).join("");
+  return `<div class="banner" data-k="${k}" style="background:linear-gradient(135deg,${c1},${c2})">
+    ${dots}<div class="plate"></div>
+    ${sides.map((e,i)=>`<span class="side" style="left:${pos[i][0]}%;top:${pos[i][1]}%;transform:translate(-50%,-50%) rotate(${[-12,8,-6,14][i]}deg)">${e}</span>`).join("")}
+    <span class="main">${main}</span>
+    ${r.type?`<span class="tag">${esc(r.type)}</span>`:""}
+  </div>`;
+}
+const esc = s =>String(s).replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function addIngs(text){
+  text.split(/[,;\n]/).map(s=>s.trim()).filter(Boolean).forEach(s=>{
+    const nice = s.charAt(0).toUpperCase()+s.slice(1);
+    if(!ingredients.some(i=>norm(i)===norm(s))) ingredients.push(nice);
+  });
+  save(); render();
+}
+function render(){
+  if(document.getElementById("libList")) renderLibrary();
+  const c = document.getElementById("chips");
+  c.innerHTML = ingredients.length ? ingredients.map((i,k)=>`<span class="chip"><span class="em">${emojiFor(i)}</span>${esc(i)}<button aria-label="Retirer ${esc(i)}" data-k="${k}">×</button></span>`).join("")
+    : `<span class="empty">Aucun ingrédient pour l'instant.</span>`;
+  const q = document.getElementById("quick");
+  q.innerHTML = "<small>Ajout rapide :</small>" + QUICK.filter(x=>!ingredients.some(i=>norm(i)===norm(x)))
+    .map(x=>`<button class="qbtn" type="button" data-q="${esc(x)}">${emojiFor(x)} ${esc(x)}</button>`).join("");
+  const a = document.getElementById("avoidChips");
+  a.innerHTML = avoid.length ? avoid.map((i,k)=>`<span class="chip avoid"><span class="em">${emojiFor(i)}</span>${esc(i)}<button aria-label="Ne plus exclure ${esc(i)}" data-k="${k}">×</button></span>`).join("")
+    : `<span class="empty">Rien à éviter pour l'instant.</span>`;
+  document.getElementById("avoidQuick").innerHTML = "<small>Suggestions :</small>" + AVOID_QUICK.filter(x=>!avoid.some(i=>norm(i)===norm(x)))
+    .map(x=>`<button class="qbtn" type="button" data-q="${esc(x)}">🚫 ${esc(x)}</button>`).join("");
+}
+function addAvoid(text){
+  text.split(/[,;\n]/).map(s=>s.trim()).filter(Boolean).forEach(s=>{
+    const nice = s.charAt(0).toUpperCase()+s.slice(1);
+    if(!avoid.some(i=>norm(i)===norm(s))) avoid.push(nice);
+    // retire de "mes ingrédients" si présent
+    ingredients = ingredients.filter(i=>norm(i)!==norm(s));
+  });
+  save(); render();
+}
+document.getElementById("avoidChips").onclick = e=>{ const k=e.target.dataset.k; if(k!==undefined){ avoid.splice(+k,1); save(); render(); } };
+document.getElementById("avoidQuick").onclick = e=>{ const q=e.target.dataset.q; if(q) addAvoid(q); };
+document.getElementById("avoidForm").onsubmit = e=>{ e.preventDefault(); const i=document.getElementById("avoidInput"); addAvoid(i.value); i.value=""; i.focus(); };
+
+/* Correspondances pour les catégories (mode hors-ligne) */
+const AVOID_MAP = {
+  "gluten":["pates","farine","pain","ble"], "lactose":["lait","beurre","fromage","creme"],
+  "fruits a coque":["noix","amande","noisette"], "arachides":["arachide","cacahuete"],
+  "porc":["lardons","jambon","porc"], "poisson":["poisson","thon","saumon"], "fruits de mer":["crevette","moule"]
+};
+function isAvoided(ing){
+  const n = norm(ing);
+  return avoid.some(a=>{
+    const na = norm(a), na1 = na.replace(/s$/,"");
+    if(n.includes(na1) || na.includes(n.replace(/s$/,""))) return true;
+    return (AVOID_MAP[na]||[]).some(x=>n.includes(x));
+  });
+}
+document.getElementById("chips").onclick = e=>{ const k=e.target.dataset.k; if(k!==undefined){ ingredients.splice(+k,1); save(); render(); } };
+document.getElementById("quick").onclick = e=>{ const q=e.target.dataset.q; if(q) addIngs(q); };
+document.getElementById("addForm").onsubmit = e=>{ e.preventDefault(); const i=document.getElementById("ingInput"); addIngs(i.value); i.value=""; i.focus(); };
+document.getElementById("clearBtn").onclick = ()=>{ ingredients=[]; save(); render(); document.getElementById("results").innerHTML=""; };
+
+/* ---------- Bibliothèque de 100 recettes (fonctionne sans Claude) ---------- */
+/* 100 recettes pour 2 personnes. Format : [titre, type, minutes, difficulté, ["quantité|ingrédient", ...], [étapes]]
+   Types : E = Entrée, P = Plat principal, D = Dessert, B = Petit-déjeuner, S = Snack
+   Sel, poivre, huile d'olive et eau sont considérés comme toujours disponibles. */
+const RAW100 = [
+// ---------- ENTRÉES, SALADES ET SOUPES ----------
+["Salade de tomates au basilic","E",10,"Facile",["4|tomates","1/2|oignon","8 feuilles|basilic"],["Trancher les tomates et l'oignon finement.","Disposer sur un plat, saler, poivrer.","Arroser d'huile d'olive et parsemer de basilic ciselé."]],
+["Salade tomates, concombre et olives","E",10,"Facile",["3|tomates","1|concombre","1/2|oignon","1 poignée|olives"],["Couper tomates et concombre en dés, émincer l'oignon.","Ajouter les olives.","Assaisonner d'huile d'olive, sel, poivre et mélanger."]],
+["Salade de riz estivale","E",25,"Facile",["120 g|riz","2|tomates","100 g|maïs","1 poignée|olives","2|oeufs"],["Cuire le riz, le rincer à l'eau froide.","Cuire les œufs 10 min, les écaler et les couper.","Mélanger riz, tomates en dés, maïs et olives.","Assaisonner d'huile d'olive, ajouter les œufs."]],
+["Salade de pâtes tomate-basilic","E",20,"Facile",["150 g|pâtes","3|tomates","1 poignée|olives","8 feuilles|basilic"],["Cuire les pâtes, les refroidir sous l'eau froide.","Ajouter tomates en dés, olives et basilic ciselé.","Arroser d'huile d'olive, saler, poivrer."]],
+["Salade de pommes de terre","E",30,"Facile",["400 g|pommes de terre","1/2|oignon","2|oeufs","1 c. à s.|vinaigre"],["Cuire les pommes de terre à l'eau 20 min, les couper en rondelles tièdes.","Cuire les œufs durs 10 min.","Mélanger pommes de terre, oignon émincé, huile et vinaigre.","Ajouter les œufs en quartiers."]],
+["Carottes râpées au citron","E",10,"Facile",["3|carottes","1/2|citron"],["Râper les carottes.","Assaisonner de jus de citron, huile, sel et poivre.","Laisser reposer 5 min avant de servir."]],
+["Salade composée aux œufs durs","E",15,"Facile",["1|salade","2|oeufs","2|tomates","100 g|maïs"],["Cuire les œufs 10 min, les écaler.","Laver et essorer la salade.","Ajouter tomates, maïs et œufs en quartiers.","Assaisonner d'une vinaigrette huile-vinaigre."]],
+["Salade de maïs et tomates","E",10,"Facile",["200 g|maïs","2|tomates","1/2|oignon","6 feuilles|basilic"],["Égoutter le maïs.","Couper les tomates en dés, émincer l'oignon.","Mélanger avec le basilic, l'huile, sel et poivre."]],
+["Œufs mimosa","E",25,"Facile",["4|oeufs","1|salade"],["Cuire les œufs 10 min, les écaler et les couper en deux.","Écraser les jaunes avec un filet d'huile, sel et poivre (ou un peu de mayonnaise).","Remplir les blancs, émietter un jaune par-dessus.","Servir sur un lit de salade."]],
+["Gaspacho","E",15,"Facile",["5|tomates","1/2|concombre","1/2|oignon","1 gousse|ail","4 feuilles|basilic"],["Couper tous les légumes en morceaux.","Mixer avec 3 c. à s. d'huile, sel et un peu d'eau froide.","Réfrigérer au moins 1 h.","Servir très frais avec du basilic."]],
+["Soupe de tomates","E",30,"Facile",["6|tomates","1|oignon","1 gousse|ail","6 feuilles|basilic"],["Faire revenir l'oignon et l'ail dans l'huile.","Ajouter les tomates coupées et 30 cl d'eau, saler.","Cuire 20 min puis mixer.","Servir avec du basilic ciselé."]],
+["Velouté de butternut","E",35,"Facile",["1/2|butternut","1|oignon","1|pommes de terre"],["Éplucher et couper la butternut et la pomme de terre en cubes.","Faire revenir l'oignon dans l'huile.","Ajouter les légumes, couvrir d'eau, saler, cuire 25 min.","Mixer finement."]],
+["Soupe de carottes","E",30,"Facile",["5|carottes","1|oignon","1|pommes de terre"],["Faire revenir l'oignon dans l'huile.","Ajouter carottes et pomme de terre en rondelles.","Couvrir d'eau, saler, cuire 20 min.","Mixer et poivrer."]],
+["Velouté de courgettes","E",25,"Facile",["3|courgettes","1|oignon","1 gousse|ail","1|pommes de terre"],["Faire revenir oignon et ail.","Ajouter courgettes et pomme de terre en morceaux.","Couvrir d'eau à hauteur, saler, cuire 15 min.","Mixer, rectifier l'assaisonnement."]],
+["Soupe de patates douces","E",30,"Facile",["2|patates douces","1|oignon","1|carottes","1 pincée|cumin"],["Faire revenir l'oignon avec le cumin.","Ajouter patates douces et carotte en dés.","Couvrir d'eau, saler, cuire 20 min.","Mixer jusqu'à obtenir un velouté."]],
+["Velouté de champignons","E",30,"Facile",["300 g|champignons","1|oignon","1|pommes de terre","2 c. à s.|crème"],["Faire revenir l'oignon puis les champignons émincés.","Ajouter la pomme de terre en dés et 50 cl d'eau, saler.","Cuire 20 min, mixer.","Ajouter la crème et poivrer."]],
+["Soupe de légumes maison","E",35,"Facile",["2|carottes","2|pommes de terre","1|courgettes","1|oignon"],["Éplucher et couper tous les légumes.","Les faire revenir 5 min dans l'huile.","Couvrir d'eau, saler, cuire 25 min.","Mixer ou servir en morceaux."]],
+["Potage pommes de terre et oignons","E",30,"Facile",["4|pommes de terre","2|oignon","1 noix|beurre"],["Faire fondre les oignons émincés dans le beurre.","Ajouter les pommes de terre en dés.","Couvrir d'eau, saler, cuire 20 min.","Mixer et poivrer."]],
+["Soupe de maïs","E",25,"Facile",["300 g|maïs","1|oignon","1|pommes de terre"],["Faire revenir l'oignon.","Ajouter maïs, pomme de terre en dés et 50 cl d'eau.","Cuire 15 min, saler.","Mixer en gardant quelques grains entiers."]],
+["Champignons à la grecque","E",25,"Facile",["400 g|champignons","1|oignon","2|tomates","1/2|citron"],["Faire revenir l'oignon émincé.","Ajouter les champignons en quartiers et les tomates en dés.","Arroser de jus de citron, saler, poivrer, cuire 15 min.","Servir froid."]],
+["Carpaccio de courgettes","E",10,"Facile",["2|courgettes","1/2|citron","6 feuilles|basilic"],["Couper les courgettes en très fines lamelles (économe).","Disposer sur une assiette.","Arroser de citron et d'huile, saler, poivrer.","Parsemer de basilic."]],
+["Concombre au basilic et citron","E",10,"Facile",["1|concombre","1/2|citron","6 feuilles|basilic"],["Couper le concombre en fines rondelles.","Assaisonner de citron, huile, sel et poivre.","Ajouter le basilic ciselé, servir frais."]],
+["Champignons farcis","E",30,"Facile",["8 gros|champignons","1/2|oignon","1 gousse|ail","2 c. à s.|fromage râpé"],["Préchauffer le four à 200 °C. Retirer les pieds des champignons.","Hacher les pieds avec l'oignon et l'ail, faire revenir 5 min.","Farcir les chapeaux, parsemer de fromage.","Cuire 15 min au four."]],
+["Salade de patates douces rôties","E",35,"Facile",["2|patates douces","1|salade","1/2|oignon"],["Préchauffer le four à 200 °C.","Couper les patates douces en cubes, huiler, saler et rôtir 25 min.","Disposer sur la salade avec l'oignon émincé.","Arroser de vinaigrette."]],
+["Salade tiède de butternut","E",35,"Facile",["1/2|butternut","1|salade","1 poignée|olives"],["Couper la butternut en cubes, huiler, saler.","Rôtir 25 min à 200 °C.","Servir tiède sur la salade avec les olives et une vinaigrette."]],
+["Tapenade d'olives","S",10,"Facile",["150 g|olives","1 gousse|ail","4 feuilles|basilic"],["Dénoyauter les olives si besoin.","Mixer avec l'ail, le basilic et 3 c. à s. d'huile.","Servir sur du pain grillé ou avec des bâtonnets de légumes."]],
+
+// ---------- PLATS AUX ŒUFS ----------
+["Omelette aux champignons","P",15,"Facile",["4|oeufs","200 g|champignons","1/2|oignon"],["Faire revenir l'oignon et les champignons émincés 5 min.","Battre les œufs, saler, poivrer.","Verser sur les champignons, cuire à feu moyen.","Plier et servir."]],
+["Tortilla de pommes de terre","P",40,"Moyen",["4|oeufs","3|pommes de terre","1|oignon"],["Cuire pommes de terre en fines tranches et oignon dans l'huile à feu doux 20 min.","Égoutter et mélanger aux œufs battus salés.","Cuire dans la poêle à feu doux 8 min.","Retourner avec une assiette et cuire 5 min de plus."]],
+["Frittata de courgettes","P",25,"Facile",["5|oeufs","2|courgettes","1/2|oignon","6 feuilles|basilic"],["Faire revenir oignon et courgettes en rondelles 8 min.","Battre les œufs avec le basilic, sel et poivre.","Verser dans la poêle, cuire à couvert 10 min à feu doux.","Servir chaud ou froid."]],
+["Shakshuka","P",30,"Facile",["4|oeufs","5|tomates","1|oignon","2 gousses|ail","1 pincée|cumin"],["Faire revenir oignon et ail avec le cumin.","Ajouter les tomates en dés, saler, mijoter 15 min.","Creuser 4 puits, casser un œuf dans chacun.","Couvrir et cuire 6-8 min jusqu'à ce que les blancs prennent."]],
+["Œufs brouillés aux champignons","B",15,"Facile",["4|oeufs","150 g|champignons","1 noix|beurre"],["Faire dorer les champignons émincés dans le beurre.","Ajouter les œufs battus.","Remuer sans arrêt à feu doux jusqu'à une texture crémeuse.","Saler, poivrer."]],
+["Frittata de pâtes","P",25,"Facile",["150 g|pâtes","4|oeufs","2|tomates","2 c. à s.|fromage râpé"],["Cuire les pâtes et les égoutter (ou utiliser un reste).","Mélanger avec les œufs battus, le fromage et les tomates en dés.","Cuire dans une poêle huilée 8 min par face à feu doux."]],
+["Œufs cocotte à la tomate","P",20,"Facile",["4|oeufs","2|tomates","1 gousse|ail","4 feuilles|basilic"],["Préchauffer le four à 180 °C.","Répartir les tomates en dés et l'ail haché dans des ramequins.","Casser un œuf par ramequin, saler.","Cuire 12 min au bain-marie, parsemer de basilic."]],
+["Flan de courgettes","P",45,"Facile",["3|courgettes","3|oeufs","20 cl|lait","2 c. à s.|fromage râpé"],["Préchauffer le four à 180 °C.","Râper les courgettes et les presser pour retirer l'eau.","Mélanger avec les œufs, le lait, le fromage, sel et poivre.","Verser dans un plat huilé et cuire 35 min."]],
+["Clafoutis salé aux tomates","P",40,"Facile",["3|oeufs","3|tomates","20 cl|lait","50 g|farine","6 feuilles|basilic"],["Préchauffer le four à 180 °C.","Mélanger œufs, farine, lait, sel et poivre.","Disposer les tomates en quartiers dans un plat, verser la pâte.","Parsemer de basilic, cuire 30 min."]],
+
+// ---------- PLATS DE RIZ ----------
+["Riz cantonais végétarien","P",25,"Facile",["200 g|riz","2|oeufs","1|carottes","100 g|maïs","1/2|oignon"],["Cuire le riz (ou utiliser un reste froid).","Faire sauter oignon et carotte en dés, ajouter le maïs.","Ajouter le riz, faire dorer 5 min.","Brouiller les œufs dans la poêle et mélanger."]],
+["Risotto aux champignons","P",35,"Moyen",["160 g|riz","250 g|champignons","1|oignon","1 cube|bouillon","2 c. à s.|parmesan"],["Faire revenir l'oignon puis les champignons.","Ajouter le riz, le nacrer 2 min.","Verser le bouillon chaud louche par louche en remuant (18 min).","Hors du feu, ajouter le parmesan."]],
+["Risotto à la butternut","P",40,"Moyen",["160 g|riz","1/4|butternut","1|oignon","1 cube|bouillon","2 c. à s.|parmesan"],["Faire revenir l'oignon et la butternut en petits dés 5 min.","Ajouter le riz et le nacrer.","Mouiller au bouillon chaud louche par louche (18 min).","Finir avec le parmesan."]],
+["Risotto de courgettes au basilic","P",35,"Moyen",["160 g|riz","2|courgettes","1|oignon","1 cube|bouillon","8 feuilles|basilic"],["Faire revenir l'oignon, ajouter le riz.","Mouiller au bouillon chaud louche par louche.","À mi-cuisson, ajouter les courgettes en dés.","Finir avec le basilic et un filet d'huile."]],
+["Tomates farcies au riz","P",50,"Facile",["4 grosses|tomates","100 g|riz","1/2|oignon","1 gousse|ail","6 feuilles|basilic"],["Préchauffer le four à 180 °C. Évider les tomates.","Mélanger le riz cru, la pulpe hachée, oignon, ail, basilic, sel.","Farcir les tomates, remettre les chapeaux.","Cuire 40 min en arrosant avec le jus."]],
+["Courgettes farcies au riz et champignons","P",45,"Moyen",["2|courgettes","100 g|riz","150 g|champignons","1/2|oignon"],["Cuire le riz. Couper les courgettes en deux et les évider.","Faire revenir oignon, champignons et chair de courgette hachée.","Mélanger avec le riz, farcir les courgettes.","Cuire 30 min à 180 °C."]],
+["Riz à la tomate","P",25,"Facile",["160 g|riz","3|tomates","1|oignon","1 gousse|ail"],["Faire revenir oignon et ail.","Ajouter les tomates en dés, cuire 5 min.","Ajouter le riz et 2 fois son volume d'eau, saler.","Couvrir et cuire 15 min à feu doux."]],
+["Riz pilaf aux carottes","P",25,"Facile",["160 g|riz","2|carottes","1|oignon"],["Faire revenir l'oignon et les carottes en petits dés.","Ajouter le riz et le nacrer 2 min.","Verser 1,5 fois le volume d'eau, saler.","Couvrir et cuire 15 min sans remuer."]],
+["Curry de légumes au riz","P",35,"Facile",["160 g|riz","1|patates douces","1|courgettes","1|oignon","1 c. à c.|curry"],["Faire revenir l'oignon avec le curry.","Ajouter patate douce et courgette en dés, couvrir d'eau à mi-hauteur.","Mijoter 20 min.","Servir avec le riz cuit."]],
+["Paella végétarienne","P",40,"Moyen",["160 g|riz","2|tomates","1|courgettes","1|oignon","2 gousses|ail","1 poignée|olives"],["Faire revenir oignon, ail et courgette en dés.","Ajouter les tomates et le riz, mélanger.","Verser 2,5 fois le volume d'eau, saler, cuire 20 min sans remuer.","Ajouter les olives en fin de cuisson."]],
+["Galettes de riz et courgette","P",30,"Facile",["200 g|riz","1|courgettes","2|oeufs","2 c. à s.|farine"],["Utiliser du riz cuit. Râper la courgette et la presser.","Mélanger riz, courgette, œufs, farine, sel et poivre.","Former des galettes et les dorer 4 min par face dans l'huile."]],
+["Arancini simples","S",45,"Moyen",["200 g|riz","1|oeufs","3 c. à s.|parmesan","4 c. à s.|farine"],["Cuire le riz bien collant et le laisser refroidir.","Mélanger avec le parmesan et la moitié de l'œuf.","Former des boules, les rouler dans le reste d'œuf puis la farine.","Faire dorer dans l'huile chaude 4-5 min."]],
+["Butternut farcie au riz","P",60,"Moyen",["1 petite|butternut","80 g|riz","150 g|champignons","1|oignon"],["Couper la butternut en deux, retirer les graines, rôtir 35 min à 200 °C.","Cuire le riz. Faire revenir oignon et champignons.","Mélanger avec le riz et un peu de chair de butternut.","Farcir et remettre 10 min au four."]],
+
+// ---------- PÂTES ----------
+["Pâtes tomate-basilic","P",20,"Facile",["200 g|pâtes","4|tomates","2 gousses|ail","10 feuilles|basilic"],["Cuire les pâtes.","Faire revenir l'ail, ajouter les tomates en dés, mijoter 10 min.","Mélanger avec les pâtes et le basilic."]],
+["Pâtes au pesto de basilic","P",15,"Facile",["200 g|pâtes","1 bouquet|basilic","1 gousse|ail","3 c. à s.|parmesan"],["Cuire les pâtes.","Mixer basilic, ail, parmesan et 6 c. à s. d'huile.","Mélanger aux pâtes égouttées avec un peu d'eau de cuisson."]],
+["Pâtes aux champignons à la crème","P",20,"Facile",["200 g|pâtes","250 g|champignons","1/2|oignon","15 cl|crème"],["Cuire les pâtes.","Faire revenir l'oignon puis les champignons.","Ajouter la crème, saler, poivrer, réduire 3 min.","Mélanger avec les pâtes."]],
+["Pâtes à la courgette et à l'ail","P",20,"Facile",["200 g|pâtes","2|courgettes","2 gousses|ail"],["Cuire les pâtes.","Faire sauter les courgettes en dés avec l'ail 8 min.","Mélanger aux pâtes avec un filet d'huile."]],
+["Pâtes aux tomates et olives","P",20,"Facile",["200 g|pâtes","4|tomates","1 poignée|olives","2 gousses|ail"],["Cuire les pâtes.","Faire revenir l'ail, ajouter tomates et olives, mijoter 10 min.","Mélanger avec les pâtes, poivrer."]],
+["Carbonara de courgettes","P",20,"Facile",["200 g|pâtes","1|courgettes","2|oeufs","3 c. à s.|parmesan"],["Cuire les pâtes.","Faire dorer la courgette en petits dés.","Battre œufs et parmesan.","Hors du feu, mélanger pâtes, courgette et œufs avec un peu d'eau de cuisson."]],
+["Gratin de pâtes à la tomate","P",35,"Facile",["200 g|pâtes","3|tomates","1|oignon","60 g|fromage râpé"],["Cuire les pâtes al dente.","Préparer une sauce tomate avec l'oignon (10 min).","Mélanger, verser dans un plat, couvrir de fromage.","Gratiner 15 min à 200 °C."]],
+["Pâtes à l'ail et à l'huile","P",15,"Facile",["200 g|pâtes","3 gousses|ail"],["Cuire les pâtes.","Faire dorer doucement l'ail émincé dans 4 c. à s. d'huile.","Mélanger aux pâtes, poivrer généreusement."]],
+["Pâtes crémeuses à la butternut","P",35,"Facile",["200 g|pâtes","1/4|butternut","1|oignon","1 gousse|ail"],["Cuire la butternut en cubes avec l'oignon et l'ail dans un peu d'eau 15 min.","Mixer avec un filet d'huile pour obtenir une sauce.","Mélanger aux pâtes cuites."]],
+["Minestrone","P",40,"Facile",["80 g|pâtes","1|carottes","1|courgettes","1|pommes de terre","2|tomates","1|oignon"],["Faire revenir l'oignon, ajouter carotte, pomme de terre et courgette en dés.","Ajouter les tomates et 1 L d'eau, saler, cuire 20 min.","Ajouter les petites pâtes, cuire encore 10 min."]],
+["Pâtes aux légumes rôtis","P",35,"Facile",["200 g|pâtes","1|courgettes","2|tomates","1|oignon","1 poignée|olives"],["Couper les légumes, les huiler et rôtir 25 min à 200 °C.","Cuire les pâtes.","Mélanger avec les légumes et les olives."]],
+["One-pot pasta tomate-basilic","P",20,"Facile",["200 g|pâtes","3|tomates","1|oignon","2 gousses|ail","8 feuilles|basilic"],["Mettre tout dans une grande poêle avec 50 cl d'eau et 2 c. à s. d'huile.","Porter à ébullition et cuire 12 min en remuant.","Saler, poivrer, servir quand l'eau est absorbée."]],
+
+// ---------- POMMES DE TERRE ----------
+["Gratin dauphinois","P",75,"Moyen",["800 g|pommes de terre","1 gousse|ail","50 cl|lait","20 cl|crème"],["Préchauffer le four à 160 °C. Frotter un plat avec l'ail.","Trancher finement les pommes de terre.","Les cuire 10 min dans le lait et la crème salés.","Verser dans le plat et cuire 1 h."]],
+["Purée maison","P",30,"Facile",["800 g|pommes de terre","20 cl|lait","40 g|beurre"],["Cuire les pommes de terre épluchées à l'eau salée 20 min.","Les écraser avec le beurre.","Incorporer le lait chaud petit à petit."]],
+["Pommes de terre sautées à l'ail","P",30,"Facile",["600 g|pommes de terre","3 gousses|ail"],["Couper les pommes de terre en cubes.","Les faire dorer dans l'huile 20 min en remuant.","Ajouter l'ail haché en fin de cuisson, saler."]],
+["Frites au four","P",40,"Facile",["600 g|pommes de terre"],["Préchauffer le four à 220 °C.","Couper en frites, rincer et sécher.","Mélanger avec 2 c. à s. d'huile et du sel.","Cuire 30 min en retournant à mi-cuisson."]],
+["Pommes de terre farcies aux champignons","P",60,"Moyen",["4 grosses|pommes de terre","200 g|champignons","1/2|oignon","40 g|fromage râpé"],["Cuire les pommes de terre au four 40 min à 200 °C.","Les couper en deux et les évider.","Mélanger la chair avec oignon et champignons poêlés.","Farcir, parsemer de fromage et gratiner 10 min."]],
+["Röstis de pommes de terre","P",30,"Facile",["500 g|pommes de terre","1/2|oignon","1|oeufs"],["Râper les pommes de terre et les presser.","Mélanger avec l'oignon râpé, l'œuf, sel et poivre.","Former des galettes et les dorer 5 min par face."]],
+["Écrasé de pommes de terre olives-basilic","P",30,"Facile",["600 g|pommes de terre","1 poignée|olives","8 feuilles|basilic"],["Cuire les pommes de terre à l'eau 20 min.","Les écraser grossièrement à la fourchette avec 4 c. à s. d'huile.","Ajouter olives hachées et basilic."]],
+["Gnocchis maison","P",60,"Moyen",["500 g|pommes de terre","150 g|farine","1|oeufs"],["Cuire les pommes de terre et les réduire en purée.","Ajouter farine, œuf et sel pour obtenir une pâte souple.","Former des boudins, couper en tronçons.","Cuire à l'eau bouillante : ils sont prêts quand ils remontent."]],
+["Pommes de terre boulangères","P",60,"Facile",["800 g|pommes de terre","2|oignon","1 cube|bouillon"],["Préchauffer le four à 180 °C.","Alterner rondelles de pommes de terre et oignons dans un plat.","Couvrir de bouillon.","Cuire 50 min."]],
+["Poêlée pommes de terre et champignons","P",30,"Facile",["500 g|pommes de terre","250 g|champignons","1 gousse|ail"],["Faire dorer les pommes de terre en cubes 15 min.","Ajouter les champignons, cuire 8 min.","Ajouter l'ail, saler, poivrer."]],
+["Tian provençal","P",60,"Facile",["2|courgettes","3|tomates","2|pommes de terre","1|oignon","2 gousses|ail"],["Préchauffer le four à 180 °C.","Mettre oignon et ail émincés au fond d'un plat.","Alterner les rondelles de légumes debout.","Arroser d'huile, saler, cuire 50 min."]],
+
+// ---------- PATATES DOUCES ET BUTTERNUT ----------
+["Frites de patates douces","P",35,"Facile",["2|patates douces"],["Préchauffer le four à 210 °C.","Couper en bâtonnets, mélanger avec huile et sel.","Étaler sans superposer et cuire 25 min."]],
+["Purée de patates douces","P",30,"Facile",["3|patates douces","1 noix|beurre"],["Cuire les patates douces en morceaux à l'eau 15 min.","Les écraser avec le beurre.","Saler, poivrer."]],
+["Curry de patates douces","P",35,"Facile",["2|patates douces","1|oignon","2|tomates","1 c. à c.|curry"],["Faire revenir l'oignon avec le curry.","Ajouter les patates douces en cubes et les tomates.","Couvrir d'eau à mi-hauteur, mijoter 20 min.","Servir avec du riz."]],
+["Gratin de patates douces","P",50,"Facile",["3|patates douces","20 cl|crème","1 gousse|ail"],["Préchauffer le four à 180 °C. Frotter le plat à l'ail.","Trancher finement les patates douces.","Les disposer dans le plat, couvrir de crème salée.","Cuire 40 min."]],
+["Galettes de patates douces","P",30,"Facile",["2|patates douces","1|oeufs","2 c. à s.|farine","1/2|oignon"],["Râper les patates douces.","Mélanger avec l'œuf, la farine, l'oignon, sel.","Former des galettes et les dorer 4 min par face."]],
+["Butternut rôtie au four","P",40,"Facile",["1/2|butternut","2 gousses|ail"],["Préchauffer le four à 200 °C.","Couper la butternut en quartiers avec la peau.","Arroser d'huile, ajouter l'ail, saler.","Rôtir 30 min."]],
+["Gratin de butternut","P",50,"Facile",["1/2|butternut","20 cl|crème","50 g|fromage râpé"],["Préchauffer le four à 180 °C.","Couper la butternut en fines tranches.","Les disposer dans un plat avec la crème salée.","Couvrir de fromage, cuire 40 min."]],
+
+// ---------- COURGETTES, CAROTTES, CHAMPIGNONS, MAÏS ----------
+["Gratin de courgettes","P",45,"Facile",["3|courgettes","2|oeufs","10 cl|crème","50 g|fromage râpé"],["Faire revenir les courgettes en rondelles 10 min.","Battre œufs, crème, sel et poivre.","Mettre les courgettes dans un plat, verser le mélange.","Couvrir de fromage, cuire 25 min à 180 °C."]],
+["Beignets de courgettes","S",30,"Facile",["2|courgettes","1|oeufs","4 c. à s.|farine"],["Râper les courgettes et les presser.","Mélanger avec l'œuf, la farine, sel et poivre.","Faire dorer des cuillerées dans l'huile 3 min par face."]],
+["Ratatouille express","P",45,"Facile",["2|courgettes","4|tomates","1|oignon","2 gousses|ail","6 feuilles|basilic"],["Faire revenir l'oignon et l'ail.","Ajouter les courgettes en dés, cuire 10 min.","Ajouter les tomates, mijoter 25 min.","Finir avec le basilic."]],
+["Spaghettis de courgettes à la tomate","P",20,"Facile",["2|courgettes","3|tomates","1 gousse|ail","6 feuilles|basilic"],["Tailler les courgettes en spaghettis (ou fines lanières).","Préparer une sauce rapide ail-tomates (10 min).","Faire sauter les courgettes 2 min, napper de sauce et basilic."]],
+["Poêlée de légumes","P",25,"Facile",["2|carottes","1|courgettes","150 g|champignons","1|oignon"],["Couper tous les légumes en lamelles.","Faire sauter les carottes et l'oignon 8 min.","Ajouter courgette et champignons, cuire 8 min, saler."]],
+["Légumes rôtis au four","P",45,"Facile",["1|patates douces","2|carottes","1|courgettes","1|oignon","1/4|butternut"],["Préchauffer le four à 200 °C.","Couper tous les légumes en morceaux.","Mélanger avec huile, sel et poivre.","Rôtir 35 min en remuant à mi-cuisson."]],
+["Carottes glacées","P",25,"Facile",["5|carottes","20 g|beurre","1 c. à c.|sucre"],["Couper les carottes en rondelles.","Les mettre dans une poêle avec beurre, sucre, sel et eau à hauteur.","Cuire jusqu'à évaporation et que les carottes brillent."]],
+["Poêlée de champignons à l'ail","P",15,"Facile",["400 g|champignons","3 gousses|ail"],["Faire dorer les champignons à feu vif dans l'huile.","Ajouter l'ail haché, cuire 2 min.","Saler, poivrer, servir."]],
+["Champignons à la crème","P",20,"Facile",["400 g|champignons","1/2|oignon","15 cl|crème"],["Faire revenir l'oignon puis les champignons.","Ajouter la crème, saler, poivrer.","Laisser réduire 5 min. Servir avec du riz ou des pâtes."]],
+["Galettes de maïs","S",25,"Facile",["250 g|maïs","1|oeufs","4 c. à s.|farine","1/2|oignon"],["Mélanger maïs égoutté, œuf, farine, oignon haché, sel.","Déposer des cuillerées dans l'huile chaude.","Dorer 3 min par face."]],
+["Poêlée maïs et courgettes","P",20,"Facile",["200 g|maïs","2|courgettes","1/2|oignon"],["Faire revenir l'oignon et les courgettes en dés 10 min.","Ajouter le maïs, cuire 3 min.","Saler, poivrer."]],
+["Wok de légumes et riz","P",25,"Facile",["160 g|riz","2|carottes","1|courgettes","150 g|champignons","1 gousse|ail"],["Cuire le riz.","Faire sauter à feu vif carottes, courgette et champignons en lamelles.","Ajouter l'ail et le riz, sauter 3 min (un trait de sauce soja si vous en avez)."]],
+["Hachis parmentier végétarien","P",60,"Moyen",["600 g|pommes de terre","300 g|champignons","2|carottes","1|oignon"],["Cuire les pommes de terre et faire une purée.","Hacher et faire revenir oignon, carottes et champignons 15 min.","Mettre la farce dans un plat, couvrir de purée.","Gratiner 20 min à 200 °C."]],
+["Chili végétarien au maïs","P",40,"Facile",["200 g|maïs","4|tomates","1|oignon","1|patates douces","1 c. à c.|cumin"],["Faire revenir l'oignon avec le cumin.","Ajouter la patate douce en dés et les tomates, mijoter 20 min.","Ajouter le maïs, cuire 5 min.","Servir avec du riz."]],
+
+// ---------- PETIT-DÉJEUNER, SNACKS ET DESSERTS ----------
+["Pancakes de patate douce","B",30,"Facile",["1|patates douces","2|oeufs","80 g|farine","10 cl|lait"],["Cuire la patate douce et l'écraser.","Mélanger avec œufs, farine, lait et une pincée de sel.","Cuire de petits pancakes à la poêle 2 min par face."]],
+["Œufs brouillés tomate-basilic","B",10,"Facile",["4|oeufs","1|tomates","4 feuilles|basilic"],["Faire revenir la tomate en dés 2 min.","Ajouter les œufs battus, remuer à feu doux.","Finir avec le basilic, saler, poivrer."]],
+["Muffins salés à la courgette","S",35,"Facile",["1|courgettes","2|oeufs","120 g|farine","10 cl|lait","50 g|fromage râpé"],["Préchauffer le four à 180 °C.","Mélanger œufs, lait, farine, 3 c. à s. d'huile et sel.","Ajouter la courgette râpée et le fromage.","Remplir des moules et cuire 25 min."]],
+["Riz au lait","D",45,"Facile",["100 g|riz","70 cl|lait","50 g|sucre"],["Porter le lait et le sucre à frémissement.","Ajouter le riz rond rincé.","Cuire 35 min à feu très doux en remuant souvent.","Servir tiède ou froid."]],
+["Carrot cake simplifié","D",50,"Moyen",["3|carottes","3|oeufs","150 g|farine","120 g|sucre"],["Préchauffer le four à 180 °C.","Fouetter œufs, sucre et 10 cl d'huile.","Ajouter la farine, une pincée de levure si possible, puis les carottes râpées.","Cuire 40 min dans un moule."]],
+["Gâteau à la patate douce","D",55,"Moyen",["2|patates douces","3|oeufs","100 g|farine","100 g|sucre"],["Cuire et écraser les patates douces.","Mélanger avec œufs, sucre et farine.","Verser dans un moule beurré.","Cuire 40 min à 180 °C."]],
+["Flan sucré à la butternut","D",50,"Facile",["300 g|butternut","3|oeufs","25 cl|lait","80 g|sucre"],["Cuire la butternut et la mixer.","Mélanger avec œufs, lait et sucre (cannelle si vous en avez).","Verser dans un plat, cuire 35 min à 170 °C au bain-marie."]],
+["Gratin de pommes de terre et courgettes","P",55,"Facile",["400 g|pommes de terre","2|courgettes","20 cl|crème","50 g|fromage râpé"],["Préchauffer le four à 180 °C.","Trancher finement pommes de terre et courgettes.","Alterner dans un plat, couvrir de crème salée et de fromage.","Cuire 45 min."]]
+];
+
+/* 100 desserts. Même format + 7e champ : nombre de parts */
+const DESSERTS100 = [
+// ---------- GÂTEAUX ----------
+["Gâteau fondant au chocolat","D",35,"Facile",["200 g|chocolat","150 g|beurre","150 g|sucre","3|oeufs","50 g|farine"],["Préchauffer le four à 180 °C.","Faire fondre chocolat et beurre.","Fouetter œufs et sucre, ajouter le chocolat puis la farine.","Cuire 20-22 min : le cœur doit rester fondant."],6],
+["Gâteau au yaourt","D",45,"Facile",["1 pot|yaourt","2 pots|sucre","3 pots|farine","1/2 pot|huile","3|oeufs","1 sachet|levure"],["Préchauffer le four à 180 °C.","Mélanger yaourt, sucre et œufs (le pot sert de mesure).","Ajouter farine, levure puis huile.","Cuire 35 min dans un moule beurré."],8],
+["Quatre-quarts","D",55,"Facile",["3|oeufs","150 g|sucre","150 g|farine","150 g|beurre"],["Préchauffer le four à 170 °C.","Fouetter œufs et sucre, ajouter le beurre fondu.","Incorporer la farine.","Cuire 45 min dans un moule à cake."],8],
+["Cake au citron","D",55,"Facile",["2|citron","3|oeufs","150 g|sucre","180 g|farine","100 g|beurre","1 sachet|levure"],["Préchauffer le four à 180 °C.","Fouetter œufs et sucre, ajouter beurre fondu, zestes et jus.","Incorporer farine et levure.","Cuire 40 min. Napper d'un glaçage citron-sucre glace si envie."],8],
+["Gâteau aux pommes","D",50,"Facile",["3|pommes","2|oeufs","100 g|sucre","120 g|farine","80 g|beurre","1/2 sachet|levure"],["Préchauffer le four à 180 °C.","Mélanger œufs, sucre, beurre fondu, farine et levure.","Ajouter les pommes en morceaux.","Cuire 40 min."],6],
+["Gâteau marbré","D",55,"Facile",["4|oeufs","180 g|sucre","200 g|farine","150 g|beurre","40 g|cacao","1 sachet|levure"],["Préparer une pâte quatre-quarts avec œufs, sucre, beurre, farine, levure.","La diviser en deux, ajouter le cacao à une moitié.","Alterner les pâtes dans le moule, marbrer à la fourchette.","Cuire 45 min à 170 °C."],8],
+["Brownie","D",40,"Facile",["200 g|chocolat","150 g|beurre","150 g|sucre","3|oeufs","80 g|farine","80 g|noix"],["Préchauffer le four à 180 °C.","Faire fondre chocolat et beurre, ajouter le sucre.","Ajouter les œufs un à un, puis la farine et les noix.","Cuire 25 min dans un moule carré."],8],
+["Banana bread","D",65,"Facile",["3|bananes","2|oeufs","100 g|sucre","200 g|farine","80 g|beurre","1 sachet|levure"],["Préchauffer le four à 175 °C.","Écraser les bananes bien mûres.","Mélanger avec œufs, sucre, beurre fondu, farine et levure.","Cuire 50 min dans un moule à cake."],8],
+["Gâteau à l'orange","D",50,"Facile",["2|oranges","3|oeufs","150 g|sucre","200 g|farine","100 g|beurre","1 sachet|levure"],["Préchauffer le four à 180 °C.","Fouetter œufs et sucre, ajouter beurre fondu, zestes et jus d'une orange.","Incorporer farine et levure, cuire 35 min.","Imbiber du jus de la seconde orange sucré."],8],
+["Gâteau renversé à l'ananas","D",55,"Facile",["1 boîte|ananas","3|oeufs","120 g|sucre","150 g|farine","100 g|beurre","1/2 sachet|levure"],["Préchauffer le four à 180 °C.","Caraméliser 50 g de sucre au fond du moule, disposer l'ananas.","Couvrir d'une pâte œufs-sucre-beurre-farine-levure.","Cuire 35 min et démouler tiède."],8],
+["Moelleux poires-chocolat","D",45,"Facile",["3|poires","150 g|chocolat","100 g|beurre","3|oeufs","100 g|sucre","60 g|farine"],["Préchauffer le four à 180 °C.","Faire fondre chocolat et beurre.","Ajouter œufs, sucre et farine.","Verser sur les poires en lamelles, cuire 30 min."],6],
+["Cake à la confiture","D",55,"Facile",["150 g|confiture","3|oeufs","120 g|sucre","180 g|farine","100 g|beurre","1 sachet|levure"],["Préparer une pâte à cake avec œufs, sucre, beurre fondu, farine et levure.","Verser la moitié dans le moule, étaler la confiture, couvrir du reste.","Cuire 45 min à 175 °C."],8],
+["Gâteau à la noix de coco","D",45,"Facile",["100 g|noix de coco râpée","3|oeufs","120 g|sucre","100 g|farine","20 cl|lait","1/2 sachet|levure"],["Préchauffer le four à 180 °C.","Fouetter œufs et sucre, ajouter le lait.","Incorporer farine, levure et coco.","Cuire 35 min."],8],
+["Gâteau basque à la confiture de cerises","D",70,"Moyen",["250 g|farine","150 g|sucre","125 g|beurre","2|oeufs","200 g|confiture"],["Mélanger farine, sucre, beurre mou et œufs pour une pâte souple, reposer 30 min au frais.","Étaler la moitié dans un moule, garnir de confiture.","Couvrir avec le reste de pâte, dorer à l'œuf.","Cuire 40 min à 180 °C."],8],
+["Madeleines","D",40,"Moyen",["2|oeufs","100 g|sucre","100 g|farine","100 g|beurre","1/2 sachet|levure","1|citron"],["Fouetter œufs et sucre, ajouter farine, levure, zeste et beurre fondu.","Laisser reposer la pâte 1 h au frais si possible.","Remplir les moules aux 3/4.","Cuire 10 min à 210 °C."],16],
+["Muffins aux myrtilles","D",35,"Facile",["150 g|myrtilles","2|oeufs","100 g|sucre","200 g|farine","10 cl|lait","80 g|beurre","1 sachet|levure"],["Préchauffer le four à 180 °C.","Mélanger les ingrédients secs d'un côté, liquides de l'autre.","Réunir rapidement sans trop travailler, ajouter les myrtilles.","Cuire 20-22 min."],12],
+["Muffins au chocolat","D",35,"Facile",["100 g|chocolat","2|oeufs","100 g|sucre","180 g|farine","20 g|cacao","10 cl|lait","80 g|beurre","1 sachet|levure"],["Préchauffer le four à 180 °C.","Mélanger farine, cacao, levure et sucre.","Ajouter œufs, lait, beurre fondu, puis le chocolat en morceaux.","Cuire 20 min en caissettes."],12],
+["Gâteau au fromage blanc","D",60,"Facile",["500 g|fromage blanc","3|oeufs","120 g|sucre","50 g|farine","1|citron"],["Préchauffer le four à 170 °C.","Mélanger fromage blanc, sucre, jaunes, farine et zeste.","Incorporer les blancs montés en neige.","Cuire 45 min."],8],
+["Financiers","D",30,"Facile",["100 g|poudre d'amande","120 g|sucre","50 g|farine","4|oeufs","100 g|beurre"],["Faire un beurre noisette (beurre fondu jusqu'à légère coloration).","Mélanger poudre d'amande, sucre, farine.","Ajouter les blancs d'œufs puis le beurre.","Cuire 12 min à 200 °C en petits moules."],15],
+["Fondant au chocolat sans farine","D",35,"Facile",["200 g|chocolat","120 g|beurre","4|oeufs","100 g|sucre"],["Préchauffer le four à 170 °C.","Faire fondre chocolat et beurre.","Ajouter jaunes et sucre, puis les blancs en neige.","Cuire 25 min."],6],
+["Gâteau aux fraises","D",50,"Moyen",["250 g|fraises","4|oeufs","120 g|sucre","120 g|farine","20 cl|crème"],["Monter œufs et sucre au fouet jusqu'à blanchiment, ajouter la farine.","Cuire la génoise 25 min à 180 °C, laisser refroidir.","Fouetter la crème en chantilly avec un peu de sucre.","Couper la génoise, garnir de chantilly et fraises."],8],
+
+// ---------- TARTES ----------
+["Tarte aux pommes","D",50,"Facile",["1|pâte brisée","4|pommes","40 g|sucre","20 g|beurre"],["Préchauffer le four à 200 °C.","Foncer le moule avec la pâte.","Disposer les pommes en fines lamelles en rosace.","Saupoudrer de sucre, parsemer de beurre, cuire 35 min."],6],
+["Tarte au citron","D",50,"Moyen",["1|pâte sablée","3|citron","3|oeufs","120 g|sucre","80 g|beurre"],["Cuire la pâte à blanc 15 min à 180 °C.","Cuire jus et zestes, sucre et œufs en fouettant jusqu'à épaississement.","Hors du feu, ajouter le beurre.","Verser sur la pâte et laisser prendre au frais 2 h."],6],
+["Tarte aux fraises","D",45,"Moyen",["1|pâte sablée","400 g|fraises","50 cl|lait","3|oeufs","80 g|sucre","40 g|farine"],["Cuire la pâte à blanc 20 min.","Préparer une crème pâtissière : lait chaud versé sur jaunes, sucre, farine, épaissir.","Étaler la crème refroidie sur la pâte.","Disposer les fraises."],6],
+["Tarte au chocolat","D",40,"Facile",["1|pâte sablée","200 g|chocolat","20 cl|crème","1|oeufs"],["Cuire la pâte à blanc 20 min à 180 °C.","Verser la crème chaude sur le chocolat, mélanger.","Ajouter l'œuf battu.","Verser sur la pâte, cuire 10 min à 150 °C, laisser prendre."],6],
+["Tarte à la confiture","D",45,"Facile",["250 g|farine","125 g|beurre","80 g|sucre","1|oeufs","250 g|confiture"],["Faire une pâte sablée avec farine, beurre, sucre et œuf.","En foncer un moule, garder un peu de pâte.","Étaler la confiture, décorer de croisillons de pâte.","Cuire 30 min à 180 °C."],6],
+["Tarte fine aux poires","D",35,"Facile",["1|pâte feuilletée","3|poires","30 g|sucre","20 g|beurre"],["Préchauffer le four à 200 °C.","Disposer les poires en fines lamelles sur la pâte.","Saupoudrer de sucre et parsemer de beurre.","Cuire 25 min."],6],
+["Tarte Tatin","D",60,"Moyen",["1|pâte brisée","6|pommes","120 g|sucre","60 g|beurre"],["Faire un caramel avec sucre et beurre dans un moule allant au feu.","Y serrer les quartiers de pommes, cuire 10 min.","Couvrir de pâte, rentrer les bords.","Cuire 35 min à 200 °C, démouler chaud."],6],
+["Tarte banane-chocolat","D",40,"Facile",["1|pâte sablée","3|bananes","150 g|chocolat","15 cl|crème"],["Cuire la pâte à blanc 20 min.","Disposer les rondelles de bananes.","Couvrir d'une ganache (crème chaude + chocolat).","Laisser prendre au frais."],6],
+["Tarte au sucre","D",40,"Facile",["250 g|farine","1 sachet|levure boulangère","10 cl|lait","1|oeufs","80 g|sucre","50 g|beurre"],["Faire une pâte avec farine, levure, lait tiède et œuf, laisser lever 1 h.","L'étaler dans un moule.","Couvrir de sucre et de noisettes de beurre.","Cuire 20 min à 200 °C."],6],
+["Tarte amandine aux poires","D",55,"Moyen",["1|pâte sablée","3|poires","100 g|poudre d'amande","100 g|sucre","100 g|beurre","2|oeufs"],["Mélanger beurre mou, sucre, poudre d'amande et œufs.","Étaler sur la pâte crue.","Disposer les demi-poires.","Cuire 40 min à 180 °C."],8],
+
+// ---------- BISCUITS ET PETITES DOUCEURS ----------
+["Cookies aux pépites de chocolat","D",25,"Facile",["125 g|beurre","100 g|sucre","1|oeufs","200 g|farine","100 g|chocolat","1/2 sachet|levure"],["Mélanger beurre mou et sucre, ajouter l'œuf.","Incorporer farine, levure et chocolat en morceaux.","Former des boules sur une plaque.","Cuire 10-12 min à 180 °C."],15],
+["Sablés au beurre","D",30,"Facile",["250 g|farine","125 g|beurre","100 g|sucre","1|oeufs"],["Sabler farine et beurre, ajouter sucre et œuf.","Étaler la pâte, découper à l'emporte-pièce.","Cuire 12 min à 180 °C."],25],
+["Sablés à la confiture","D",40,"Moyen",["250 g|farine","125 g|beurre","100 g|sucre","1|oeufs","150 g|confiture"],["Préparer une pâte sablée et l'étaler.","Découper des ronds, évider le centre de la moitié.","Cuire 10 min à 180 °C.","Assembler avec la confiture."],12],
+["Palets bretons","D",35,"Facile",["3|oeufs","150 g|sucre","200 g|beurre","250 g|farine","1/2 sachet|levure"],["Fouetter jaunes et sucre, ajouter le beurre mou (demi-sel).","Incorporer farine et levure.","Former un boudin, réfrigérer 1 h, couper en palets.","Cuire 15 min à 180 °C."],20],
+["Biscuits aux flocons d'avoine","D",25,"Facile",["150 g|flocons d'avoine","100 g|farine","100 g|beurre","80 g|sucre","1|oeufs"],["Mélanger tous les ingrédients.","Former des petits tas aplatis.","Cuire 12 min à 180 °C."],15],
+["Rochers à la noix de coco","D",25,"Facile",["200 g|noix de coco râpée","150 g|sucre","3|oeufs"],["Mélanger coco, sucre et blancs d'œufs.","Former des petits rochers.","Cuire 15 min à 180 °C jusqu'à légère coloration."],20],
+["Crinkles au chocolat","D",30,"Facile",["150 g|chocolat","60 g|beurre","100 g|sucre","2|oeufs","150 g|farine","50 g|sucre glace"],["Faire fondre chocolat et beurre, ajouter sucre, œufs et farine.","Réfrigérer 1 h.","Former des boules, les rouler dans le sucre glace.","Cuire 10 min à 180 °C."],20],
+["Meringues","D",120,"Moyen",["3|oeufs","180 g|sucre"],["Monter les blancs en neige ferme.","Ajouter le sucre progressivement jusqu'à un mélange brillant.","Former des petits tas sur une plaque.","Cuire 1 h 30 à 100 °C."],20],
+["Truffes au chocolat","D",30,"Facile",["200 g|chocolat","10 cl|crème","30 g|beurre","30 g|cacao"],["Verser la crème chaude sur le chocolat, ajouter le beurre.","Réfrigérer 2 h.","Former des boules et les rouler dans le cacao."],20],
+["Mendiants au chocolat","D",20,"Facile",["150 g|chocolat","50 g|fruits secs"],["Faire fondre le chocolat.","Former des petits disques sur du papier cuisson.","Décorer de fruits secs avant que ça durcisse."],15],
+["Barres de céréales maison","D",30,"Facile",["200 g|flocons d'avoine","80 g|miel","50 g|beurre","80 g|fruits secs"],["Faire fondre miel et beurre.","Mélanger avec les flocons et les fruits secs.","Tasser dans un moule, cuire 20 min à 170 °C.","Couper en barres une fois refroidi."],10],
+["Chouquettes","D",45,"Moyen",["25 cl|eau","100 g|beurre","150 g|farine","4|oeufs","50 g|sucre perlé"],["Porter eau, beurre et une pincée de sel à ébullition, ajouter la farine d'un coup.","Dessécher 1 min, puis incorporer les œufs un à un.","Former des petits choux, parsemer de sucre perlé.","Cuire 25 min à 190 °C sans ouvrir le four."],30],
+
+// ---------- CRÈMES, MOUSSES ET VERRINES ----------
+["Mousse au chocolat","D",20,"Facile",["200 g|chocolat","6|oeufs","30 g|sucre"],["Faire fondre le chocolat, ajouter les jaunes.","Monter les blancs en neige avec le sucre.","Incorporer délicatement au chocolat.","Réfrigérer au moins 3 h."],6],
+["Crème brûlée","D",60,"Moyen",["50 cl|crème","5|oeufs","100 g|sucre","1|vanille"],["Chauffer la crème avec la vanille.","Mélanger jaunes et sucre, verser la crème.","Cuire en ramequins 45 min à 100 °C, refroidir.","Saupoudrer de sucre et caraméliser au chalumeau ou sous le gril."],6],
+["Crème caramel","D",60,"Moyen",["50 cl|lait","4|oeufs","150 g|sucre","1|vanille"],["Faire un caramel avec 80 g de sucre, le répartir dans les ramequins.","Mélanger œufs, sucre restant et lait chaud vanillé.","Verser et cuire 40 min au bain-marie à 160 °C.","Réfrigérer et démouler."],6],
+["Crème au chocolat","D",20,"Facile",["50 cl|lait","100 g|chocolat","3|oeufs","50 g|sucre","20 g|maïzena"],["Fouetter jaunes, sucre et maïzena.","Verser le lait chaud, remettre sur le feu jusqu'à épaississement.","Ajouter le chocolat, mélanger.","Répartir en pots et réfrigérer."],6],
+["Panna cotta aux fruits rouges","D",20,"Facile",["50 cl|crème","60 g|sucre","2 feuilles|gélatine","200 g|fruits rouges"],["Ramollir la gélatine dans l'eau froide.","Chauffer crème et sucre, ajouter la gélatine essorée.","Verser en verrines, réfrigérer 4 h.","Couvrir d'un coulis de fruits rouges mixés avec un peu de sucre."],6],
+["Île flottante","D",40,"Moyen",["50 cl|lait","4|oeufs","100 g|sucre","1|vanille"],["Faire une crème anglaise : lait vanillé chaud sur jaunes et 60 g de sucre, épaissir sans bouillir.","Monter les blancs en neige avec 40 g de sucre.","Pocher des cuillerées de blancs dans du lait frémissant 1 min par face.","Servir sur la crème, napper de caramel."],4],
+["Semoule au lait","D",20,"Facile",["50 cl|lait","60 g|semoule","50 g|sucre","1|vanille"],["Porter le lait vanillé et sucré à ébullition.","Verser la semoule en pluie en remuant.","Cuire 8 min à feu doux.","Servir tiède ou froid avec de la confiture."],4],
+["Tiramisu","D",30,"Moyen",["250 g|mascarpone","3|oeufs","80 g|sucre","20|biscuits cuillère","25 cl|café","20 g|cacao"],["Fouetter jaunes et sucre, ajouter le mascarpone.","Incorporer les blancs en neige.","Alterner biscuits trempés dans le café et crème.","Réfrigérer 6 h, saupoudrer de cacao."],6],
+["Mousse au citron","D",25,"Facile",["2|citron","3|oeufs","80 g|sucre","20 cl|crème"],["Cuire jus, zestes, sucre et jaunes jusqu'à épaississement, refroidir.","Fouetter la crème en chantilly.","Incorporer crème et blancs en neige au citron.","Réfrigérer 3 h."],6],
+["Crème dessert à la vanille","D",20,"Facile",["50 cl|lait","3|oeufs","60 g|sucre","25 g|maïzena","1|vanille"],["Fouetter jaunes, sucre et maïzena.","Verser le lait vanillé chaud.","Épaissir sur le feu en remuant.","Répartir en pots et réfrigérer."],4],
+["Flan pâtissier","D",60,"Moyen",["1 L|lait","4|oeufs","150 g|sucre","90 g|maïzena","1|vanille"],["Chauffer le lait vanillé.","Fouetter œufs, sucre et maïzena, verser le lait chaud.","Épaissir sur le feu, verser dans un moule.","Cuire 40 min à 180 °C, réfrigérer."],8],
+["Mousse à la fraise","D",20,"Facile",["300 g|fraises","20 cl|crème","60 g|sucre"],["Mixer les fraises avec le sucre.","Fouetter la crème en chantilly.","Mélanger délicatement, répartir en verrines.","Réfrigérer 2 h."],4],
+["Verrines yaourt, confiture et biscuits","D",10,"Facile",["4|yaourt","4 c. à s.|confiture","6|biscuits"],["Émietter les biscuits au fond des verres.","Ajouter le yaourt.","Couvrir d'une cuillerée de confiture."],4],
+["Cheesecake sans cuisson","D",30,"Facile",["200 g|biscuits","80 g|beurre","300 g|fromage frais","20 cl|crème","80 g|sucre","1|citron"],["Mélanger biscuits écrasés et beurre fondu, tasser dans un moule.","Fouetter fromage frais, sucre, zeste et crème montée.","Étaler sur la base.","Réfrigérer 6 h, servir avec de la confiture ou des fruits."],8],
+["Charlotte aux fraises","D",40,"Moyen",["24|biscuits cuillère","400 g|fraises","30 cl|crème","250 g|mascarpone","80 g|sucre"],["Tapisser un moule de biscuits légèrement imbibés de sirop.","Fouetter crème, mascarpone et sucre.","Alterner crème et fraises.","Réfrigérer 6 h, démouler."],8],
+["Verrines banane-chocolat","D",15,"Facile",["2|bananes","100 g|chocolat","10 cl|crème","4|biscuits"],["Faire une ganache avec la crème chaude et le chocolat.","Émietter les biscuits au fond des verres.","Ajouter les rondelles de banane, napper de ganache."],4],
+
+// ---------- CRÊPES, PÂTES À FRIRE, CLAFOUTIS, CRUMBLES ----------
+["Crêpes","D",40,"Facile",["250 g|farine","4|oeufs","50 cl|lait","50 g|beurre","1 c. à s.|sucre"],["Mélanger farine, sucre et œufs.","Ajouter le lait petit à petit, puis le beurre fondu.","Laisser reposer 30 min si possible.","Cuire dans une poêle chaude, garnir de confiture, chocolat ou sucre."],15],
+["Gaufres","D",40,"Facile",["250 g|farine","3|oeufs","40 cl|lait","80 g|beurre","50 g|sucre","1 sachet|levure"],["Mélanger farine, levure et sucre.","Ajouter œufs, lait et beurre fondu.","Laisser reposer 30 min.","Cuire dans le gaufrier chaud."],10],
+["Pancakes","D",25,"Facile",["200 g|farine","2|oeufs","25 cl|lait","30 g|sucre","1 sachet|levure","30 g|beurre"],["Mélanger les ingrédients secs.","Ajouter œufs, lait et beurre fondu.","Cuire de petites louches 2 min par face.","Servir avec du sirop, du miel ou des fruits."],12],
+["Pain perdu","D",15,"Facile",["4 tranches|pain","2|oeufs","20 cl|lait","40 g|sucre","20 g|beurre"],["Battre œufs, lait et sucre.","Tremper les tranches de pain rassis.","Les dorer dans le beurre 2 min par face.","Saupoudrer de sucre ou de cannelle."],4],
+["Beignets aux pommes","D",35,"Moyen",["3|pommes","150 g|farine","2|oeufs","15 cl|lait","30 g|sucre"],["Préparer une pâte avec farine, œufs, lait et sucre.","Couper les pommes en rondelles, retirer le cœur.","Tremper dans la pâte et frire 2 min par face.","Saupoudrer de sucre."],4],
+["Clafoutis aux cerises","D",50,"Facile",["500 g|cerises","3|oeufs","100 g|sucre","80 g|farine","25 cl|lait"],["Préchauffer le four à 180 °C.","Disposer les cerises dans un plat beurré.","Fouetter œufs, sucre, farine et lait, verser.","Cuire 35 min."],6],
+["Far breton","D",60,"Facile",["200 g|pruneaux","4|oeufs","150 g|sucre","200 g|farine","75 cl|lait"],["Préchauffer le four à 200 °C.","Mélanger farine, sucre, œufs, puis le lait.","Verser dans un plat beurré avec les pruneaux.","Cuire 45 min."],8],
+["Crumble aux pommes","D",45,"Facile",["5|pommes","100 g|farine","80 g|sucre","80 g|beurre"],["Préchauffer le four à 180 °C.","Couper les pommes en dés dans un plat.","Sabler farine, sucre et beurre du bout des doigts.","Couvrir les pommes et cuire 30 min."],6],
+["Crumble poires-chocolat","D",45,"Facile",["4|poires","80 g|chocolat","100 g|farine","80 g|sucre","80 g|beurre"],["Couper les poires en dés, ajouter le chocolat en morceaux.","Préparer la pâte à crumble.","Couvrir les fruits et cuire 30 min à 180 °C."],6],
+["Crumble aux fruits rouges","D",40,"Facile",["400 g|fruits rouges","100 g|farine","80 g|sucre","80 g|beurre"],["Mettre les fruits rouges (frais ou surgelés) dans un plat.","Sabler farine, sucre et beurre.","Couvrir et cuire 30 min à 180 °C."],6],
+["Mug cake au chocolat","D",5,"Facile",["30 g|chocolat","20 g|beurre","1|oeufs","2 c. à s.|sucre","2 c. à s.|farine"],["Faire fondre chocolat et beurre dans un mug au micro-ondes.","Ajouter œuf, sucre et farine, mélanger.","Cuire 1 min au micro-ondes."],1],
+["Mug cake vanille-confiture","D",5,"Facile",["1|oeufs","2 c. à s.|sucre","3 c. à s.|farine","2 c. à s.|lait","1 c. à s.|confiture"],["Mélanger œuf, sucre, farine et lait dans un mug.","Déposer la confiture au centre.","Cuire 1 min 10 au micro-ondes."],1],
+["Gâteau roulé à la confiture","D",35,"Moyen",["4|oeufs","100 g|sucre","100 g|farine","200 g|confiture"],["Fouetter œufs et sucre jusqu'à ce que ça triple de volume, ajouter la farine.","Étaler sur une plaque, cuire 8 min à 200 °C.","Démouler sur un torchon, tartiner de confiture.","Rouler et laisser refroidir."],8],
+["Profiteroles","D",60,"Difficile",["25 cl|eau","100 g|beurre","150 g|farine","4|oeufs","150 g|chocolat","20 cl|crème","1 bac|glace vanille"],["Préparer une pâte à choux et former des petits choux, cuire 25 min à 190 °C.","Faire une sauce avec la crème chaude et le chocolat.","Garnir les choux refroidis de glace.","Napper de sauce chaude."],6],
+
+// ---------- DESSERTS AUX FRUITS ----------
+["Salade de fruits frais","D",15,"Facile",["2|pommes","2|oranges","2|bananes","200 g|fraises","1|citron","2 c. à s.|sucre"],["Éplucher et couper tous les fruits.","Arroser de jus de citron et d'orange.","Sucrer légèrement, réfrigérer 30 min."],6],
+["Pommes au four","D",40,"Facile",["4|pommes","40 g|beurre","40 g|sucre","1 c. à c.|cannelle"],["Préchauffer le four à 180 °C.","Évider les pommes sans les traverser.","Garnir de beurre, sucre et cannelle.","Cuire 30 min."],4],
+["Poires Belle-Hélène","D",35,"Moyen",["4|poires","100 g|sucre","150 g|chocolat","10 cl|crème","1 bac|glace vanille"],["Pocher les poires épluchées 20 min dans 1 L d'eau avec le sucre.","Faire une sauce chocolat avec la crème.","Servir les poires avec une boule de glace et la sauce chaude."],4],
+["Bananes caramélisées","D",10,"Facile",["4|bananes","40 g|beurre","40 g|sucre"],["Couper les bananes en deux dans la longueur.","Faire fondre beurre et sucre dans une poêle.","Dorer les bananes 2 min par face.","Servir chaud, avec de la glace si vous en avez."],4],
+["Compote de pommes","D",25,"Facile",["6|pommes","40 g|sucre","1 c. à c.|cannelle"],["Éplucher et couper les pommes.","Cuire à couvert avec un fond d'eau, le sucre et la cannelle 20 min.","Écraser ou mixer selon la texture voulue."],6],
+["Fraises au sucre et au citron","D",10,"Facile",["400 g|fraises","2 c. à s.|sucre","1/2|citron"],["Laver et équeuter les fraises, les couper en deux.","Ajouter sucre et jus de citron.","Laisser macérer 15 min au frais."],4],
+["Brochettes de fruits au chocolat","D",15,"Facile",["2|bananes","200 g|fraises","1|pommes","100 g|chocolat"],["Couper les fruits en morceaux et les enfiler sur des pics.","Faire fondre le chocolat.","Napper les brochettes de filets de chocolat."],4],
+["Glace express à la banane","D",10,"Facile",["4|bananes","2 c. à s.|cacao"],["Couper les bananes en rondelles et les congeler 4 h.","Mixer jusqu'à obtenir une texture de glace.","Ajouter le cacao (ou du beurre de cacahuète) et servir aussitôt."],4],
+["Fondue au chocolat","D",15,"Facile",["200 g|chocolat","15 cl|crème","2|bananes","200 g|fraises","1|pommes"],["Couper les fruits en morceaux.","Faire fondre le chocolat avec la crème.","Tremper les fruits dans le chocolat chaud."],4],
+["Poires pochées à la vanille","D",30,"Facile",["4|poires","100 g|sucre","1|vanille"],["Porter 1 L d'eau, le sucre et la vanille à ébullition.","Y pocher les poires épluchées 20 min.","Servir tièdes ou froides avec leur sirop."],4],
+["Oranges à la cannelle","D",10,"Facile",["4|oranges","1 c. à s.|sucre","1 c. à c.|cannelle"],["Peler les oranges à vif et les couper en rondelles.","Saupoudrer de sucre et de cannelle.","Réfrigérer 30 min."],4],
+["Ananas rôti","D",30,"Facile",["1|ananas","40 g|beurre","40 g|sucre"],["Couper l'ananas en tranches.","Les dorer dans le beurre et le sucre 5 min par face.","Servir chaud avec une boule de glace."],4],
+["Gratin de fruits rouges","D",20,"Facile",["300 g|fruits rouges","3|oeufs","60 g|sucre","10 cl|crème"],["Répartir les fruits dans des plats individuels.","Fouetter jaunes et sucre au bain-marie jusqu'à ce que ça mousse, ajouter la crème.","Napper les fruits, passer 3 min sous le gril."],4],
+["Pêches rôties au miel","D",25,"Facile",["4|pêches","3 c. à s.|miel","20 g|beurre"],["Préchauffer le four à 200 °C.","Couper les pêches en deux, les mettre dans un plat.","Arroser de miel, parsemer de beurre, cuire 20 min."],4],
+["Mangue et coco","D",10,"Facile",["2|mangues","20 cl|lait de coco","2 c. à s.|sucre","2 c. à s.|noix de coco râpée"],["Couper les mangues en dés.","Mélanger lait de coco et sucre.","Verser sur la mangue et parsemer de coco."],4],
+["Verrines fraises et yaourt","D",10,"Facile",["300 g|fraises","4|yaourt","2 c. à s.|sucre"],["Couper les fraises, les sucrer.","Alterner yaourt et fraises dans des verres.","Servir frais."],4],
+["Compote de fruits rouges","D",15,"Facile",["400 g|fruits rouges","50 g|sucre"],["Cuire les fruits rouges avec le sucre 10 min.","Laisser refroidir.","Servir avec du yaourt, des crêpes ou de la glace."],4],
+["Sorbet express aux fraises","D",10,"Facile",["400 g|fraises","60 g|sucre","1/2|citron"],["Congeler les fraises coupées 4 h (ou utiliser des fraises surgelées).","Mixer avec le sucre et le citron.","Servir aussitôt."],4],
+
+// ---------- CONFITURE, CHOCOLAT ET IDÉES RAPIDES ----------
+["Tartelettes à la confiture","D",35,"Facile",["1|pâte sablée","200 g|confiture"],["Découper des ronds de pâte et les placer dans des moules à tartelettes.","Garnir de confiture.","Cuire 20 min à 180 °C."],8],
+["Chaussons aux pommes","D",40,"Facile",["1|pâte feuilletée","3|pommes","40 g|sucre","1|oeufs"],["Cuire les pommes en dés avec le sucre 10 min.","Découper des ronds de pâte, garnir d'une moitié.","Refermer, souder et dorer à l'œuf.","Cuire 20 min à 200 °C."],6],
+["Chaussons à la confiture","D",30,"Facile",["1|pâte feuilletée","150 g|confiture","1|oeufs"],["Découper des ronds de pâte.","Déposer une cuillerée de confiture, refermer en demi-lune.","Dorer à l'œuf, cuire 18 min à 200 °C."],6],
+["Pain au chocolat maison express","D",30,"Facile",["1|pâte feuilletée","80 g|chocolat","1|oeufs"],["Couper la pâte en rectangles.","Placer deux bâtons de chocolat, rouler.","Dorer à l'œuf, cuire 18 min à 200 °C."],6],
+["Galette des rois","D",50,"Moyen",["2|pâte feuilletée","100 g|poudre d'amande","100 g|sucre","80 g|beurre","2|oeufs"],["Mélanger poudre d'amande, sucre, beurre mou et un œuf.","Étaler sur une pâte, glisser une fève, couvrir de la seconde.","Souder, dorer à l'œuf, rayer le dessus.","Cuire 30 min à 190 °C."],8],
+["Salami au chocolat","D",20,"Facile",["200 g|chocolat","80 g|beurre","150 g|biscuits","50 g|sucre","1|oeufs"],["Faire fondre chocolat et beurre, ajouter sucre et œuf.","Ajouter les biscuits concassés.","Former un boudin dans du film, réfrigérer 4 h.","Couper en rondelles."],10],
+["Pâte à tartiner maison","D",15,"Facile",["200 g|chocolat","20 cl|lait concentré sucré","50 g|beurre"],["Faire fondre doucement le chocolat avec le beurre.","Ajouter le lait concentré, mélanger jusqu'à ce que ce soit lisse.","Mettre en pot, conserver au frais 1 semaine."],10],
+["Chocolat liégeois","D",20,"Facile",["50 cl|lait","100 g|chocolat","3|oeufs","50 g|sucre","20 cl|crème"],["Préparer une crème au chocolat (lait, jaunes, sucre, chocolat épaissis).","Répartir en verres et refroidir.","Couvrir de chantilly faite avec la crème."],4],
+["Coulant au chocolat cœur confiture","D",25,"Moyen",["100 g|chocolat","80 g|beurre","2|oeufs","60 g|sucre","30 g|farine","4 c. à c.|confiture"],["Faire fondre chocolat et beurre, ajouter œufs, sucre et farine.","Remplir des ramequins à moitié, ajouter 1 c. à c. de confiture.","Couvrir de pâte, cuire 9 min à 200 °C."],4]
+];
+
+
+/* Ingrédients de base, toujours considérés comme disponibles */
+const BASE_INGS = ["sel","poivre","huile d'olive","eau"];
+const LACTO = ["beurre","lait","creme","fromage","parmesan","yaourt","mascarpone","glace","brioche","pate brisee","pate sablee","pate feuilletee"];
+const NOT_VEGGIE = ["gelatine"];
+const NOT_VEGAN = ["miel"];
+const GLUTEN = ["pates","pate ","farine","biscuit","pain","brioche","semoule","cereales","flocons"];
+const TYPE_NAMES = {E:"Entrée",P:"Plat principal",D:"Dessert",B:"Petit-déjeuner",S:"Snack"};
+
+function buildBook(raw){
+  const n = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/œ/g,"oe");
+  return raw.map(([titre,t,temps,difficulte,ings,etapes,portions])=>{
+    const ing = ings.map(x=>{ const [q,nom]=x.split("|"); return {quantite:q, nom}; });
+    const names = ing.map(i=>n(i.nom));
+    const hasDairy = names.some(x=>LACTO.some(l=>x.includes(l)));
+    const hasEgg = names.some(x=>x.includes("oeuf"));
+    const hasGluten = names.some(x=>GLUTEN.some(g=>(x+" ").includes(g)));
+    const veggie = !names.some(x=>NOT_VEGGIE.some(g=>x.includes(g)));
+    const tags = veggie ? ["Végétarien"] : [];
+    if(veggie && !hasDairy && !hasEgg && !names.some(x=>NOT_VEGAN.some(g=>x.includes(g)))) tags.push("Vegan");
+    if(!hasGluten) tags.push("Sans gluten");
+    if(!hasDairy) tags.push("Sans lactose");
+    return {titre, type:TYPE_NAMES[t], temps, difficulte, tags, ing, etapes, portions: portions||2};
+  });
+}
+
+const BOOK = buildBook(RAW100.concat(DESSERTS100));
+
+/* Correspondance tolérante : pluriels, accents et petites fautes de frappe */
+function lev(a,b){
+  if(Math.abs(a.length-b.length)>2) return 9;
+  const d=[...Array(b.length+1).keys()];
+  for(let i=1;i<=a.length;i++){ let p=d[0]; d[0]=i;
+    for(let j=1;j<=b.length;j++){ const t=d[j]; d[j]=Math.min(d[j]+1,d[j-1]+1,p+(a[i-1]===b[j-1]?0:1)); p=t; } }
+  return d[b.length];
+}
+const stem = x => norm(x).split(/\s+/).map(w=>w.replace(/[sx]$/,"")).join(" ");
+function matchIng(have, x){
+  const sx = stem(x);
+  return have.some(h=>{
+    const sh = stem(h);
+    if(sh===sx) return true;
+    if(sh.length>=3 && sx.length>=3 && (` ${sx} `.includes(` ${sh} `) || ` ${sh} `.includes(` ${sx} `))) return true;
+    return sh.length>=5 && sx.length>=5 && lev(sh,sx)<=2;
+  });
+}
+function toCard(r){
+  const have = ingredients;
+  const ings = r.ing.map(i=>({nom:i.nom, quantite:i.quantite, dispo:matchIng(have,i.nom)}));
+  if(r.type!=="Dessert") ings.push({nom:"sel, poivre, huile d'olive", quantite:"", dispo:true});
+  else ings.push({nom:"une pincée de sel", quantite:"", dispo:true});
+  const nUsed = ings.filter(i=>i.dispo).length - 1;
+  return {titre:r.titre, type:r.type, portions:r.portions, description:"", temps:r.temps, difficulte:r.difficulte,
+          ingredients:ings, etapes:r.etapes, nUsed, nMiss: r.ing.length - nUsed, score: nUsed/r.ing.length};
+}
+function localSearch(opts){
+  return BOOK.filter(r => (!opts.type || r.type===opts.type) && (!opts.time || r.temps<=+opts.time) && (!opts.diet || r.tags.includes(opts.diet)) && !r.ing.some(i=>isAvoided(i.nom)))
+    .map(toCard)
+    .filter(r => r.nUsed>0 && (!opts.strict || r.nMiss===0))
+    .sort((a,b)=> a.nMiss-b.nMiss || b.nUsed-a.nUsed).slice(0,8);
+}
+
+/* ---------- Section bibliothèque : menus Salé / Sucré et sous-catégories ---------- */
+const CATEGORY = {"Salade de tomates au basilic":"Salades et entrées","Salade tomates, concombre et olives":"Salades et entrées","Salade de riz estivale":"Salades et entrées","Salade de pâtes tomate-basilic":"Salades et entrées","Salade de pommes de terre":"Salades et entrées","Carottes râpées au citron":"Salades et entrées","Salade composée aux œufs durs":"Salades et entrées","Salade de maïs et tomates":"Salades et entrées","Œufs mimosa":"Salades et entrées","Gaspacho":"Soupes et veloutés","Soupe de tomates":"Soupes et veloutés","Velouté de butternut":"Soupes et veloutés","Soupe de carottes":"Soupes et veloutés","Velouté de courgettes":"Soupes et veloutés","Soupe de patates douces":"Soupes et veloutés","Velouté de champignons":"Soupes et veloutés","Soupe de légumes maison":"Soupes et veloutés","Potage pommes de terre et oignons":"Soupes et veloutés","Soupe de maïs":"Soupes et veloutés","Champignons à la grecque":"Salades et entrées","Carpaccio de courgettes":"Salades et entrées","Concombre au basilic et citron":"Salades et entrées","Champignons farcis":"Salades et entrées","Salade de patates douces rôties":"Salades et entrées","Salade tiède de butternut":"Salades et entrées","Tapenade d'olives":"Apéro et snacks","Omelette aux champignons":"Œufs","Tortilla de pommes de terre":"Œufs","Frittata de courgettes":"Œufs","Shakshuka":"Œufs","Œufs brouillés aux champignons":"Petit-déjeuner","Frittata de pâtes":"Œufs","Œufs cocotte à la tomate":"Œufs","Flan de courgettes":"Œufs","Clafoutis salé aux tomates":"Œufs","Riz cantonais végétarien":"Riz","Risotto aux champignons":"Riz","Risotto à la butternut":"Riz","Risotto de courgettes au basilic":"Riz","Tomates farcies au riz":"Riz","Courgettes farcies au riz et champignons":"Riz","Riz à la tomate":"Riz","Riz pilaf aux carottes":"Riz","Curry de légumes au riz":"Riz","Paella végétarienne":"Riz","Galettes de riz et courgette":"Riz","Arancini simples":"Apéro et snacks","Butternut farcie au riz":"Riz","Pâtes tomate-basilic":"Pâtes","Pâtes au pesto de basilic":"Pâtes","Pâtes aux champignons à la crème":"Pâtes","Pâtes à la courgette et à l'ail":"Pâtes","Pâtes aux tomates et olives":"Pâtes","Carbonara de courgettes":"Pâtes","Gratin de pâtes à la tomate":"Pâtes","Pâtes à l'ail et à l'huile":"Pâtes","Pâtes crémeuses à la butternut":"Pâtes","Minestrone":"Pâtes","Pâtes aux légumes rôtis":"Pâtes","One-pot pasta tomate-basilic":"Pâtes","Gratin dauphinois":"Pommes de terre","Purée maison":"Pommes de terre","Pommes de terre sautées à l'ail":"Pommes de terre","Frites au four":"Pommes de terre","Pommes de terre farcies aux champignons":"Pommes de terre","Röstis de pommes de terre":"Pommes de terre","Écrasé de pommes de terre olives-basilic":"Pommes de terre","Gnocchis maison":"Pommes de terre","Pommes de terre boulangères":"Pommes de terre","Poêlée pommes de terre et champignons":"Pommes de terre","Tian provençal":"Pommes de terre","Frites de patates douces":"Patates douces et butternut","Purée de patates douces":"Patates douces et butternut","Curry de patates douces":"Patates douces et butternut","Gratin de patates douces":"Patates douces et butternut","Galettes de patates douces":"Patates douces et butternut","Butternut rôtie au four":"Patates douces et butternut","Gratin de butternut":"Patates douces et butternut","Gratin de courgettes":"Légumes","Beignets de courgettes":"Apéro et snacks","Ratatouille express":"Légumes","Spaghettis de courgettes à la tomate":"Légumes","Poêlée de légumes":"Légumes","Légumes rôtis au four":"Légumes","Carottes glacées":"Légumes","Poêlée de champignons à l'ail":"Légumes","Champignons à la crème":"Légumes","Galettes de maïs":"Apéro et snacks","Poêlée maïs et courgettes":"Légumes","Wok de légumes et riz":"Légumes","Hachis parmentier végétarien":"Légumes","Chili végétarien au maïs":"Légumes","Pancakes de patate douce":"Petit-déjeuner","Œufs brouillés tomate-basilic":"Petit-déjeuner","Muffins salés à la courgette":"Apéro et snacks","Riz au lait":"Crèmes, mousses et verrines","Carrot cake simplifié":"Gâteaux","Gâteau à la patate douce":"Gâteaux","Flan sucré à la butternut":"Crèmes, mousses et verrines","Gratin de pommes de terre et courgettes":"Pommes de terre","Gâteau fondant au chocolat":"Gâteaux","Gâteau au yaourt":"Gâteaux","Quatre-quarts":"Gâteaux","Cake au citron":"Gâteaux","Gâteau aux pommes":"Gâteaux","Gâteau marbré":"Gâteaux","Brownie":"Gâteaux","Banana bread":"Gâteaux","Gâteau à l'orange":"Gâteaux","Gâteau renversé à l'ananas":"Gâteaux","Moelleux poires-chocolat":"Gâteaux","Cake à la confiture":"Gâteaux","Gâteau à la noix de coco":"Gâteaux","Gâteau basque à la confiture de cerises":"Gâteaux","Madeleines":"Gâteaux","Muffins aux myrtilles":"Gâteaux","Muffins au chocolat":"Gâteaux","Gâteau au fromage blanc":"Gâteaux","Financiers":"Gâteaux","Fondant au chocolat sans farine":"Gâteaux","Gâteau aux fraises":"Gâteaux","Tarte aux pommes":"Tartes","Tarte au citron":"Tartes","Tarte aux fraises":"Tartes","Tarte au chocolat":"Tartes","Tarte à la confiture":"Tartes","Tarte fine aux poires":"Tartes","Tarte Tatin":"Tartes","Tarte banane-chocolat":"Tartes","Tarte au sucre":"Tartes","Tarte amandine aux poires":"Tartes","Cookies aux pépites de chocolat":"Biscuits et petites douceurs","Sablés au beurre":"Biscuits et petites douceurs","Sablés à la confiture":"Biscuits et petites douceurs","Palets bretons":"Biscuits et petites douceurs","Biscuits aux flocons d'avoine":"Biscuits et petites douceurs","Rochers à la noix de coco":"Biscuits et petites douceurs","Crinkles au chocolat":"Biscuits et petites douceurs","Meringues":"Biscuits et petites douceurs","Truffes au chocolat":"Biscuits et petites douceurs","Mendiants au chocolat":"Biscuits et petites douceurs","Barres de céréales maison":"Biscuits et petites douceurs","Chouquettes":"Biscuits et petites douceurs","Mousse au chocolat":"Crèmes, mousses et verrines","Crème brûlée":"Crèmes, mousses et verrines","Crème caramel":"Crèmes, mousses et verrines","Crème au chocolat":"Crèmes, mousses et verrines","Panna cotta aux fruits rouges":"Crèmes, mousses et verrines","Île flottante":"Crèmes, mousses et verrines","Semoule au lait":"Crèmes, mousses et verrines","Tiramisu":"Crèmes, mousses et verrines","Mousse au citron":"Crèmes, mousses et verrines","Crème dessert à la vanille":"Crèmes, mousses et verrines","Flan pâtissier":"Crèmes, mousses et verrines","Mousse à la fraise":"Crèmes, mousses et verrines","Verrines yaourt, confiture et biscuits":"Crèmes, mousses et verrines","Cheesecake sans cuisson":"Crèmes, mousses et verrines","Charlotte aux fraises":"Crèmes, mousses et verrines","Verrines banane-chocolat":"Crèmes, mousses et verrines","Crêpes":"Crêpes, clafoutis et crumbles","Gaufres":"Crêpes, clafoutis et crumbles","Pancakes":"Crêpes, clafoutis et crumbles","Pain perdu":"Crêpes, clafoutis et crumbles","Beignets aux pommes":"Crêpes, clafoutis et crumbles","Clafoutis aux cerises":"Crêpes, clafoutis et crumbles","Far breton":"Crêpes, clafoutis et crumbles","Crumble aux pommes":"Crêpes, clafoutis et crumbles","Crumble poires-chocolat":"Crêpes, clafoutis et crumbles","Crumble aux fruits rouges":"Crêpes, clafoutis et crumbles","Mug cake au chocolat":"Crêpes, clafoutis et crumbles","Mug cake vanille-confiture":"Crêpes, clafoutis et crumbles","Gâteau roulé à la confiture":"Crêpes, clafoutis et crumbles","Profiteroles":"Crêpes, clafoutis et crumbles","Salade de fruits frais":"Desserts aux fruits","Pommes au four":"Desserts aux fruits","Poires Belle-Hélène":"Desserts aux fruits","Bananes caramélisées":"Desserts aux fruits","Compote de pommes":"Desserts aux fruits","Fraises au sucre et au citron":"Desserts aux fruits","Brochettes de fruits au chocolat":"Desserts aux fruits","Glace express à la banane":"Desserts aux fruits","Fondue au chocolat":"Desserts aux fruits","Poires pochées à la vanille":"Desserts aux fruits","Oranges à la cannelle":"Desserts aux fruits","Ananas rôti":"Desserts aux fruits","Gratin de fruits rouges":"Desserts aux fruits","Pêches rôties au miel":"Desserts aux fruits","Mangue et coco":"Desserts aux fruits","Verrines fraises et yaourt":"Desserts aux fruits","Compote de fruits rouges":"Desserts aux fruits","Sorbet express aux fraises":"Desserts aux fruits","Tartelettes à la confiture":"Confiture et chocolat","Chaussons aux pommes":"Confiture et chocolat","Chaussons à la confiture":"Confiture et chocolat","Pain au chocolat maison express":"Confiture et chocolat","Galette des rois":"Confiture et chocolat","Salami au chocolat":"Confiture et chocolat","Pâte à tartiner maison":"Confiture et chocolat","Chocolat liégeois":"Confiture et chocolat","Coulant au chocolat cœur confiture":"Confiture et chocolat"};
+const SUBCATS = {
+  sale: [["Salades et entrées","🥗"],["Soupes et veloutés","🍲"],["Œufs","🥚"],["Riz","🍚"],["Pâtes","🍝"],["Pommes de terre","🥔"],["Patates douces et butternut","🎃"],["Légumes","🥕"],["Apéro et snacks","🫒"],["Petit-déjeuner","🍳"]],
+  sucre: [["Gâteaux","🎂"],["Tartes","🥧"],["Biscuits et petites douceurs","🍪"],["Crèmes, mousses et verrines","🍮"],["Crêpes, clafoutis et crumbles","🥞"],["Desserts aux fruits","🍓"],["Confiture et chocolat","🍫"]]
+};
+BOOK.forEach(r=>{ r.cat = CATEGORY[r.titre] || (r.type==="Dessert"?"Gâteaux":"Légumes"); r.menu = SUBCATS.sucre.some(([c])=>c===r.cat) ? "sucre" : "sale"; });
+let libMenu = "sale", libSub = "";
+const openSecs = new Set();   // sous-catégories dépliées
+try{ const m = localStorage.getItem("frigo-menu"); if(m==="sale"||m==="sucre") libMenu = m; }catch(e){}
+
+function renderLibrary(){
+  const q = norm(document.getElementById("libSearch").value||"");
+  const onlyOk = document.getElementById("libOk").checked;
+  let hidden = 0;
+  // recettes visibles selon recherche / réalisables / à éviter (tous menus)
+  const pool = BOOK.filter(r=>{
+      if(r.ing.some(i=>isAvoided(i.nom))){ hidden++; return false; }
+      if(q && !norm(r.titre).includes(q) && !r.ing.some(i=>norm(i.nom).includes(q))) return false;
+      return true;
+    }).map(r=>({r, c:toCard(r)})).filter(x=>!onlyOk || x.c.nMiss===0);
+  const inMenu = m => pool.filter(x=>x.r.menu===m);
+  document.getElementById("cntSale").textContent = inMenu("sale").length;
+  document.getElementById("cntSucre").textContent = inMenu("sucre").length;
+  document.querySelectorAll("#menuTabs .mtab").forEach(b=>b.classList.toggle("on", b.dataset.m===libMenu));
+  const menuItems = inMenu(libMenu);
+  const subs = SUBCATS[libMenu];
+  if(libSub && !subs.some(([c])=>c===libSub)) libSub = "";
+  document.getElementById("subcats").innerHTML =
+    `<button type="button" class="sc${libSub?"":" on"}" data-c="">Tout <small>${menuItems.length}</small></button>` +
+    subs.map(([c,e])=>{ const n = menuItems.filter(x=>x.r.cat===c).length;
+      return `<button type="button" class="sc${libSub===c?" on":""}" data-c="${esc(c)}" ${n?"":"disabled"}>${e} ${esc(c)} <small>${n}</small></button>`; }).join("");
+  const sortFn = (a,b)=> ingredients.length ? (a.c.nMiss-b.c.nMiss || a.r.titre.localeCompare(b.r.titre,"fr")) : a.r.titre.localeCompare(b.r.titre,"fr");
+  const item = ({r,c})=>{
+    const main = r.ing.map(i=>emojiFor(i.nom)).filter(e=>e!=="🥄").filter((e,k,a)=>a.indexOf(e)===k).slice(0,3).join("");
+    const badge = !ingredients.length ? "" : c.nMiss===0 ? `<span class="lb ok">✓ réalisable</span>` : `<span class="lb">${c.nMiss} manquant${c.nMiss>1?"s":""}</span>`;
+    return `<button class="lib-item" type="button" data-i="${BOOK.indexOf(r)}"><span class="li-em">${main||"🍽️"}</span><span class="li-t">${esc(r.titre)}<small>${esc(r.type)} · ⏱ ${r.temps} min</small></span>${badge}</button>`;
+  };
+  let html = "", shown = 0;
+  const groups = libSub ? subs.filter(([c])=>c===libSub) : subs;
+  const autoOpen = !!q || onlyOk;   // en recherche, tout est déplié
+  for(const [c,e] of groups){
+    const g = menuItems.filter(x=>x.r.cat===c).sort(sortFn);
+    if(!g.length) continue;
+    shown += g.length;
+    if(libSub) html += `<div class="lib-grid">${g.map(item).join("")}</div>`;
+    else {
+      const open = autoOpen || openSecs.has(c);
+      html += `<div class="lib-sec${open?" open":""}"><button type="button" class="lib-group" data-sec="${esc(c)}" aria-expanded="${open}">${e} ${esc(c)} <small>${g.length}</small><span class="chev">›</span></button><div class="lib-grid">${g.map(item).join("")}</div></div>`;
+    }
+  }
+  document.getElementById("libFold").style.display = (libSub || autoOpen) ? "none" : "";
+  const box = document.getElementById("libList");
+  box.innerHTML = html || `<span class="empty">Aucune recette ne correspond.</span>`;
+  document.getElementById("libInfo").textContent = `${shown} recette${shown>1?"s":""} affichée${shown>1?"s":""}` + (hidden ? ` · ${hidden} masquée${hidden>1?"s":""} (ingrédients à éviter)` : "");
+}
+document.getElementById("libSearch").oninput = renderLibrary;
+document.getElementById("libOk").onchange = renderLibrary;
+document.getElementById("menuTabs").onclick = e=>{
+  const b = e.target.closest(".mtab"); if(!b) return;
+  libMenu = b.dataset.m; libSub = "";
+  try{ localStorage.setItem("frigo-menu", libMenu); }catch(err){}
+  renderLibrary(); document.getElementById("libList").scrollTop = 0;
+};
+document.getElementById("libFold").onclick = e=>{
+  const f = e.target.dataset.f; if(!f) return;
+  SUBCATS[libMenu].forEach(([c])=> f==="open" ? openSecs.add(c) : openSecs.delete(c));
+  renderLibrary();
+};
+document.getElementById("subcats").onclick = e=>{
+  const b = e.target.closest(".sc"); if(!b || b.disabled) return;
+  libSub = b.dataset.c; renderLibrary(); document.getElementById("libList").scrollTop = 0;
+};
+document.getElementById("libList").onclick = e=>{
+  const h = e.target.closest(".lib-group");
+  if(h){ const c = h.dataset.sec, sec = h.parentElement;
+    if(openSecs.has(c)) openSecs.delete(c); else openSecs.add(c);
+    sec.classList.toggle("open", openSecs.has(c)); h.setAttribute("aria-expanded", openSecs.has(c)); return; }
+  const b = e.target.closest(".lib-item"); if(!b) return;
+  showRecipes([toCard(BOOK[+b.dataset.i])], "library");
+  document.getElementById("results").scrollIntoView({behavior:"smooth",block:"start"});
+};
+
+/* ---------- Recherche avec Claude ---------- */
+let sample = null;
+(async()=>{ try{ sample = await claude.use("sample"); }catch(e){ sample=null; } })();
+
+async function aiSearch(opts){
+  const prompt = `Tu es un chef cuisinier français. Propose 4 recettes réalisables avec ces ingrédients disponibles : ${ingredients.join(", ")}.
+Contraintes :
+- Type de plat : ${opts.type||"peu importe"}
+- Temps total maximum : ${opts.time? opts.time+" minutes":"peu importe"}
+- Nombre de personnes : ${opts.people} (adapte les quantités)
+- Régime : ${opts.diet||"aucun"}
+- INTERDIT (allergies / indésirables) : ${avoid.length ? avoid.join(", ") + ". N'utilise JAMAIS ces ingrédients, ni aucun produit qui en contient ou en dérive, même en petite quantité ou en garniture." : "aucun"}
+- ${opts.strict ? "Utilise UNIQUEMENT les ingrédients disponibles, plus sel, poivre, huile et eau." : "Privilégie les ingrédients disponibles ; tu peux ajouter au maximum 2-3 ingrédients courants manquants."}
+Réponds uniquement en JSON, sous la forme :
+{"recettes":[{"titre":string,"type":"Entrée"|"Plat principal"|"Dessert"|"Petit-déjeuner"|"Snack","emojis":[string] (3 à 5 emojis illustrant le plat : le 1er = le plat fini, les suivants = ses ingrédients principaux),"description":string (une phrase),"temps":number (minutes),"difficulte":"Facile"|"Moyen"|"Difficile","ingredients":[{"nom":string,"quantite":string,"dispo":boolean (true si l'utilisateur l'a ou si c'est sel/poivre/huile/eau)}],"etapes":[string],"astuce":string}]}`;
+  const res = await sample.json(prompt, {modelTier:"default"});
+  return (res && res.recettes) || [];
+}
+
+function showRecipes(list, source){
+  const out = document.getElementById("results");
+  if(!list.length){ out.innerHTML = `<div class="card empty">Aucune recette trouvée. Essayez d'ajouter quelques ingrédients ou d'assouplir les filtres.</div>`; return; }
+  currentList = list; currentSource = source;
+  const head = source==="saved" ? `<h2 class="results-title">📖 Recettes sauvegardées</h2>` : source==="library" ? `<h2 class="results-title">📚 Depuis ma bibliothèque</h2>` : "";
+  out.innerHTML = head + list.map((r,k)=>{
+    const ings = r.ingredients||[];
+    const nHave = ings.filter(i=>i.dispo).length;
+    const miss = ings.length - nHave;
+    const scoreTxt = miss===0 ? "✓ Tout est là" : `${miss} manquant${miss>1?"s":""}`;
+    return `<article class="recipe${k===0?" open":""}">
+      ${bannerHTML(r,k)}
+      <div class="rhead" data-k="${k}">
+        <div>
+          <h3>${esc(r.titre)}</h3>
+          <div class="meta"><span class="pill">⏱ ${esc(r.temps)} min</span><span class="pill">${esc(r.difficulte||"")}</span>${r.portions?`<span class="pill">👥 ${r.portions} ${r.type==="Dessert"&&r.portions>2?"parts":r.portions>1?"personnes":"personne"}</span>`:""}</div>
+          ${r.description?`<p class="desc">${esc(r.description)}</p>`:""}
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+          <button class="save${saved.has(recipeKey(r))?" on":""}" type="button" data-k="${k}" data-key="${esc(recipeKey(r))}" title="Sauvegarder">${saved.has(recipeKey(r))?"♥":"♡"}</button>
+          ${source==="saved" ? "" : `<span class="score ${miss?"mid":""}">${scoreTxt}</span>`}
+        </div>
+      </div>
+      <div class="rbody">
+        <div class="photo-bar">
+          <a class="pbtn" href="https://www.google.com/search?tbm=isch&q=${encodeURIComponent(r.titre+" recette plat")}" target="_blank" rel="noopener">📷 Voir des photos du plat</a>
+        </div>
+        <div class="cols">
+          <div><h4>Ingrédients</h4><ul class="ing">${ings.map(i=>`<li><span class="${i.dispo?"have":"miss"}">${i.dispo?"✓":"○"}</span><span class="em">${emojiFor(i.nom)}</span><span>${i.quantite?`<b>${esc(i.quantite)}</b> `:""}${esc(i.nom)}</span></li>`).join("")}</ul></div>
+          <div><h4>Préparation</h4><ol class="steps">${(r.etapes||[]).map(s=>`<li>${esc(s)}</li>`).join("")}</ol>
+          ${r.astuce?`<div class="tip">💡 ${esc(r.astuce)}</div>`:""}</div>
+        </div>
+      </div>
+    </article>`;
+  }).join("");
+}
+let currentList = [], currentSource = "";
+document.getElementById("results").onclick = e=>{
+  const sv = e.target.closest(".save"); if(sv){ toggleSave(currentList[+sv.dataset.k], sv); return; }
+  const h = e.target.closest(".rhead, .banner"); if(h) h.parentElement.classList.toggle("open");
+};
+
+
+
+/* ---------- Recettes sauvegardées ---------- */
+let saved = new Map();          // clé -> recette
+let savedColl = null;           // collection privée de l'utilisateur
+let storeMode = "local";
+function recipeKey(r){ return ("r-" + norm(r.titre||"recette").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")).slice(0,120) || "r-recette"; }
+function loadLocalSaved(){
+  try{ const arr = JSON.parse(localStorage.getItem("frigo-saved")||"[]"); saved = new Map(arr.map(x=>[x.key,x.recipe])); }catch(e){ saved = new Map(); }
+}
+function saveLocalSaved(){ try{ localStorage.setItem("frigo-saved", JSON.stringify([...saved].map(([key,recipe])=>({key,recipe})))); }catch(e){} }
+
+function renderSaved(){
+  document.getElementById("savedCount").textContent = saved.size;
+  const list = document.getElementById("savedList");
+  list.innerHTML = saved.size ? [...saved].map(([key,r])=>{
+    const em = (Array.isArray(r.emojis)&&r.emojis[0]) || (TYPE_STYLE[r.type]||[])[2] || "🍽️";
+    return `<button class="saved-item" type="button" data-key="${esc(key)}">${em} ${esc(r.titre)} <small>⏱ ${esc(r.temps)} min</small></button>`;
+  }).join("") : `<span class="empty">Cliquez sur ♡ sur une recette pour la garder ici.</span>`;
+  document.getElementById("showAllSaved").style.display = saved.size ? "" : "none";
+  // met à jour les cœurs visibles
+  document.querySelectorAll("#results .save").forEach(b=>{
+    const on = saved.has(b.dataset.key); b.classList.toggle("on",on); b.textContent = on?"♥":"♡";
+  });
+  if(currentSource==="saved"){
+    const items = [...saved.values()];
+    if(items.length) showRecipes(items.map(x=>JSON.parse(JSON.stringify(x))), "saved");
+    else document.getElementById("results").innerHTML = "";
+  }
+}
+document.getElementById("savedList").onclick = e=>{
+  const b = e.target.closest(".saved-item"); if(!b) return;
+  const r = saved.get(b.dataset.key); if(!r) return;
+  showRecipes([JSON.parse(JSON.stringify(r))], "saved");
+  document.getElementById("results").scrollIntoView({behavior:"smooth",block:"start"});
+};
+document.getElementById("showAllSaved").onclick = ()=>{
+  showRecipes([...saved.values()].map(x=>JSON.parse(JSON.stringify(x))), "saved");
+  document.getElementById("results").scrollIntoView({behavior:"smooth",block:"start"});
+};
+
+async function toggleSave(r, btn){
+  if(!r) return;
+  const key = recipeKey(r);
+  const note = document.getElementById("savedNote");
+  const wasSaved = saved.has(key);
+  btn.disabled = true;
+  try{
+    if(storeMode==="db" && savedColl){
+      if(wasSaved) await savedColl.doc(key).delete();
+      else await savedColl.doc(key).set({recipe: JSON.parse(JSON.stringify(r)), savedAt: Date.now()});
+    }
+    if(wasSaved) saved.delete(key); else saved.set(key, JSON.parse(JSON.stringify(r)));
+    if(storeMode==="local") saveLocalSaved();
+    note.textContent = wasSaved ? `« ${r.titre} » retirée de vos recettes.` : `« ${r.titre} » sauvegardée ✓`;
+    btn.classList.add("pop"); setTimeout(()=>btn.classList.remove("pop"),400);
+    renderSaved();
+  }catch(err){
+    note.textContent = err && err.code==="quota_exceeded" ? "Espace de sauvegarde plein : supprimez quelques recettes." : "La sauvegarde n'a pas fonctionné, réessayez.";
+  }finally{ btn.disabled = false; }
+}
+
+(async()=>{
+  loadLocalSaved(); renderSaved();
+  let db=null, user=null, uid=null;
+  try{ db = await claude.use("db"); user = await claude.use("user"); uid = user ? await user.id() : null; }catch(e){}
+  const note = document.getElementById("savedNote");
+  if(!db || !uid){
+    note.textContent = "Vos recettes sont sauvegardées sur cet appareil.";
+    return;
+  }
+  savedColl = db.collection("data/users/" + uid);
+  const timer = setTimeout(()=>{ note.textContent = "Chargement de vos recettes sauvegardées…"; }, 10000);
+  savedColl.orderBy("savedAt","desc").onSnapshot(async snap=>{
+    if(!snap.metadata.fromCache){ clearTimeout(timer); if(note.textContent.startsWith("Chargement")) note.textContent=""; }
+    const fromDb = new Map(snap.docs.filter(d=>d.exists && d.data().recipe).map(d=>[d.id, d.data().recipe]));
+    if(storeMode==="local"){
+      storeMode = "db";
+      // reprend les recettes sauvegardées auparavant dans ce navigateur
+      const local = [...saved].filter(([k])=>!fromDb.has(k));
+      for(const [k,r] of local){ try{ await savedColl.doc(k).set({recipe:r, savedAt:Date.now()}); fromDb.set(k,r); }catch(e){} }
+      if(local.length){ try{ localStorage.removeItem("frigo-saved"); }catch(e){} }
+    }
+    saved = fromDb;
+    renderSaved();
+  }, err=>{
+    clearTimeout(timer);
+    storeMode = "local"; savedColl = null; loadLocalSaved(); renderSaved();
+    note.textContent = "Vos recettes sont sauvegardées sur cet appareil.";
+  });
+})();
+
+const LOADER_SVG = `<svg viewBox="0 0 300 220" aria-hidden="true">
+  <g class="spark"><path d="M40 60l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="var(--amber)"/></g>
+  <g class="spark sp2"><path d="M258 50l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="var(--accent)"/></g>
+  <g class="spark sp3"><path d="M244 120l3 6 6 3-6 3-3 6-3-6-6-3 6-3z" fill="var(--green)"/></g>
+  <g fill="none" stroke="var(--muted)" stroke-width="3" stroke-linecap="round">
+    <path class="vap" d="M120 96c-6-8 6-12 0-22"/><path class="vap v2" d="M150 92c-6-8 6-12 0-22"/><path class="vap v3" d="M180 96c-6-8 6-12 0-22"/>
+  </g>
+  <!-- ingrédients éjectés : même trajectoire circulaire, l'un derrière l'autre -->
+  <g class="orbit" style="transform-origin:150px 86px"><g class="spin"><circle cx="150" cy="126" r="11" fill="#e4572e"/><path d="M145 116l5 4 5-4" stroke="#4f7a4a" stroke-width="2.5" fill="none" stroke-linecap="round"/></g></g>
+  <g class="orbit o2" style="transform-origin:150px 86px"><g class="spin"><ellipse cx="150" cy="126" rx="13" ry="8" fill="#fff" stroke="#e8dcc8" stroke-width="2"/><circle cx="150" cy="126" r="5" fill="#f6b93b"/></g></g>
+  <g class="orbit o3" style="transform-origin:150px 86px"><g class="spin"><rect x="140" y="121.5" width="20" height="9" rx="4" fill="#f29e4c" transform="rotate(-20 150 126)"/></g></g>
+  <g class="orbit o4" style="transform-origin:150px 86px"><g class="spin"><path d="M144 123c0-8 12-8 12 0 0 5-6 9-6 9s-6-4-6-9z" fill="#7cb518"/></g></g>
+  <!-- poêle -->
+  <g class="pan">
+    <path d="M78 138h144a6 6 0 0 1 6 6c-4 22-22 34-50 34h-56c-28 0-46-12-50-34a6 6 0 0 1 6-6z" fill="var(--ink)"/>
+    <path d="M90 146h120" stroke="#fff" stroke-opacity=".18" stroke-width="5" stroke-linecap="round"/>
+    <rect x="222" y="148" width="64" height="12" rx="6" fill="var(--accent)"/>
+  </g>
+  <!-- brûleur et flammes -->
+  <g>
+    <path class="flame" d="M118 206c-8-6-6-16 2-22 0 6 6 8 6 14 0 4-3 7-8 8z" fill="#f29e4c"/>
+    <path class="flame fl2" d="M150 208c-10-7-8-20 3-28 0 8 8 10 8 18 0 6-4 9-11 10z" fill="#e4572e"/>
+    <path class="flame fl3" d="M182 206c-8-6-6-16 2-22 0 6 6 8 6 14 0 4-3 7-8 8z" fill="#f29e4c"/>
+    <rect x="96" y="208" width="108" height="8" rx="4" fill="var(--line)"/>
+  </g>
+</svg>`;
+const LOADER_MSGS = ["Le chef ouvre le frigo…","On fait sauter les ingrédients…","On goûte et on assaisonne…","Dressage des assiettes…"];
+let loaderTimer = null;
+function showLoader(){
+  const out = document.getElementById("results");
+  out.innerHTML = `<div class="loader">${LOADER_SVG}<p><span id="loaderMsg">${LOADER_MSGS[0]}</span></p></div>`;
+  let i = 0; clearInterval(loaderTimer);
+  loaderTimer = setInterval(()=>{ const m=document.getElementById("loaderMsg"); if(!m){clearInterval(loaderTimer);return;} i=(i+1)%LOADER_MSGS.length; m.textContent=LOADER_MSGS[i]; }, 2200);
+  out.scrollIntoView({behavior:"smooth", block:"start"});
+}
+function hideLoader(){ clearInterval(loaderTimer); }
+const wait = ms => new Promise(r=>setTimeout(r,ms));
+
+document.getElementById("goBtn").onclick = async ()=>{
+  const st = document.getElementById("status"), btn = document.getElementById("goBtn");
+  if(!ingredients.length){ st.textContent = "Ajoutez d'abord au moins un ingrédient."; return; }
+  const $ = id => document.getElementById(id);
+  const opts = { type:$("type").value, time:$("time").value, people:$("people").value, diet:$("diet").value, strict:$("strict").checked };
+  if(sample){
+    btn.disabled = true;
+    st.textContent = "";
+    showLoader();
+    try{
+      const list = await aiSearch(opts);
+      hideLoader();
+      showRecipes(list, "ai");
+      st.textContent = `${list.length} recette${list.length>1?"s":""} créée${list.length>1?"s":""} sur mesure par Claude pour ${opts.people} personne${opts.people>1?"s":""}.`;
+    }catch(err){
+      hideLoader();
+      const list = localSearch(opts);
+      showRecipes(list, "local");
+      st.textContent = (err && err.code==="rate_limited" ? "Trop de demandes, réessayez dans un instant. " : "Le chef IA n'est pas disponible. ")
+        + "Voici des recettes de votre bibliothèque.";
+    }finally{ btn.disabled = false; }
+  } else {
+    btn.disabled = true; st.textContent = "";
+    showLoader();
+    await wait(1800);
+    hideLoader(); btn.disabled = false;
+    const list = localSearch(opts);
+    showRecipes(list, "local");
+    st.textContent = `${list.length} recette${list.length>1?"s":""} trouvée${list.length>1?"s":""} dans votre bibliothèque.`;
+  }
+};
+
+load(); render();
+</script>
+<script>
+if("serviceWorker" in navigator){ window.addEventListener("load", ()=>{ navigator.serviceWorker.register("sw.js").catch(()=>{}); }); }
+</script>
+</body>
+</html>
