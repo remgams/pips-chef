@@ -21,6 +21,19 @@
     :root{ --bg:#1c1917; --card:#26221f; --ink:#f3ede6; --muted:#a89d92; --line:#3a332e;
       --accent:#e07a5f; --accent-soft:#3d2a24; --green:#8cbf85; --green-soft:#253323; --amber:#e3b05c; --amber-soft:#3a2f1c; }
   }
+  body.otto{
+    --bg:#121110; --card:#1c1a17; --ink:#f2ece3; --muted:#a39a8f; --line:#34302a;
+    --accent:#e39b3a; --accent-soft:#3a2c17; --green:#9ccf8f; --green-soft:#22301f; --amber:#e8b45f; --amber-soft:#3a2f1c;
+  }
+  .mode-switch{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:5px;margin:0 0 22px}
+  .mode-switch button{background:transparent;color:var(--muted);font:600 15px Inter,sans-serif;padding:12px 8px;border-radius:12px}
+  .mode-switch button.on{background:var(--accent);color:#fff}
+  body.otto .mode-switch button.on{color:#1a140c}
+  .photo-banner{position:relative;cursor:pointer;padding:12px;background:var(--bg)}
+  .photo-banner img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;border-radius:6px;border:6px solid #f4efe6;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+  body.otto .photo-banner img{border-color:#2a2622}
+  .photo-banner .tag{position:absolute;left:26px;top:26px;background:rgba(255,255,255,.92);color:#2b2420;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px}
+  .li-em img.thumb{width:44px;height:44px;object-fit:cover;border-radius:8px;display:block}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,sans-serif}
   .wrap{max-width:900px;margin:0 auto;padding:32px 20px 60px}
@@ -124,11 +137,85 @@
   .li-t small{color:var(--muted);font-weight:400;font-size:12px}
   .lb{font-size:11px;white-space:nowrap;padding:2px 7px;border-radius:999px;background:var(--amber-soft);color:var(--amber);font-weight:600}
   .lb.ok{background:var(--green-soft);color:var(--green)}
+  .btn.small{padding:9px 14px;font-size:14px}
+  .people{font-size:14px;color:var(--muted);display:flex;align-items:center;gap:4px;margin:0}
+  .people select{width:auto;padding:5px 8px}
+  .plan-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+  .week{display:grid;gap:8px}
+  .day{display:grid;grid-template-columns:74px 1fr 1fr;gap:8px;align-items:stretch}
+  .day.today .dname{color:var(--accent)}
+  .dname{font-family:Fraunces,serif;font-weight:700;font-size:15px;display:flex;align-items:center}
+  .slot{min-height:54px;border:1px dashed var(--line);border-radius:12px;background:var(--bg);padding:6px 8px;display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);text-align:left;font-weight:500;width:100%}
+  .slot:hover{border-color:var(--accent);color:var(--accent)}
+  .slot > span:first-child{font-size:18px}
+  .slot .meal{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);display:block}
+  .slot.filled{border-style:solid;background:var(--card);color:var(--ink)}
+  .slot.filled .t{flex:1;line-height:1.25}
+  .slot .x{background:none;padding:2px 6px;color:var(--muted);font-size:16px;margin-left:auto}
+  .slot .x:hover{color:var(--accent)}
+  @media(max-width:520px){.day{grid-template-columns:1fr 1fr}.dname{grid-column:1/-1;margin-top:4px}}
+  .shop-cat{margin:14px 0 6px;font-weight:600;font-size:14px}
+  .shop-cat:first-child{margin-top:0}
+  .shop-item{display:flex;align-items:flex-start;gap:10px;padding:7px 4px;border-bottom:1px dashed var(--line);font-size:14px;cursor:pointer;color:var(--ink);margin:0}
+  .shop-item input{margin-top:3px;accent-color:var(--accent)}
+  .shop-item.done .si-t{text-decoration:line-through;color:var(--muted)}
+  .si-t b{font-weight:600}
+  .si-for{display:block;font-size:12px;color:var(--muted)}
+  .shop-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px}
+  .shop-foot .ghost{white-space:nowrap}
+  .plan-btn{flex-shrink:0;background:var(--bg);border:1px solid var(--line);font-size:16px;line-height:1;padding:7px 9px;border-radius:999px}
+  .plan-btn:hover{border-color:var(--accent)}
+  .modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:flex-end;justify-content:center;z-index:50;padding:12px}
+  .modal[hidden]{display:none}
+  @media(min-width:640px){.modal{align-items:center}}
+  .modal-box{background:var(--card);border-radius:18px;padding:18px;width:100%;max-width:520px;max-height:85vh;overflow-y:auto;box-shadow:0 10px 40px rgba(0,0,0,.3)}
+  .pm-grid{display:grid;grid-template-columns:90px 1fr 1fr;gap:6px;align-items:center}
+  .pm-grid .dn{font-weight:600;font-size:14px}
+  .pm-slot{background:var(--bg);border:1px solid var(--line);color:var(--ink);font-size:13px;font-weight:500;padding:9px 6px;border-radius:10px}
+  .pm-slot:hover{border-color:var(--accent);color:var(--accent)}
+  .pm-slot.busy{color:var(--muted);font-weight:400}
+  .pm-list{display:grid;gap:6px;max-height:50vh;overflow-y:auto;margin-top:10px}
+  .basket-row{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .basket-btn{background:var(--green-soft);color:var(--green);border:1px solid transparent;text-align:left;display:flex;flex-direction:column;line-height:1.25;padding:10px 14px}
+  .basket-btn small{font-weight:500;font-size:12px;opacity:.85}
+  .basket-btn:hover{border-color:var(--green)}
+  .more-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;padding:6px 0 4px}
+  .taste{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:5px;margin-bottom:16px}
+  .tbtn{background:transparent;color:var(--muted);font-weight:600;font-size:14px;padding:10px 6px;border-radius:10px}
+  .tbtn.on{background:var(--accent);color:#fff;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+  .stars{display:flex;align-items:center;gap:2px;margin-top:8px}
+  .star{background:none;padding:0 1px;font-size:22px;line-height:1;color:var(--line);transition:transform .1s}
+  .star.on{color:#f2b134}
+  .star:hover{transform:scale(1.2)}
+  .stars:hover .star{color:#f2b134}
+  .stars .star:hover ~ .star{color:var(--line)}
+  .star-lbl{font-size:12px;color:var(--muted);margin-left:6px}
+  .lb.rate{background:#fdf1d6;color:#b7791f}
+  .share-list{display:grid;gap:8px}
+  .share-opt{display:flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--line);color:var(--ink);padding:12px 14px;border-radius:12px;font:600 15px Inter,sans-serif;text-decoration:none;text-align:left;width:100%}
+  .share-opt:hover{border-color:var(--accent)}
+  .share-opt span{font-size:22px;width:28px;text-align:center}
+  .share-prev{white-space:pre-wrap;font-size:12px;color:var(--muted);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px;max-height:160px;overflow:auto;margin:12px 0 0}
+  .fold-head{background:none;padding:0;color:var(--ink);font:700 20px Fraunces,serif;display:flex;align-items:center;gap:4px;text-align:left}
+  .fold-head .chev{color:var(--muted);font:400 26px/1 Inter,sans-serif;margin-left:6px;transition:transform .2s;transform:rotate(90deg)}
+  #shopCard.folded .fold-head .chev{transform:rotate(0)}
+  #shopCard.folded #shopBody{display:none}
+  #shopCard.folded .saved-head{margin-bottom:0}
+  .dish-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .dish-chip{display:inline-flex;align-items:center;gap:4px;background:var(--accent-soft);border-radius:999px;padding:5px 6px 5px 12px;font-size:13px;color:var(--ink)}
+  .dish-chip button{background:none;padding:0 5px;color:var(--muted);font-size:15px}
+  .pbtn.shop-add{background:var(--accent);color:#fff;border-color:var(--accent)}
+  body.otto .pbtn.shop-add{color:#1a140c}
+  .pbtn.shop-add.in{background:var(--green-soft);color:var(--green);border-color:transparent}
+  .card-prev{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:8px;margin-bottom:10px;text-align:center;max-height:260px;overflow:hidden}
+  .card-prev img{max-width:100%;max-height:240px;border-radius:8px;display:block;margin:0 auto}
+  .wa-next{background:var(--green-soft);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--ink)}
+  .wa-next p{margin:0 0 8px}
   .ing .em{width:22px;text-align:center}
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:20px}
   h2{font-family:Fraunces,serif;font-size:20px;margin:0 0 14px}
   .row{display:flex;gap:10px}
-  input[type=text]{flex:1;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+  input[type=text]{flex:1;min-width:0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
   input[type=text]:focus{outline:2px solid var(--accent);border-color:transparent}
   button{font:inherit;cursor:pointer;border:none;border-radius:10px;padding:12px 18px;font-weight:600}
   .btn{background:var(--accent);color:#fff}
@@ -180,8 +267,8 @@
 <div class="wrap">
   <header class="hero">
     <div>
-      <h1>Mon Frigo <span>Chef</span></h1>
-      <p class="sub">Ajoutez ce que vous avez sous la main, on s'occupe du menu.</p>
+      <h1 id="heroTitle">Mon Frigo <span>Chef</span></h1>
+      <p class="sub" id="heroSub">Ajoutez ce que vous avez sous la main, on s'occupe du menu.</p>
     </div>
     <svg class="hero-art" viewBox="0 0 260 180" aria-hidden="true">
       <!-- ombre -->
@@ -234,6 +321,10 @@
       </g>
     </svg>
   </header>
+  <div class="mode-switch" id="modeSwitch" role="tablist" aria-label="Mode">
+    <button type="button" data-mode="frigo" class="on" role="tab">🐱 Frigo Chef</button>
+    <button type="button" data-mode="otto" role="tab">📖 Otto</button>
+  </div>
 
   <div class="card">
     <h2><span class="h2ico">🧺</span>Mes ingrédients</h2>
@@ -243,7 +334,11 @@
     </form>
     <div class="chips" id="chips"></div>
     <div class="quick" id="quick"><small>Ajout rapide :</small></div>
-    <div style="text-align:right;margin-top:6px"><button class="ghost" id="clearBtn" type="button">Tout effacer</button></div>
+    <div class="basket-row">
+      <button class="basket-btn" id="basketBtn" type="button">🧺 Panier malin <small>21 ingrédients pas chers · 72 recettes</small></button>
+      <button class="ghost" id="clearBtn" type="button">Tout effacer</button>
+    </div>
+    <div class="status" id="basketNote"></div>
   </div>
 
   <div class="card">
@@ -259,6 +354,11 @@
 
   <div class="card">
     <h2><span class="h2ico">✨</span>Mes envies</h2>
+    <div class="taste" id="taste" role="radiogroup" aria-label="Salé ou sucré">
+      <button type="button" class="tbtn" data-t="sale" role="radio">🧂 Salé</button>
+      <button type="button" class="tbtn" data-t="sucre" role="radio">🍰 Sucré</button>
+      <button type="button" class="tbtn" data-t="both" role="radio">🍽️ Les deux</button>
+    </div>
     <div class="opts">
       <div><label for="type">Type de plat</label>
         <select id="type"><option value="">Peu importe</option><option>Entrée</option><option>Plat principal</option><option>Dessert</option><option>Petit-déjeuner</option><option>Snack</option></select></div>
@@ -278,7 +378,7 @@
     <div class="saved-head">
       <h2 style="margin:0"><span class="h2ico">📚</span>Ma bibliothèque <span class="count" id="libCount">200</span></h2>
     </div>
-    <p class="empty" style="margin:-4px 0 12px">200 recettes rangées en deux menus, salé et sucré, consultables même sans Claude.</p>
+    <p class="empty" id="libIntro" style="margin:-4px 0 12px">200 recettes rangées en deux menus, salé et sucré, consultables même sans Claude.</p>
     <div class="menu-tabs" id="menuTabs" role="tablist">
       <button type="button" class="mtab on" data-m="sale" role="tab">🧂 Salé <span id="cntSale"></span></button>
       <button type="button" class="mtab" data-m="sucre" role="tab">🍰 Sucré <span id="cntSucre"></span></button>
@@ -302,10 +402,63 @@
     <div class="status" id="savedNote"></div>
   </div>
 
+  <div class="card" id="planCard">
+    <div class="saved-head">
+      <h2 style="margin:0"><span class="h2ico">📅</span>Mes menus de la semaine</h2>
+      <label class="people">👥 <select id="planPeople"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select> pers.</label>
+    </div>
+    <div class="plan-actions">
+      <button class="btn small" type="button" id="planAuto">✨ Remplir les repas vides</button>
+      <button class="ghost" type="button" id="planToShop">🛒 Ajouter la semaine à ma liste</button>
+      <button class="ghost" type="button" id="planClear">Vider la semaine</button>
+    </div>
+    <div class="week" id="week"></div>
+    <div class="status" id="planNote"></div>
+  </div>
+
+  <div class="card" id="shopCard">
+    <div class="saved-head">
+      <button type="button" class="fold-head" id="shopToggle" aria-expanded="true"><span class="h2ico">🛒</span>Ma liste de courses <span class="count" id="shopCount">0</span><span class="chev">›</span></button>
+      <button class="ghost" type="button" id="shopCopy">📋 Copier</button>
+    </div>
+    <div id="shopBody">
+    <p class="empty" style="margin:-4px 0 10px">Les ingrédients qui vous manquent pour les plats choisis.</p>
+    <div class="dish-chips" id="shopDishes"></div>
+    <div id="shopList"></div>
+    <div class="shop-foot"><button class="ghost" type="button" id="shopUncheck">Décocher tout</button><span class="status" id="shopNote" style="margin:0"></span></div>
+    </div>
+  </div>
+
   <div class="recipes" id="results"></div>
+
+  <div class="modal" id="planModal" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="pmTitle">
+      <div class="saved-head"><h2 id="pmTitle" style="margin:0;font-size:19px"></h2><button class="ghost" type="button" id="pmClose" aria-label="Fermer" style="font-size:22px">×</button></div>
+      <div id="pmBody"></div>
+    </div>
+  </div>
 </div>
 
 <script>
+/* ---------- Notes des recettes (1 à 5 étoiles) ---------- */
+let ratings = {};          // clé de recette -> nombre d'étoiles
+let ratingsDoc = null, ratingsWriting = Promise.resolve();
+try{ ratings = JSON.parse(localStorage.getItem("frigo-ratings")||"{}") || {}; }catch(e){ ratings = {}; }
+const rateOf = r => ratings[recipeKey(r)] || 0;
+function saveRatings(){
+  try{ localStorage.setItem("frigo-ratings", JSON.stringify(ratings)); }catch(e){}
+  if(ratingsDoc){
+    const data = {ratings: JSON.parse(JSON.stringify(ratings)), updatedAt: Date.now()};
+    ratingsWriting = ratingsWriting.then(()=>ratingsDoc.set(data)).catch(()=>{});
+  }
+}
+function starsHTML(r, k){
+  const n = rateOf(r);
+  return `<div class="stars" role="group" aria-label="Ma note">` + [1,2,3,4,5].map(i=>
+    `<button type="button" class="star${i<=n?" on":""}" data-k="${k}" data-star="${i}" aria-label="${i} étoile${i>1?"s":""}">★</button>`).join("") +
+    `<span class="star-lbl">${n ? ["","Pas aimé","Bof","Bien","Très bien","Excellent !"][n] : "Noter"}</span></div>`;
+}
+const rateBadge = r => { const n = rateOf(r); return n ? `<span class="lb rate">★ ${n}</span>` : ""; };
 const QUICK = ["Œufs","Pâtes","Riz","Tomates","Oignon","Ail","Poulet","Fromage","Pommes de terre","Lait","Beurre","Farine","Carottes","Courgette","Citron"];
 const BASICS = ["sel","poivre","huile","eau","huile d'olive"];
 const AVOID_QUICK = ["Arachides","Fruits à coque","Gluten","Lactose","Porc","Fruits de mer","Poisson","Champignons","Coriandre","Piment"];
@@ -343,6 +496,7 @@ const TYPE_STYLE = {
 };
 const PALETTES = [["#f4a582","#c8553d"],["#a8d5a2","#5e9c5a"],["#ffe08a","#e0a020"],["#b9d7f0","#4a86b8"],["#d6c3f0","#8a63c2"],["#f7c6d9","#d16b9a"]];
 function bannerHTML(r, k){
+  if(r.photo && OTTO_PHOTOS[r.photo]) return `<div class="banner photo-banner" data-k="${k}" style="height:auto"><img src="${OTTO_PHOTOS[r.photo]}" alt="${esc(r.titre)}" loading="lazy">${r.type?`<span class="tag">${esc(r.type)}</span>`:""}</div>`;
   const st = TYPE_STYLE[r.type] || null;
   const [c1,c2] = st ? st : PALETTES[k % PALETTES.length];
   let ems = (Array.isArray(r.emojis) && r.emojis.length) ? r.emojis.slice(0,5) : [];
@@ -371,11 +525,12 @@ function addIngs(text){
 }
 function render(){
   if(document.getElementById("libList")) renderLibrary();
+  if(typeof renderShop==="function" && document.getElementById("shopList")) try{ renderShop(); }catch(e){}
   const c = document.getElementById("chips");
   c.innerHTML = ingredients.length ? ingredients.map((i,k)=>`<span class="chip"><span class="em">${emojiFor(i)}</span>${esc(i)}<button aria-label="Retirer ${esc(i)}" data-k="${k}">×</button></span>`).join("")
     : `<span class="empty">Aucun ingrédient pour l'instant.</span>`;
   const q = document.getElementById("quick");
-  q.innerHTML = "<small>Ajout rapide :</small>" + QUICK.filter(x=>!ingredients.some(i=>norm(i)===norm(x)))
+  q.innerHTML = "<small>Ajout rapide :</small>" + QUICK.filter(x=>!(typeof matchIng==="function" ? matchIng(ingredients,x) : ingredients.some(i=>norm(i)===norm(x))))
     .map(x=>`<button class="qbtn" type="button" data-q="${esc(x)}">${emojiFor(x)} ${esc(x)}</button>`).join("");
   const a = document.getElementById("avoidChips");
   a.innerHTML = avoid.length ? avoid.map((i,k)=>`<span class="chip avoid"><span class="em">${emojiFor(i)}</span>${esc(i)}<button aria-label="Ne plus exclure ${esc(i)}" data-k="${k}">×</button></span>`).join("")
@@ -413,6 +568,40 @@ function isAvoided(ing){
 document.getElementById("chips").onclick = e=>{ const k=e.target.dataset.k; if(k!==undefined){ ingredients.splice(+k,1); save(); render(); } };
 document.getElementById("quick").onclick = e=>{ const q=e.target.dataset.q; if(q) addIngs(q); };
 document.getElementById("addForm").onsubmit = e=>{ e.preventDefault(); const i=document.getElementById("ingInput"); addIngs(i.value); i.value=""; i.focus(); };
+const BASKET = ["Oeufs","Farine","Sucre","Beurre","Lait","Oignons","Ail","Pommes de terre","Carottes","Riz","Pâtes",
+  "Pommes","Levure","Chocolat","Confiture","Crème","Fromage râpé","Courgettes","Champignons","Butternut","Patates douces"];
+document.getElementById("basketBtn").onclick = ()=>{
+  const skip = BASKET.filter(b=>avoid.some(a=>norm(a)===norm(b)) || (typeof isAvoided==="function" && isAvoided(b)));
+  const toAdd = BASKET.filter(b=>!skip.includes(b) && !ingredients.some(i=>norm(i)===norm(b)));
+  if(toAdd.length) addIngs(toAdd.join(","));
+  const n = BOOK.filter(r=>!r.ing.some(x=>isAvoided(x.nom)) && toCard(r).nMiss===0).length;
+  document.getElementById("basketNote").textContent =
+    (toAdd.length ? `${toAdd.length} ingrédient${toAdd.length>1?"s":""} ajouté${toAdd.length>1?"s":""}.` : "Le panier malin est déjà dans vos ingrédients.") +
+    ` Vous pouvez faire ${n} recettes de la bibliothèque sans rien acheter d'autre.` +
+    (skip.length ? ` (${skip.join(", ")} : non ajouté${skip.length>1?"s":""}, car dans vos ingrédients à éviter.)` : "");
+};
+/* --- Salé / Sucré / Les deux --- */
+const TYPE_BY_TASTE = {
+  sale:  ["Entrée","Plat principal","Petit-déjeuner","Snack"],
+  sucre: ["Dessert","Petit-déjeuner","Snack"],
+  both:  ["Entrée","Plat principal","Dessert","Petit-déjeuner","Snack"]
+};
+let taste = "both";
+try{ const t = localStorage.getItem("frigo-taste"); if(TYPE_BY_TASTE[t]) taste = t; }catch(e){}
+function renderTaste(){
+  document.querySelectorAll("#taste .tbtn").forEach(b=>{ const on = b.dataset.t===taste; b.classList.toggle("on",on); b.setAttribute("aria-checked",on); });
+  const sel = document.getElementById("type"), cur = sel.value;
+  const label = t => taste==="sucre" && t==="Snack" ? "Goûter" : t;
+  sel.innerHTML = `<option value="">Peu importe</option>` + TYPE_BY_TASTE[taste].map(t=>`<option value="${t}">${label(t)}</option>`).join("");
+  sel.value = TYPE_BY_TASTE[taste].includes(cur) ? cur : "";
+}
+document.getElementById("taste").onclick = e=>{
+  const b = e.target.closest(".tbtn"); if(!b) return;
+  taste = b.dataset.t; try{ localStorage.setItem("frigo-taste", taste); }catch(err){}
+  renderTaste();
+};
+renderTaste();
+
 document.getElementById("clearBtn").onclick = ()=>{ ingredients=[]; save(); render(); document.getElementById("results").innerHTML=""; };
 
 /* ---------- Bibliothèque de 100 recettes (fonctionne sans Claude) ---------- */
@@ -657,10 +846,10 @@ const DESSERTS100 = [
 
 /* Ingrédients de base, toujours considérés comme disponibles */
 const BASE_INGS = ["sel","poivre","huile d'olive","eau"];
-const LACTO = ["beurre","lait","creme","fromage","parmesan","yaourt","mascarpone","glace","brioche","pate brisee","pate sablee","pate feuilletee"];
-const NOT_VEGGIE = ["gelatine"];
+const LACTO = ["beurre","lait ","lait|","creme","fromage","parmesan","feta","ricotta","cheddar","pecorino","gruyere","mozzarella","cream cheese","babeurre","yaourt","mascarpone","glace","brioche","pate brisee","pate sablee","pate feuilletee"];
+const NOT_VEGGIE = ["gelatine","steak","boeuf","aloyau","poulet","agneau","sauce de poisson","jambon","lardon","anchois","prosciutto","crevette","porc","saumon","saucisse","poisson"];
 const NOT_VEGAN = ["miel"];
-const GLUTEN = ["pates","pate ","farine","biscuit","pain","brioche","semoule","cereales","flocons"];
+const GLUTEN = ["pates","pate ","farine","biscuit","pain","brioche","semoule","cereales","flocons d'avoine","boulghour","naan","pita","sauce soja","spaghetti","chapelure","pappardelle","orecchiette","fusilli","coquillettes","filo","pate feuilletee","kataifi","son d'avoine"];
 const TYPE_NAMES = {E:"Entrée",P:"Plat principal",D:"Dessert",B:"Petit-déjeuner",S:"Snack"};
 
 function buildBook(raw){
@@ -668,7 +857,7 @@ function buildBook(raw){
   return raw.map(([titre,t,temps,difficulte,ings,etapes,portions])=>{
     const ing = ings.map(x=>{ const [q,nom]=x.split("|"); return {quantite:q, nom}; });
     const names = ing.map(i=>n(i.nom));
-    const hasDairy = names.some(x=>LACTO.some(l=>x.includes(l)));
+    const hasDairy = names.some(x=>LACTO.some(l=>(x+"|").includes(l)) && !/lait de coco/.test(x));
     const hasEgg = names.some(x=>x.includes("oeuf"));
     const hasGluten = names.some(x=>GLUTEN.some(g=>(x+" ").includes(g)));
     const veggie = !names.some(x=>NOT_VEGGIE.some(g=>x.includes(g)));
@@ -680,7 +869,11 @@ function buildBook(raw){
   });
 }
 
-const BOOK = buildBook(RAW100.concat(DESSERTS100));
+const FRIGO_BOOK = buildBook(RAW100.concat(DESSERTS100));
+let BOOK = FRIGO_BOOK;
+const OTTO_RAW = [];
+const OTTO_PHOTOS = {};
+const OTTO_BOOK = buildBook(OTTO_RAW).map((r,i)=>Object.assign(r, {menu:"sale"}, OTTO_RAW[i][7]||{}));
 
 /* Correspondance tolérante : pluriels, accents et petites fautes de frappe */
 function lev(a,b){
@@ -691,38 +884,67 @@ function lev(a,b){
   return d[b.length];
 }
 const stem = x => norm(x).split(/\s+/).map(w=>w.replace(/[sx]$/,"")).join(" ");
+/* mots qui changent l'ingrédient : « pommes » ≠ « pommes de terre », « lait » ≠ « lait de coco »… */
+const DISTINCT = ["de terre","douce","coco","concentre","feuilletee","brisee","sablee","glace","blanc","frai","perle","boulangere","cuillere"];
 function matchIng(have, x){
   const sx = stem(x);
   return have.some(h=>{
     const sh = stem(h);
     if(sh===sx) return true;
+    if(DISTINCT.some(d=>sh.includes(d)!==sx.includes(d))) return false;
     if(sh.length>=3 && sx.length>=3 && (` ${sx} `.includes(` ${sh} `) || ` ${sh} `.includes(` ${sx} `))) return true;
-    return sh.length>=5 && sx.length>=5 && lev(sh,sx)<=2;
+    const L = Math.min(sh.length, sx.length), d = lev(sh,sx);
+    return (L>=4 && d<=1) || (L>=7 && d<=2);
   });
 }
 function toCard(r){
   const have = ingredients;
-  const ings = r.ing.map(i=>({nom:i.nom, quantite:i.quantite, dispo:matchIng(have,i.nom)}));
-  if(r.type!=="Dessert") ings.push({nom:"sel, poivre, huile d'olive", quantite:"", dispo:true});
+  const isBase = n => /^(huile d'olive|huile de tournesol)( \(.*\))?$|^(eau|eau tiede|sel|poivre|glacons)$/.test(norm(n));
+  const ings = r.ing.map(i=>({nom:i.nom, quantite:i.quantite, dispo:isBase(i.nom) || matchIng(have,i.nom)}));
+  if(r.photo) ings.push({nom:"sel, poivre", quantite:"", dispo:true});
+  else if(r.type!=="Dessert") ings.push({nom:"sel, poivre, huile d'olive", quantite:"", dispo:true});
   else ings.push({nom:"une pincée de sel", quantite:"", dispo:true});
+  const extraF = r.photo ? {photo:r.photo, astuce:r.astuce, extra:r.extra, cat:r.cat} : {};
   const nUsed = ings.filter(i=>i.dispo).length - 1;
-  return {titre:r.titre, type:r.type, portions:r.portions, description:"", temps:r.temps, difficulte:r.difficulte,
-          ingredients:ings, etapes:r.etapes, nUsed, nMiss: r.ing.length - nUsed, score: nUsed/r.ing.length};
+  return {titre:r.titre, type:r.type, menu:r.menu, portions:r.portions, description:"", temps:r.temps, difficulte:r.difficulte,
+          ingredients:ings, etapes:r.etapes, nUsed, nMiss: r.ing.length - nUsed, score: nUsed/r.ing.length, ...extraF};
 }
-function localSearch(opts){
-  return BOOK.filter(r => (!opts.type || r.type===opts.type) && (!opts.time || r.temps<=+opts.time) && (!opts.diet || r.tags.includes(opts.diet)) && !r.ing.some(i=>isAvoided(i.nom)))
+function localSearch(opts){ return localSearchAll(opts).slice(0,8); }
+function tasteOk(r, opts){
+  const t = opts.taste || "both";
+  if(t==="both") return true;
+  if(t==="sucre") return r.menu==="sucre" || (opts.type && r.type===opts.type && r.type!=="Plat principal" && /pancake|gâteau|crêpe|sucr/i.test(r.titre));
+  return r.menu==="sale";
+}
+function localSearchAll(opts){
+  const list = localSearchSorted(opts);
+  if((opts.taste||"both")!=="both") return list;
+  // les deux : on alterne salé et sucré pour avoir un vrai mélange
+  const a = list.filter(r=>r.menu!=="sucre"), b = list.filter(r=>r.menu==="sucre"), out = [];
+  for(let i=0; i<Math.max(a.length,b.length); i++){ if(a[i]) out.push(a[i]); if(b[i]) out.push(b[i]); }
+  return out;
+}
+function localSearchSorted(opts){
+  return BOOK.filter(r => tasteOk(r, opts) && (!opts.type || r.type===opts.type) && (!opts.time || r.temps<=+opts.time) && (!opts.diet || r.tags.includes(opts.diet)) && !r.ing.some(i=>isAvoided(i.nom)))
     .map(toCard)
     .filter(r => r.nUsed>0 && (!opts.strict || r.nMiss===0))
-    .sort((a,b)=> a.nMiss-b.nMiss || b.nUsed-a.nUsed).slice(0,8);
+    .sort((a,b)=> a.nMiss-b.nMiss || (rateOf(b)>=4)-(rateOf(a)>=4) || b.nUsed-a.nUsed);
 }
 
 /* ---------- Section bibliothèque : menus Salé / Sucré et sous-catégories ---------- */
-const CATEGORY = {"Salade de tomates au basilic":"Salades et entrées","Salade tomates, concombre et olives":"Salades et entrées","Salade de riz estivale":"Salades et entrées","Salade de pâtes tomate-basilic":"Salades et entrées","Salade de pommes de terre":"Salades et entrées","Carottes râpées au citron":"Salades et entrées","Salade composée aux œufs durs":"Salades et entrées","Salade de maïs et tomates":"Salades et entrées","Œufs mimosa":"Salades et entrées","Gaspacho":"Soupes et veloutés","Soupe de tomates":"Soupes et veloutés","Velouté de butternut":"Soupes et veloutés","Soupe de carottes":"Soupes et veloutés","Velouté de courgettes":"Soupes et veloutés","Soupe de patates douces":"Soupes et veloutés","Velouté de champignons":"Soupes et veloutés","Soupe de légumes maison":"Soupes et veloutés","Potage pommes de terre et oignons":"Soupes et veloutés","Soupe de maïs":"Soupes et veloutés","Champignons à la grecque":"Salades et entrées","Carpaccio de courgettes":"Salades et entrées","Concombre au basilic et citron":"Salades et entrées","Champignons farcis":"Salades et entrées","Salade de patates douces rôties":"Salades et entrées","Salade tiède de butternut":"Salades et entrées","Tapenade d'olives":"Apéro et snacks","Omelette aux champignons":"Œufs","Tortilla de pommes de terre":"Œufs","Frittata de courgettes":"Œufs","Shakshuka":"Œufs","Œufs brouillés aux champignons":"Petit-déjeuner","Frittata de pâtes":"Œufs","Œufs cocotte à la tomate":"Œufs","Flan de courgettes":"Œufs","Clafoutis salé aux tomates":"Œufs","Riz cantonais végétarien":"Riz","Risotto aux champignons":"Riz","Risotto à la butternut":"Riz","Risotto de courgettes au basilic":"Riz","Tomates farcies au riz":"Riz","Courgettes farcies au riz et champignons":"Riz","Riz à la tomate":"Riz","Riz pilaf aux carottes":"Riz","Curry de légumes au riz":"Riz","Paella végétarienne":"Riz","Galettes de riz et courgette":"Riz","Arancini simples":"Apéro et snacks","Butternut farcie au riz":"Riz","Pâtes tomate-basilic":"Pâtes","Pâtes au pesto de basilic":"Pâtes","Pâtes aux champignons à la crème":"Pâtes","Pâtes à la courgette et à l'ail":"Pâtes","Pâtes aux tomates et olives":"Pâtes","Carbonara de courgettes":"Pâtes","Gratin de pâtes à la tomate":"Pâtes","Pâtes à l'ail et à l'huile":"Pâtes","Pâtes crémeuses à la butternut":"Pâtes","Minestrone":"Pâtes","Pâtes aux légumes rôtis":"Pâtes","One-pot pasta tomate-basilic":"Pâtes","Gratin dauphinois":"Pommes de terre","Purée maison":"Pommes de terre","Pommes de terre sautées à l'ail":"Pommes de terre","Frites au four":"Pommes de terre","Pommes de terre farcies aux champignons":"Pommes de terre","Röstis de pommes de terre":"Pommes de terre","Écrasé de pommes de terre olives-basilic":"Pommes de terre","Gnocchis maison":"Pommes de terre","Pommes de terre boulangères":"Pommes de terre","Poêlée pommes de terre et champignons":"Pommes de terre","Tian provençal":"Pommes de terre","Frites de patates douces":"Patates douces et butternut","Purée de patates douces":"Patates douces et butternut","Curry de patates douces":"Patates douces et butternut","Gratin de patates douces":"Patates douces et butternut","Galettes de patates douces":"Patates douces et butternut","Butternut rôtie au four":"Patates douces et butternut","Gratin de butternut":"Patates douces et butternut","Gratin de courgettes":"Légumes","Beignets de courgettes":"Apéro et snacks","Ratatouille express":"Légumes","Spaghettis de courgettes à la tomate":"Légumes","Poêlée de légumes":"Légumes","Légumes rôtis au four":"Légumes","Carottes glacées":"Légumes","Poêlée de champignons à l'ail":"Légumes","Champignons à la crème":"Légumes","Galettes de maïs":"Apéro et snacks","Poêlée maïs et courgettes":"Légumes","Wok de légumes et riz":"Légumes","Hachis parmentier végétarien":"Légumes","Chili végétarien au maïs":"Légumes","Pancakes de patate douce":"Petit-déjeuner","Œufs brouillés tomate-basilic":"Petit-déjeuner","Muffins salés à la courgette":"Apéro et snacks","Riz au lait":"Crèmes, mousses et verrines","Carrot cake simplifié":"Gâteaux","Gâteau à la patate douce":"Gâteaux","Flan sucré à la butternut":"Crèmes, mousses et verrines","Gratin de pommes de terre et courgettes":"Pommes de terre","Gâteau fondant au chocolat":"Gâteaux","Gâteau au yaourt":"Gâteaux","Quatre-quarts":"Gâteaux","Cake au citron":"Gâteaux","Gâteau aux pommes":"Gâteaux","Gâteau marbré":"Gâteaux","Brownie":"Gâteaux","Banana bread":"Gâteaux","Gâteau à l'orange":"Gâteaux","Gâteau renversé à l'ananas":"Gâteaux","Moelleux poires-chocolat":"Gâteaux","Cake à la confiture":"Gâteaux","Gâteau à la noix de coco":"Gâteaux","Gâteau basque à la confiture de cerises":"Gâteaux","Madeleines":"Gâteaux","Muffins aux myrtilles":"Gâteaux","Muffins au chocolat":"Gâteaux","Gâteau au fromage blanc":"Gâteaux","Financiers":"Gâteaux","Fondant au chocolat sans farine":"Gâteaux","Gâteau aux fraises":"Gâteaux","Tarte aux pommes":"Tartes","Tarte au citron":"Tartes","Tarte aux fraises":"Tartes","Tarte au chocolat":"Tartes","Tarte à la confiture":"Tartes","Tarte fine aux poires":"Tartes","Tarte Tatin":"Tartes","Tarte banane-chocolat":"Tartes","Tarte au sucre":"Tartes","Tarte amandine aux poires":"Tartes","Cookies aux pépites de chocolat":"Biscuits et petites douceurs","Sablés au beurre":"Biscuits et petites douceurs","Sablés à la confiture":"Biscuits et petites douceurs","Palets bretons":"Biscuits et petites douceurs","Biscuits aux flocons d'avoine":"Biscuits et petites douceurs","Rochers à la noix de coco":"Biscuits et petites douceurs","Crinkles au chocolat":"Biscuits et petites douceurs","Meringues":"Biscuits et petites douceurs","Truffes au chocolat":"Biscuits et petites douceurs","Mendiants au chocolat":"Biscuits et petites douceurs","Barres de céréales maison":"Biscuits et petites douceurs","Chouquettes":"Biscuits et petites douceurs","Mousse au chocolat":"Crèmes, mousses et verrines","Crème brûlée":"Crèmes, mousses et verrines","Crème caramel":"Crèmes, mousses et verrines","Crème au chocolat":"Crèmes, mousses et verrines","Panna cotta aux fruits rouges":"Crèmes, mousses et verrines","Île flottante":"Crèmes, mousses et verrines","Semoule au lait":"Crèmes, mousses et verrines","Tiramisu":"Crèmes, mousses et verrines","Mousse au citron":"Crèmes, mousses et verrines","Crème dessert à la vanille":"Crèmes, mousses et verrines","Flan pâtissier":"Crèmes, mousses et verrines","Mousse à la fraise":"Crèmes, mousses et verrines","Verrines yaourt, confiture et biscuits":"Crèmes, mousses et verrines","Cheesecake sans cuisson":"Crèmes, mousses et verrines","Charlotte aux fraises":"Crèmes, mousses et verrines","Verrines banane-chocolat":"Crèmes, mousses et verrines","Crêpes":"Crêpes, clafoutis et crumbles","Gaufres":"Crêpes, clafoutis et crumbles","Pancakes":"Crêpes, clafoutis et crumbles","Pain perdu":"Crêpes, clafoutis et crumbles","Beignets aux pommes":"Crêpes, clafoutis et crumbles","Clafoutis aux cerises":"Crêpes, clafoutis et crumbles","Far breton":"Crêpes, clafoutis et crumbles","Crumble aux pommes":"Crêpes, clafoutis et crumbles","Crumble poires-chocolat":"Crêpes, clafoutis et crumbles","Crumble aux fruits rouges":"Crêpes, clafoutis et crumbles","Mug cake au chocolat":"Crêpes, clafoutis et crumbles","Mug cake vanille-confiture":"Crêpes, clafoutis et crumbles","Gâteau roulé à la confiture":"Crêpes, clafoutis et crumbles","Profiteroles":"Crêpes, clafoutis et crumbles","Salade de fruits frais":"Desserts aux fruits","Pommes au four":"Desserts aux fruits","Poires Belle-Hélène":"Desserts aux fruits","Bananes caramélisées":"Desserts aux fruits","Compote de pommes":"Desserts aux fruits","Fraises au sucre et au citron":"Desserts aux fruits","Brochettes de fruits au chocolat":"Desserts aux fruits","Glace express à la banane":"Desserts aux fruits","Fondue au chocolat":"Desserts aux fruits","Poires pochées à la vanille":"Desserts aux fruits","Oranges à la cannelle":"Desserts aux fruits","Ananas rôti":"Desserts aux fruits","Gratin de fruits rouges":"Desserts aux fruits","Pêches rôties au miel":"Desserts aux fruits","Mangue et coco":"Desserts aux fruits","Verrines fraises et yaourt":"Desserts aux fruits","Compote de fruits rouges":"Desserts aux fruits","Sorbet express aux fraises":"Desserts aux fruits","Tartelettes à la confiture":"Confiture et chocolat","Chaussons aux pommes":"Confiture et chocolat","Chaussons à la confiture":"Confiture et chocolat","Pain au chocolat maison express":"Confiture et chocolat","Galette des rois":"Confiture et chocolat","Salami au chocolat":"Confiture et chocolat","Pâte à tartiner maison":"Confiture et chocolat","Chocolat liégeois":"Confiture et chocolat","Coulant au chocolat cœur confiture":"Confiture et chocolat"};
-const SUBCATS = {
+const FRIGO_CATEGORY = {"Salade de tomates au basilic":"Salades et entrées","Salade tomates, concombre et olives":"Salades et entrées","Salade de riz estivale":"Salades et entrées","Salade de pâtes tomate-basilic":"Salades et entrées","Salade de pommes de terre":"Salades et entrées","Carottes râpées au citron":"Salades et entrées","Salade composée aux œufs durs":"Salades et entrées","Salade de maïs et tomates":"Salades et entrées","Œufs mimosa":"Salades et entrées","Gaspacho":"Soupes et veloutés","Soupe de tomates":"Soupes et veloutés","Velouté de butternut":"Soupes et veloutés","Soupe de carottes":"Soupes et veloutés","Velouté de courgettes":"Soupes et veloutés","Soupe de patates douces":"Soupes et veloutés","Velouté de champignons":"Soupes et veloutés","Soupe de légumes maison":"Soupes et veloutés","Potage pommes de terre et oignons":"Soupes et veloutés","Soupe de maïs":"Soupes et veloutés","Champignons à la grecque":"Salades et entrées","Carpaccio de courgettes":"Salades et entrées","Concombre au basilic et citron":"Salades et entrées","Champignons farcis":"Salades et entrées","Salade de patates douces rôties":"Salades et entrées","Salade tiède de butternut":"Salades et entrées","Tapenade d'olives":"Apéro et snacks","Omelette aux champignons":"Œufs","Tortilla de pommes de terre":"Œufs","Frittata de courgettes":"Œufs","Shakshuka":"Œufs","Œufs brouillés aux champignons":"Petit-déjeuner","Frittata de pâtes":"Œufs","Œufs cocotte à la tomate":"Œufs","Flan de courgettes":"Œufs","Clafoutis salé aux tomates":"Œufs","Riz cantonais végétarien":"Riz","Risotto aux champignons":"Riz","Risotto à la butternut":"Riz","Risotto de courgettes au basilic":"Riz","Tomates farcies au riz":"Riz","Courgettes farcies au riz et champignons":"Riz","Riz à la tomate":"Riz","Riz pilaf aux carottes":"Riz","Curry de légumes au riz":"Riz","Paella végétarienne":"Riz","Galettes de riz et courgette":"Riz","Arancini simples":"Apéro et snacks","Butternut farcie au riz":"Riz","Pâtes tomate-basilic":"Pâtes","Pâtes au pesto de basilic":"Pâtes","Pâtes aux champignons à la crème":"Pâtes","Pâtes à la courgette et à l'ail":"Pâtes","Pâtes aux tomates et olives":"Pâtes","Carbonara de courgettes":"Pâtes","Gratin de pâtes à la tomate":"Pâtes","Pâtes à l'ail et à l'huile":"Pâtes","Pâtes crémeuses à la butternut":"Pâtes","Minestrone":"Pâtes","Pâtes aux légumes rôtis":"Pâtes","One-pot pasta tomate-basilic":"Pâtes","Gratin dauphinois":"Pommes de terre","Purée maison":"Pommes de terre","Pommes de terre sautées à l'ail":"Pommes de terre","Frites au four":"Pommes de terre","Pommes de terre farcies aux champignons":"Pommes de terre","Röstis de pommes de terre":"Pommes de terre","Écrasé de pommes de terre olives-basilic":"Pommes de terre","Gnocchis maison":"Pommes de terre","Pommes de terre boulangères":"Pommes de terre","Poêlée pommes de terre et champignons":"Pommes de terre","Tian provençal":"Pommes de terre","Frites de patates douces":"Patates douces et butternut","Purée de patates douces":"Patates douces et butternut","Curry de patates douces":"Patates douces et butternut","Gratin de patates douces":"Patates douces et butternut","Galettes de patates douces":"Patates douces et butternut","Butternut rôtie au four":"Patates douces et butternut","Gratin de butternut":"Patates douces et butternut","Gratin de courgettes":"Légumes","Beignets de courgettes":"Apéro et snacks","Ratatouille express":"Légumes","Spaghettis de courgettes à la tomate":"Légumes","Poêlée de légumes":"Légumes","Légumes rôtis au four":"Légumes","Carottes glacées":"Légumes","Poêlée de champignons à l'ail":"Légumes","Champignons à la crème":"Légumes","Galettes de maïs":"Apéro et snacks","Poêlée maïs et courgettes":"Légumes","Wok de légumes et riz":"Légumes","Hachis parmentier végétarien":"Légumes","Chili végétarien au maïs":"Légumes","Pancakes de patate douce":"Petit-déjeuner","Œufs brouillés tomate-basilic":"Petit-déjeuner","Muffins salés à la courgette":"Apéro et snacks","Riz au lait":"Crèmes, mousses et verrines","Carrot cake simplifié":"Gâteaux","Gâteau à la patate douce":"Gâteaux","Flan sucré à la butternut":"Crèmes, mousses et verrines","Gratin de pommes de terre et courgettes":"Pommes de terre","Gâteau fondant au chocolat":"Gâteaux","Gâteau au yaourt":"Gâteaux","Quatre-quarts":"Gâteaux","Cake au citron":"Gâteaux","Gâteau aux pommes":"Gâteaux","Gâteau marbré":"Gâteaux","Brownie":"Gâteaux","Banana bread":"Gâteaux","Gâteau à l'orange":"Gâteaux","Gâteau renversé à l'ananas":"Gâteaux","Moelleux poires-chocolat":"Gâteaux","Cake à la confiture":"Gâteaux","Gâteau à la noix de coco":"Gâteaux","Gâteau basque à la confiture de cerises":"Gâteaux","Madeleines":"Gâteaux","Muffins aux myrtilles":"Gâteaux","Muffins au chocolat":"Gâteaux","Gâteau au fromage blanc":"Gâteaux","Financiers":"Gâteaux","Fondant au chocolat sans farine":"Gâteaux","Gâteau aux fraises":"Gâteaux","Tarte aux pommes":"Tartes","Tarte au citron":"Tartes","Tarte aux fraises":"Tartes","Tarte au chocolat":"Tartes","Tarte à la confiture":"Tartes","Tarte fine aux poires":"Tartes","Tarte Tatin":"Tartes","Tarte banane-chocolat":"Tartes","Tarte au sucre":"Tartes","Tarte amandine aux poires":"Tartes","Cookies aux pépites de chocolat":"Biscuits et petites douceurs","Sablés au beurre":"Biscuits et petites douceurs","Sablés à la confiture":"Biscuits et petites douceurs","Palets bretons":"Biscuits et petites douceurs","Biscuits aux flocons d'avoine":"Biscuits et petites douceurs","Rochers à la noix de coco":"Biscuits et petites douceurs","Crinkles au chocolat":"Biscuits et petites douceurs","Meringues":"Biscuits et petites douceurs","Truffes au chocolat":"Biscuits et petites douceurs","Mendiants au chocolat":"Biscuits et petites douceurs","Barres de céréales maison":"Biscuits et petites douceurs","Chouquettes":"Biscuits et petites douceurs","Mousse au chocolat":"Crèmes, mousses et verrines","Crème brûlée":"Crèmes, mousses et verrines","Crème caramel":"Crèmes, mousses et verrines","Crème au chocolat":"Crèmes, mousses et verrines","Panna cotta aux fruits rouges":"Crèmes, mousses et verrines","Île flottante":"Crèmes, mousses et verrines","Semoule au lait":"Crèmes, mousses et verrines","Tiramisu":"Crèmes, mousses et verrines","Mousse au citron":"Crèmes, mousses et verrines","Crème dessert à la vanille":"Crèmes, mousses et verrines","Flan pâtissier":"Crèmes, mousses et verrines","Mousse à la fraise":"Crèmes, mousses et verrines","Verrines yaourt, confiture et biscuits":"Crèmes, mousses et verrines","Cheesecake sans cuisson":"Crèmes, mousses et verrines","Charlotte aux fraises":"Crèmes, mousses et verrines","Verrines banane-chocolat":"Crèmes, mousses et verrines","Crêpes":"Crêpes, clafoutis et crumbles","Gaufres":"Crêpes, clafoutis et crumbles","Pancakes":"Crêpes, clafoutis et crumbles","Pain perdu":"Crêpes, clafoutis et crumbles","Beignets aux pommes":"Crêpes, clafoutis et crumbles","Clafoutis aux cerises":"Crêpes, clafoutis et crumbles","Far breton":"Crêpes, clafoutis et crumbles","Crumble aux pommes":"Crêpes, clafoutis et crumbles","Crumble poires-chocolat":"Crêpes, clafoutis et crumbles","Crumble aux fruits rouges":"Crêpes, clafoutis et crumbles","Mug cake au chocolat":"Crêpes, clafoutis et crumbles","Mug cake vanille-confiture":"Crêpes, clafoutis et crumbles","Gâteau roulé à la confiture":"Crêpes, clafoutis et crumbles","Profiteroles":"Crêpes, clafoutis et crumbles","Salade de fruits frais":"Desserts aux fruits","Pommes au four":"Desserts aux fruits","Poires Belle-Hélène":"Desserts aux fruits","Bananes caramélisées":"Desserts aux fruits","Compote de pommes":"Desserts aux fruits","Fraises au sucre et au citron":"Desserts aux fruits","Brochettes de fruits au chocolat":"Desserts aux fruits","Glace express à la banane":"Desserts aux fruits","Fondue au chocolat":"Desserts aux fruits","Poires pochées à la vanille":"Desserts aux fruits","Oranges à la cannelle":"Desserts aux fruits","Ananas rôti":"Desserts aux fruits","Gratin de fruits rouges":"Desserts aux fruits","Pêches rôties au miel":"Desserts aux fruits","Mangue et coco":"Desserts aux fruits","Verrines fraises et yaourt":"Desserts aux fruits","Compote de fruits rouges":"Desserts aux fruits","Sorbet express aux fraises":"Desserts aux fruits","Tartelettes à la confiture":"Confiture et chocolat","Chaussons aux pommes":"Confiture et chocolat","Chaussons à la confiture":"Confiture et chocolat","Pain au chocolat maison express":"Confiture et chocolat","Galette des rois":"Confiture et chocolat","Salami au chocolat":"Confiture et chocolat","Pâte à tartiner maison":"Confiture et chocolat","Chocolat liégeois":"Confiture et chocolat","Coulant au chocolat cœur confiture":"Confiture et chocolat"};
+let CATEGORY = FRIGO_CATEGORY;
+const OTTO_CATEGORY = Object.fromEntries(OTTO_BOOK.map(r=>[r.titre, r.cat]));
+const OTTO_SUBCATS = {
+  sale: [["Mezze et légumineuses","🫘"],["Salades","🥗"],["Soupes","🍜"],["Plats","🍲"],["Pains","🫓"],["En-cas","🍟"],["Petit-déjeuner","🥣"]],
+  sucre: [["Desserts","🍰"],["Biscuits","🍪"],["Pains sucrés","🍞"]]
+};
+const FRIGO_SUBCATS = {
   sale: [["Salades et entrées","🥗"],["Soupes et veloutés","🍲"],["Œufs","🥚"],["Riz","🍚"],["Pâtes","🍝"],["Pommes de terre","🥔"],["Patates douces et butternut","🎃"],["Légumes","🥕"],["Apéro et snacks","🫒"],["Petit-déjeuner","🍳"]],
   sucre: [["Gâteaux","🎂"],["Tartes","🥧"],["Biscuits et petites douceurs","🍪"],["Crèmes, mousses et verrines","🍮"],["Crêpes, clafoutis et crumbles","🥞"],["Desserts aux fruits","🍓"],["Confiture et chocolat","🍫"]]
 };
-BOOK.forEach(r=>{ r.cat = CATEGORY[r.titre] || (r.type==="Dessert"?"Gâteaux":"Légumes"); r.menu = SUBCATS.sucre.some(([c])=>c===r.cat) ? "sucre" : "sale"; });
+let SUBCATS = FRIGO_SUBCATS;
+FRIGO_BOOK.forEach(r=>{ r.cat = FRIGO_CATEGORY[r.titre] || (r.type==="Dessert"?"Gâteaux":"Légumes"); r.menu = FRIGO_SUBCATS.sucre.some(([c])=>c===r.cat) ? "sucre" : "sale"; });
 let libMenu = "sale", libSub = "";
 const openSecs = new Set();   // sous-catégories dépliées
 try{ const m = localStorage.getItem("frigo-menu"); if(m==="sale"||m==="sucre") libMenu = m; }catch(e){}
@@ -752,7 +974,7 @@ function renderLibrary(){
   const item = ({r,c})=>{
     const main = r.ing.map(i=>emojiFor(i.nom)).filter(e=>e!=="🥄").filter((e,k,a)=>a.indexOf(e)===k).slice(0,3).join("");
     const badge = !ingredients.length ? "" : c.nMiss===0 ? `<span class="lb ok">✓ réalisable</span>` : `<span class="lb">${c.nMiss} manquant${c.nMiss>1?"s":""}</span>`;
-    return `<button class="lib-item" type="button" data-i="${BOOK.indexOf(r)}"><span class="li-em">${main||"🍽️"}</span><span class="li-t">${esc(r.titre)}<small>${esc(r.type)} · ⏱ ${r.temps} min</small></span>${badge}</button>`;
+    return `<button class="lib-item" type="button" data-i="${BOOK.indexOf(r)}"><span class="li-em">${r.photo&&OTTO_PHOTOS[r.photo]?`<img class="thumb" src="${OTTO_PHOTOS[r.photo]}" alt="">`:(main||"🍽️")}</span><span class="li-t">${esc(r.titre)}<small>${esc(r.type)} · ⏱ ${r.temps} min</small></span>${rateBadge(r)}${badge}</button>`;
   };
   let html = "", shown = 0;
   const groups = libSub ? subs.filter(([c])=>c===libSub) : subs;
@@ -772,6 +994,37 @@ function renderLibrary(){
   box.innerHTML = html || `<span class="empty">Aucune recette ne correspond.</span>`;
   document.getElementById("libInfo").textContent = `${shown} recette${shown>1?"s":""} affichée${shown>1?"s":""}` + (hidden ? ` · ${hidden} masquée${hidden>1?"s":""} (ingrédients à éviter)` : "");
 }
+/* ---------- Modes : Frigo Chef / Otto ---------- */
+let appMode = "frigo";
+function setMode(m, quiet){
+  if(m==="otto" && !OTTO_BOOK.length) m = "frigo";
+  appMode = m;
+  try{ localStorage.setItem("frigo-mode", m); }catch(e){}
+  const otto = m==="otto";
+  document.body.classList.toggle("otto", otto);
+  BOOK = otto ? OTTO_BOOK : FRIGO_BOOK;
+  CATEGORY = otto ? OTTO_CATEGORY : FRIGO_CATEGORY;
+  SUBCATS = otto ? OTTO_SUBCATS : FRIGO_SUBCATS;
+  libSub = ""; openSecs.clear();
+  document.querySelectorAll("#modeSwitch button").forEach(b=>{ const on = b.dataset.mode===m; b.classList.toggle("on",on); b.setAttribute("aria-selected",on); });
+  document.getElementById("heroTitle").innerHTML = otto ? `Mode <span>Otto</span>` : `Mon Frigo <span>Chef</span>`;
+  document.getElementById("heroSub").textContent = otto ? "Les recettes du livre, simplifiées. Dites ce que vous avez, on cherche dans le livre." : "Ajoutez ce que vous avez sous la main, on s'occupe du menu.";
+  const nSale = BOOK.filter(r=>r.menu!=="sucre").length, nSucre = BOOK.length - nSale;
+  document.getElementById("libCount").textContent = BOOK.length;
+  document.getElementById("libIntro").textContent = otto
+    ? `${BOOK.length} recettes du livre Otto (${nSale} salées, ${nSucre} sucrée${nSucre>1?"s":""}), réécrites en version simple, avec leur photo.`
+    : "200 recettes rangées en deux menus, salé et sucré, consultables même sans Claude.";
+  const bb = document.getElementById("basketBtn"); if(bb) bb.style.display = otto ? "none" : "";
+  if(!quiet){
+    document.getElementById("results").innerHTML = "";
+    document.getElementById("status").textContent = otto ? "Mode Otto : la recherche se fait dans les recettes du livre." : "";
+  }
+  if(libMenu==="sucre" && !nSucre) libMenu = "sale";
+  renderLibrary();
+}
+document.getElementById("modeSwitch").onclick = e=>{ const b = e.target.closest("button[data-mode]"); if(b && b.dataset.mode!==appMode) setMode(b.dataset.mode); };
+if(!OTTO_BOOK.length) document.getElementById("modeSwitch").style.display = "none";
+
 document.getElementById("libSearch").oninput = renderLibrary;
 document.getElementById("libOk").onchange = renderLibrary;
 document.getElementById("menuTabs").onclick = e=>{
@@ -803,9 +1056,11 @@ document.getElementById("libList").onclick = e=>{
 let sample = null;
 (async()=>{ try{ sample = await claude.use("sample"); }catch(e){ sample=null; } })();
 
-async function aiSearch(opts){
-  const prompt = `Tu es un chef cuisinier français. Propose 4 recettes réalisables avec ces ingrédients disponibles : ${ingredients.join(", ")}.
+async function aiSearch(opts, n=6, exclude=[]){
+  const prompt = `Tu es un chef cuisinier français. Propose ${n} recettes variées (bases et techniques différentes) réalisables avec ces ingrédients disponibles : ${ingredients.join(", ")}.${exclude.length ? `
+Ne propose AUCUNE de ces recettes déjà données, ni de variante proche : ${exclude.join(" ; ")}.` : ""}
 Contraintes :
+- ${opts.taste==="sale" ? "UNIQUEMENT des recettes salées (aucun dessert, rien de sucré)." : opts.taste==="sucre" ? "UNIQUEMENT des recettes sucrées : desserts, goûters, petits-déjeuners sucrés (rien de salé)." : "Un mélange de recettes salées ET sucrées, environ moitié-moitié."}
 - Type de plat : ${opts.type||"peu importe"}
 - Temps total maximum : ${opts.time? opts.time+" minutes":"peu importe"}
 - Nombre de personnes : ${opts.people} (adapte les quantités)
@@ -822,7 +1077,7 @@ function showRecipes(list, source){
   const out = document.getElementById("results");
   if(!list.length){ out.innerHTML = `<div class="card empty">Aucune recette trouvée. Essayez d'ajouter quelques ingrédients ou d'assouplir les filtres.</div>`; return; }
   currentList = list; currentSource = source;
-  const head = source==="saved" ? `<h2 class="results-title">📖 Recettes sauvegardées</h2>` : source==="library" ? `<h2 class="results-title">📚 Depuis ma bibliothèque</h2>` : "";
+  const head = source==="saved" ? `<h2 class="results-title">📖 Recettes sauvegardées</h2>` : source==="library" ? `<h2 class="results-title">📚 Depuis ma bibliothèque</h2>` : source==="plan" ? `<h2 class="results-title">📅 Au menu</h2>` : "";
   out.innerHTML = head + list.map((r,k)=>{
     const ings = r.ingredients||[];
     const nHave = ings.filter(i=>i.dispo).length;
@@ -833,16 +1088,19 @@ function showRecipes(list, source){
       <div class="rhead" data-k="${k}">
         <div>
           <h3>${esc(r.titre)}</h3>
-          <div class="meta"><span class="pill">⏱ ${esc(r.temps)} min</span><span class="pill">${esc(r.difficulte||"")}</span>${r.portions?`<span class="pill">👥 ${r.portions} ${r.type==="Dessert"&&r.portions>2?"parts":r.portions>1?"personnes":"personne"}</span>`:""}</div>
+          ${starsHTML(r, k)}
+          <div class="meta" style="margin-top:6px"><span class="pill">⏱ ${esc(r.temps)} min</span>${r.extra?`<span class="pill">${esc(r.extra)}</span>`:""}<span class="pill">${esc(r.difficulte||"")}</span>${r.portions?`<span class="pill">👥 ${r.portions} ${r.type==="Dessert"&&r.portions>2?"parts":r.portions>1?"personnes":"personne"}</span>`:""}</div>
           ${r.description?`<p class="desc">${esc(r.description)}</p>`:""}
         </div>
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
-          <button class="save${saved.has(recipeKey(r))?" on":""}" type="button" data-k="${k}" data-key="${esc(recipeKey(r))}" title="Sauvegarder">${saved.has(recipeKey(r))?"♥":"♡"}</button>
+          <div style="display:flex;gap:6px"><button class="plan-btn share-btn" type="button" data-k="${k}" title="Partager">📤</button><button class="plan-btn" type="button" data-k="${k}" title="Ajouter à mes menus">📅</button>
+          <button class="save${saved.has(recipeKey(r))?" on":""}" type="button" data-k="${k}" data-key="${esc(recipeKey(r))}" title="Sauvegarder">${saved.has(recipeKey(r))?"♥":"♡"}</button></div>
           ${source==="saved" ? "" : `<span class="score ${miss?"mid":""}">${scoreTxt}</span>`}
         </div>
       </div>
       <div class="rbody">
         <div class="photo-bar">
+          ${shopBtnHTML(r,k)}
           <a class="pbtn" href="https://www.google.com/search?tbm=isch&q=${encodeURIComponent(r.titre+" recette plat")}" target="_blank" rel="noopener">📷 Voir des photos du plat</a>
         </div>
         <div class="cols">
@@ -852,10 +1110,64 @@ function showRecipes(list, source){
         </div>
       </div>
     </article>`;
-  }).join("");
+  }).join("") + resultsFooter(source);
 }
+let lastOpts = null, localAll = [], localPage = 0, shownTitles = [];
+function resultsFooter(source){
+  if(source==="ai" && sample) return `<div class="more-row"><button class="btn small" type="button" id="moreAi">🔄 Proposer d'autres recettes</button><span class="status" id="moreNote" style="margin:0"></span></div>`;
+  if(source==="local" && localAll.length > 8) return `<div class="more-row"><button class="btn small" type="button" id="moreLocal">🔄 Proposer d'autres recettes</button></div>`;
+  return "";
+}
+document.getElementById("results").addEventListener("click", async e=>{
+  if(e.target.id==="moreLocal"){
+    const pages = Math.ceil(localAll.length/8);
+    localPage = (localPage+1) % pages;
+    const go = document.getElementById("goBtn"); go.disabled = true;
+    showLoader();
+    await wait(1800);
+    hideLoader(); go.disabled = false;
+    showRecipes(localAll.slice(localPage*8, localPage*8+8), "local");
+    document.getElementById("results").scrollIntoView({behavior:"smooth",block:"start"});
+    document.getElementById("status").textContent = localPage===0
+      ? "Retour aux premières propositions (celles qui demandent le moins d'achats)."
+      : `Nouvelle sélection ${localPage+1} sur ${pages} dans votre bibliothèque.`;
+  }
+  if(e.target.id==="moreAi" && lastOpts){
+    const b = e.target, note = document.getElementById("moreNote");
+    const previous = currentList.slice(), go = document.getElementById("goBtn");
+    go.disabled = true;
+    showLoader();
+    try{
+      const more = await aiSearch(lastOpts, 6, shownTitles.slice(-40));
+      hideLoader();
+      const seen = new Set(shownTitles.map(norm));
+      const fresh = more.filter(r=>r && r.titre && !seen.has(norm(r.titre)));
+      if(!fresh.length) throw {message:"vide"};
+      shownTitles = shownTitles.concat(fresh.map(r=>r.titre));
+      showRecipes(fresh, "ai");
+      document.getElementById("results").scrollIntoView({behavior:"smooth",block:"start"});
+      document.getElementById("status").textContent = `Nouvelle sélection : ${fresh.length} recettes différentes des précédentes.`;
+    }catch(err){
+      hideLoader();
+      showRecipes(previous, "ai");   // on remet les recettes d'avant
+      const n = document.getElementById("moreNote");
+      if(n) n.textContent = err && err.code==="rate_limited" ? "Trop de demandes, réessayez dans un instant." : "Claude n'a pas pu répondre, réessayez.";
+    }finally{ go.disabled = false; }
+  }
+});
 let currentList = [], currentSource = "";
 document.getElementById("results").onclick = e=>{
+  const st = e.target.closest(".star");
+  if(st){
+    const r = currentList[+st.dataset.k], key = recipeKey(r), n = +st.dataset.star;
+    if(ratings[key]===n) delete ratings[key]; else ratings[key] = n;   // retoucher la même étoile efface la note
+    saveRatings();
+    st.parentElement.outerHTML = starsHTML(r, +st.dataset.k);
+    renderLibrary(); renderSaved();
+    return;
+  }
+  const sb = e.target.closest(".share-btn"); if(sb){ openShare(currentList[+sb.dataset.k]); return; }
+  const pb = e.target.closest(".plan-btn"); if(pb){ openPlaceRecipe(currentList[+pb.dataset.k]); return; }
   const sv = e.target.closest(".save"); if(sv){ toggleSave(currentList[+sv.dataset.k], sv); return; }
   const h = e.target.closest(".rhead, .banner"); if(h) h.parentElement.classList.toggle("open");
 };
@@ -877,7 +1189,7 @@ function renderSaved(){
   const list = document.getElementById("savedList");
   list.innerHTML = saved.size ? [...saved].map(([key,r])=>{
     const em = (Array.isArray(r.emojis)&&r.emojis[0]) || (TYPE_STYLE[r.type]||[])[2] || "🍽️";
-    return `<button class="saved-item" type="button" data-key="${esc(key)}">${em} ${esc(r.titre)} <small>⏱ ${esc(r.temps)} min</small></button>`;
+    return `<button class="saved-item" type="button" data-key="${esc(key)}">${em} ${esc(r.titre)} <small>⏱ ${esc(r.temps)} min${rateOf(r)?` · <span style="color:#b7791f">★ ${rateOf(r)}</span>`:""}</small></button>`;
   }).join("") : `<span class="empty">Cliquez sur ♡ sur une recette pour la garder ici.</span>`;
   document.getElementById("showAllSaved").style.display = saved.size ? "" : "none";
   // met à jour les cœurs visibles
@@ -952,6 +1264,458 @@ async function toggleSave(r, btn){
   });
 })();
 
+/* ---------- Menus de la semaine et liste de courses ---------- */
+const DAYS = ["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"];
+const MEALS = [["midi","Midi"],["soir","Soir"]];
+let plan = {};            // "0-midi" -> recette
+let shopChecked = [];     // clés des articles cochés
+let planPeople = 2;
+let planDoc = null;       // document privé dans la base (si disponible)
+let planWriting = Promise.resolve();
+
+let shopDishes = [];   // plats choisis pour la liste de courses
+function planSnapshot(){ return {plan, dishes:shopDishes, checked:shopChecked, people:planPeople, updatedAt:Date.now()}; }
+function loadLocalPlan(){
+  try{ const d = JSON.parse(localStorage.getItem("frigo-plan")||"null"); if(d){ plan=d.plan||{}; shopDishes=d.dishes||[]; shopChecked=d.checked||[]; planPeople=d.people||2; } }catch(e){}
+}
+function savePlan(){
+  try{ localStorage.setItem("frigo-plan", JSON.stringify(planSnapshot())); }catch(e){}
+  if(planDoc){
+    const data = JSON.parse(JSON.stringify(planSnapshot()));
+    planWriting = planWriting.then(()=>planDoc.set(data)).catch(err=>{
+      document.getElementById("planNote").textContent = "La sauvegarde du menu n'a pas fonctionné, il reste enregistré sur cet appareil.";
+    });
+  }
+}
+const cleanRecipe = r => { const c = JSON.parse(JSON.stringify(r)); delete c.nUsed; delete c.nMiss; delete c.score; return c; };
+
+function renderWeek(){
+  document.getElementById("planPeople").value = String(planPeople);
+  const todayIdx = (new Date().getDay()+6)%7;
+  document.getElementById("week").innerHTML = DAYS.map((d,i)=>`<div class="day${i===todayIdx?" today":""}"><div class="dname">${d}</div>` +
+    MEALS.map(([m,label])=>{
+      const r = plan[i+"-"+m];
+      if(!r) return `<button type="button" class="slot" data-slot="${i}-${m}"><span><span class="meal">${label}</span>+ Ajouter</span></button>`;
+      const em = (Array.isArray(r.emojis)&&r.emojis[0]) || (r.ingredients||[]).map(x=>emojiFor(x.nom)).find(e=>!["🥄","🧂","💧","🫒","🧄","🧅"].includes(e)) || (TYPE_STYLE[r.type]||[])[2] || "🍽️";
+      return `<div class="slot filled" data-slot="${i}-${m}" role="button" tabindex="0"><span>${em}</span><span class="t"><span class="meal">${label}</span>${esc(r.titre)}</span><button type="button" class="x" data-rm="${i}-${m}" aria-label="Retirer">×</button></div>`;
+    }).join("") + `</div>`).join("");
+  const n = Object.keys(plan).length;
+  document.getElementById("planNote").textContent = n ? `${n} repas prévu${n>1?"s":""} sur 14.` : "";
+  renderShop();
+}
+
+/* --- quantités : lecture, addition, affichage --- */
+function parseQty(q){
+  const FR = {"½":.5,"¼":.25,"¾":.75,"⅓":1/3,"⅔":2/3,"⅛":.125};
+  const m = String(q||"").trim().match(/^(?:(\d+)\/(\d+)|(\d+(?:[.,]\d+)?)\s*([½¼¾⅓⅔⅛])?|([½¼¾⅓⅔⅛]))\s*(.*)$/);
+  if(!m) return null;
+  let n = m[1] ? m[1]/m[2] : m[5] ? FR[m[5]] : parseFloat(m[3].replace(",",".")) + (m[4] ? FR[m[4]] : 0);
+  let rest = m[6].trim();
+  if(/^(à|a|ou|\+|-|\d)/i.test(rest)) return null;          // « 120 à 150 g » : on garde le texte tel quel
+  const unit = rest.split(/\s+/).map(w=>w.replace(/s$/,"")).join(" ").replace(/^(gro|gros|grosse|petite|petit)$/,"");
+  return {n, unit};
+}
+function fmtNum(n, unit){
+  if(/^(g|cl|ml)$/.test(unit)) return String(Math.round(n/10)*10 || Math.round(n));
+  const whole = Math.floor(n+1e-9), frac = n - whole;
+  let f = "";
+  if(frac>0.2 && frac<0.4) f="¼"; else if(frac>=0.4 && frac<0.6) f="½"; else if(frac>=0.6 && frac<0.85) f="¾";
+  else if(frac>=0.85) return String(whole+1);
+  return whole ? whole + (f?" "+f:"") : (f||"¼");
+}
+function plural(unit, n){
+  if(!unit || /^(g|kg|cl|ml|L|c\. à s\.|c\. à c\.)$/.test(unit) || n<=1 || !/^[a-zA-Zéèê]/.test(unit) || /^\(/.test(unit)) return unit;
+  return unit.split(" ").map((w,k)=>k===0?w+"s":w).join(" ");
+}
+const SHOP_CATS = [
+  ["🥬 Fruits et légumes", ["tomate","ail","oignon","concombre","basilic","courgette","salade","champignon","carotte","patate","butternut","pomme","citron","poire","banane","fraise","orange","fruits rouges","cerise","myrtille","peche","mangue","ananas","persil","menthe","herbe","poivron","aubergine","poireau","chou","epinard","brocoli","avocat","coriandre fraiche","gingembre","piment rouge","piment vert","piments rouges","piments verts","jalapeno","radis","laitue","sucrine","oignons verts","echalote","aneth","estragon","ciboulette","origan frais","thym","romarin","asperge","pomme de terre","mangue","peche","myrtille","figue"]],
+  ["🧀 Crèmerie et œufs", ["oeuf","lait","beurre","creme","fromage","parmesan","yaourt","mascarpone","cheddar","feta","ricotta","mozzarella","pecorino","gruyere","cream cheese","babeurre","jaune"]],
+  ["🧊 Frais et surgelés", ["pate brisee","pate sablee","pate feuilletee","glace","jambon","lardon","poulet","viande","saumon","crevette","prosciutto","saucisse","steak","porc","boeuf","filo","kataifi","surgele","levure fraiche"]],
+  ["🥫 Épicerie", []]
+];
+function shopCat(name){
+  const n = norm(name);
+  for(const [cat, keys] of SHOP_CATS){ if(keys.some(k=>n.includes(k))) return cat; }
+  return "🥫 Épicerie";
+}
+function buildShopping(){
+  const items = new Map();
+  for(const r of shopDishes){
+    const scale = r.portions===2 ? planPeople/2 : 1;
+    for(const i of (r.ingredients||[])){
+      if(!i.quantite && /sel|poivre|huile/.test(norm(i.nom))) continue;
+      const p = parseQty(i.quantite);
+      const key = stem(i.nom);
+      if(!items.has(key)) items.set(key, {key, nom:i.nom, units:{}, texts:[], recipes:new Set(), have:matchIng(ingredients, i.nom)});
+      const it = items.get(key);
+      if(p) it.units[p.unit] = (it.units[p.unit]||0) + p.n*scale; else if(i.quantite) it.texts.push(i.quantite);
+      it.recipes.add(r.titre);
+    }
+  }
+  return [...items.values()];
+}
+function itemLabel(it){
+  const name = it.nom.charAt(0).toUpperCase()+it.nom.slice(1);
+  const parts = Object.entries(it.units).map(([u,n])=> u ? `${fmtNum(n,u)} ${plural(u,n)}` : fmtNum(n,""));
+  let qty = parts.concat([...new Set(it.texts)]).join(" + ");
+  return {name, qty};
+}
+let lastShop = [];
+function renderShop(){
+  const base = n => /^(huile d'olive|huile de tournesol|huile|eau|eau tiede|sel|fleur de sel|poivre|glacons)( \(.*\))?$/.test(norm(n));
+  const all = buildShopping().filter(it=>!base(it.nom));
+  const list = all.filter(it=>!it.have);
+  lastShop = list;
+  const box = document.getElementById("shopList");
+  document.getElementById("shopCount").textContent = list.filter(it=>!shopChecked.includes(it.key)).length;
+  renderShopDishes();
+  if(!all.length){ box.innerHTML = `<span class="empty">${shopDishes.length ? "Vous avez déjà tout ! 🎉" : "Touchez « 🛒 Ajouter les ingrédients manquants » sur une recette pour la mettre ici."}</span>`; document.getElementById("shopNote").textContent=""; return; }
+  const groups = {};
+  list.forEach(it=>{ (groups[shopCat(it.nom)] ||= []).push(it); });
+  box.innerHTML = SHOP_CATS.map(([cat])=>cat).filter(c=>groups[c]).map(c=>
+    `<div class="shop-cat">${c}</div>` + groups[c].sort((a,b)=>a.nom.localeCompare(b.nom,"fr")).map(it=>{
+      const {name, qty} = itemLabel(it), done = shopChecked.includes(it.key);
+      return `<label class="shop-item${done?" done":""}"><input type="checkbox" data-key="${esc(it.key)}" ${done?"checked":""}><span class="si-t"><b>${esc(name)}</b>${qty?` — ${esc(qty)}`:""}<span class="si-for">${esc([...it.recipes].join(", "))}</span></span></label>`;
+    }).join("")).join("") || `<span class="empty">Vous avez déjà tout ! 🎉</span>`;
+  const nHave = all.filter(it=>it.have).length;
+  document.getElementById("shopNote").textContent = nHave ? `${nHave} ingrédient${nHave>1?"s":""} déjà dans votre frigo, masqué${nHave>1?"s":""}.` : "";
+}
+document.getElementById("shopList").onchange = e=>{
+  const k = e.target.dataset.key; if(!k) return;
+  shopChecked = e.target.checked ? [...new Set([...shopChecked,k])] : shopChecked.filter(x=>x!==k);
+  e.target.closest(".shop-item").classList.toggle("done", e.target.checked);
+  document.getElementById("shopCount").textContent = lastShop.filter(it=>!shopChecked.includes(it.key)).length;
+  savePlan();
+};
+/* repli de la liste de courses (mémorisé) */
+(()=>{ const card = document.getElementById("shopCard"), t = document.getElementById("shopToggle");
+  try{ if(localStorage.getItem("frigo-shop-folded")==="1"){ card.classList.add("folded"); t.setAttribute("aria-expanded","false"); } }catch(e){}
+  t.onclick = ()=>{ const f = card.classList.toggle("folded"); t.setAttribute("aria-expanded", String(!f)); try{ localStorage.setItem("frigo-shop-folded", f?"1":"0"); }catch(e){} };
+})();
+document.getElementById("shopUncheck").onclick = ()=>{ shopChecked = []; savePlan(); renderShop(); };
+document.getElementById("shopCopy").onclick = async (e)=>{
+  const groups = {};
+  lastShop.filter(it=>!shopChecked.includes(it.key)).forEach(it=>{ (groups[shopCat(it.nom)] ||= []).push(it); });
+  const txt = "🛒 Liste de courses\n" + SHOP_CATS.map(([c])=>c).filter(c=>groups[c]).map(c=>"\n"+c+"\n"+groups[c].map(it=>{ const {name,qty}=itemLabel(it); return "☐ "+name+(qty?" — "+qty:""); }).join("\n")).join("\n");
+  const b = e.currentTarget;
+  try{ await navigator.clipboard.writeText(txt); b.textContent = "✓ Copiée"; }
+  catch(err){ b.textContent = "Copie impossible"; }
+  setTimeout(()=>{ b.textContent = "📋 Copier"; }, 2000);
+};
+
+/* --- fenêtre de choix --- */
+const modal = document.getElementById("planModal");
+function openModal(title, html){ document.getElementById("pmTitle").textContent = title; document.getElementById("pmBody").innerHTML = html; modal.hidden = false; }
+function closeModal(){ modal.hidden = true; }
+document.getElementById("pmClose").onclick = closeModal;
+modal.onclick = e=>{ if(e.target===modal) closeModal(); };
+document.addEventListener("keydown", e=>{ if(e.key==="Escape" && !modal.hidden) closeModal(); });
+
+/* --- partage d'une recette --- */
+function recipeText(r){
+  const ings = (r.ingredients||[]).filter(i=>i.quantite || !/sel, poivre|pincée de sel/.test(i.nom))
+    .map(i=>"• "+(i.quantite?i.quantite+" ":"")+i.nom).join("\n");
+  const steps = (r.etapes||[]).map((t,i)=>(i+1)+". "+t).join("\n");
+  const pers = r.portions ? ` · ${r.portions} ${r.type==="Dessert"&&r.portions>2?"parts":"pers."}` : "";
+  return `🍽️ ${r.titre}\n⏱ ${r.temps} min${r.extra?" ("+r.extra+")":""}${pers}\n\n🛒 Ingrédients\n${ings}\n\n👩‍🍳 Préparation\n${steps}`
+    + (r.astuce ? `\n\n💡 ${r.astuce}` : "") + `\n\n— Envoyé depuis Mon Frigo Chef`;
+}
+/* --- fiche recette en image (canvas) --- */
+async function recipeCardBlob(r){
+  try{ await document.fonts.ready; }catch(e){}
+  const W = 1080, P = 64, ctx0 = document.createElement("canvas").getContext("2d");
+  const otto = document.body.classList.contains("otto");
+  const C = otto ? {bg:"#161412", card:"#201d1a", ink:"#f2ece3", muted:"#a39a8f", acc:"#e39b3a", line:"#3a342e"}
+                 : {bg:"#faf6ef", card:"#ffffff", ink:"#2b2420", muted:"#7a6e64", acc:"#c8553d", line:"#ebe2d6"};
+  const wrap = (txt, font, maxW) => { ctx0.font = font; const out=[]; let line="";
+    for(const w of String(txt).split(/\s+/)){ const t = line ? line+" "+w : w; if(ctx0.measureText(t).width > maxW && line){ out.push(line); line = w; } else line = t; }
+    if(line) out.push(line); return out; };
+  // image d'en-tête
+  let img = null, imgH = 520;
+  if(r.photo && OTTO_PHOTOS[r.photo]){
+    img = await new Promise(res=>{ const i = new Image(); i.onload=()=>res(i); i.onerror=()=>res(null); i.src = OTTO_PHOTOS[r.photo]; });
+    if(img) imgH = Math.min(1080, Math.round(W * img.height / img.width));
+  }
+  const fT = "700 58px Fraunces, Georgia, serif", fH = "700 34px Fraunces, Georgia, serif", fB = "400 30px Inter, Arial, sans-serif", fS = "400 26px Inter, Arial, sans-serif";
+  const tW = W - 2*P;
+  const title = wrap(r.titre, fT, tW);
+  const pers = r.portions ? ` · 👥 ${r.portions} ${r.type==="Dessert"&&r.portions>2?"parts":"pers."}` : "";
+  const meta = `⏱ ${r.temps} min${r.extra?" ("+r.extra+")":""}${pers}`;
+  const ings = (r.ingredients||[]).filter(i=>i.quantite || !/sel, poivre|pincée de sel/.test(i.nom)).map(i=>"• "+(i.quantite?i.quantite+" ":"")+i.nom);
+  const colW = (tW - 32)/2, half = Math.ceil(ings.length/2);
+  const ingCols = [ings.slice(0,half), ings.slice(half)].map(col=>col.map(t=>wrap(t, fS, colW)));
+  const ingH = Math.max(...ingCols.map(col=>col.reduce((a,l)=>a+l.length*36+6,0)));
+  const steps = (r.etapes||[]).map((t,i)=>wrap((i+1)+". "+t, fB, tW));
+  const stepsH = steps.reduce((a,l)=>a+l.length*42+14,0);
+  const tip = r.astuce ? wrap("💡 "+r.astuce, fS, tW-40) : [];
+  const H = imgH + P + title.length*66 + 56 + 70 + ingH + 40 + 70 + stepsH + (tip.length? tip.length*36+70 : 0) + 110;
+  const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+  const c = cv.getContext("2d");
+  c.fillStyle = C.bg; c.fillRect(0,0,W,H);
+  if(img){ c.drawImage(img, 0, 0, W, imgH); }
+  else {
+    const g = c.createLinearGradient(0,0,W,imgH); const st = TYPE_STYLE[r.type] || ["#f4a582","#c8553d"];
+    g.addColorStop(0, st[0]); g.addColorStop(1, st[1]); c.fillStyle = g; c.fillRect(0,0,W,imgH);
+    c.fillStyle = "rgba(255,255,255,.85)"; c.beginPath(); c.arc(W/2, imgH/2, 170, 0, Math.PI*2); c.fill();
+    const em = (r.ingredients||[]).map(i=>emojiFor(i.nom)).filter(e=>!["🥄","🧂","💧","🫒"].includes(e)).filter((e,k,a)=>a.indexOf(e)===k).slice(0,4);
+    c.font = "150px sans-serif"; c.textAlign="center"; c.textBaseline="middle"; c.fillText((TYPE_STYLE[r.type]||[])[2]||"🍽️", W/2, imgH/2+8);
+    c.font = "80px sans-serif"; [[150,130],[W-150,140],[170,imgH-120],[W-170,imgH-110]].forEach(([x,y],k)=>{ if(em[k]) c.fillText(em[k],x,y); });
+    c.textAlign="left"; c.textBaseline="alphabetic";
+  }
+  let y = imgH + P + 50;
+  c.fillStyle = C.ink; c.font = fT; title.forEach(l=>{ c.fillText(l, P, y); y += 66; });
+  c.fillStyle = C.muted; c.font = fB; c.fillText(meta, P, y - 6); y += 56;
+  const section = t => { c.fillStyle = C.acc; c.font = fH; c.fillText(t, P, y); y += 22; c.fillStyle = C.line; c.fillRect(P, y, tW, 2); y += 48; };
+  section("Ingrédients");
+  c.fillStyle = C.ink; c.font = fS;
+  ingCols.forEach((col, ci)=>{ let yy = y; const x = P + ci*(colW+32); col.forEach(lines=>{ lines.forEach(l=>{ c.fillText(l, x, yy); yy += 36; }); yy += 6; }); });
+  y += ingH + 40;
+  section("Préparation");
+  c.fillStyle = C.ink; c.font = fB;
+  steps.forEach(lines=>{ lines.forEach(l=>{ c.fillText(l, P, y); y += 42; }); y += 14; });
+  if(tip.length){
+    y += 10; const bh = tip.length*36 + 34;
+    c.fillStyle = otto ? "#3a2c17" : "#f6e0d9"; c.beginPath(); c.roundRect ? c.roundRect(P, y-6, tW, bh, 18) : c.rect(P, y-6, tW, bh); c.fill();
+    c.fillStyle = C.ink; c.font = fS; let yy = y + 32; tip.forEach(l=>{ c.fillText(l, P+20, yy); yy += 36; }); y += bh + 24;
+  }
+  c.fillStyle = C.muted; c.font = fS; c.textAlign = "right"; c.fillText("Mon Frigo Chef 🐱", W - P, H - 44);
+  return await new Promise(res=>cv.toBlob(res, "image/jpeg", 0.88));
+}
+const slug = t => norm(t).replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,60) || "recette";
+let downloadsNS = null;
+(async()=>{ try{ downloadsNS = await claude.use("downloads"); }catch(e){} })();
+
+function openShare(r){
+  if(!r) return;
+  const txt = recipeText(r), enc = encodeURIComponent(txt);
+  const native = typeof navigator.share==="function";
+  openModal(`📤 Partager « ${r.titre} »`, `<div class="card-prev" id="cardPrev"><span class="empty">Préparation de la fiche avec photo…</span></div>
+  <div class="share-list" style="margin-bottom:8px">
+    <button type="button" class="share-opt" id="shWa"><span>💬</span><b id="shWaLbl" style="font-weight:600">WhatsApp avec la photo</b></button>
+    <div id="shWaNext" style="display:none" class="wa-next"></div>
+  </div>
+  <div class="share-list" id="cardActions" style="margin-bottom:14px"></div>
+  <p class="empty" style="margin:0 0 8px;font-size:13px">Ou en texte :</p>
+  <div class="share-list">
+    ${native?`<button type="button" class="share-opt" id="shNative"><span>📲</span>Partager…</button>`:""}
+    <button type="button" class="share-opt" id="shCopy"><span>📋</span><b id="shCopyLbl" style="font-weight:600">Copier la recette</b></button>
+    <a class="share-opt" href="sms:?&body=${enc}"><span>✉️</span>SMS</a>
+    <a class="share-opt" href="mailto:?subject=${encodeURIComponent("Recette : "+r.titre)}&body=${enc}"><span>📧</span>E-mail</a>
+  </div>
+  <p class="empty" style="margin:10px 0 0;font-size:12px">Si SMS ou e-mail ne s'ouvre pas, copiez la recette et collez-la dans votre message.</p>
+  <div class="share-prev">${esc(txt)}</div>`);
+  document.getElementById("shCopy").onclick = async ()=>{
+    const l = document.getElementById("shCopyLbl");
+    try{ await navigator.clipboard.writeText(txt); l.textContent = "✓ Recette copiée"; }
+    catch(e){ l.textContent = "Copie impossible : sélectionnez le texte ci-dessous"; }
+  };
+  // fiche image
+  const cardP = recipeCardBlob(r);
+  document.getElementById("shWa").onclick = async ()=>{
+    const l = document.getElementById("shWaLbl"), next = document.getElementById("shWaNext");
+    l.textContent = "Préparation de la photo…";
+    const blob = await cardP, fname = `recette-${slug(r.titre)}.jpg`;
+    const file = blob && (()=>{ try{ return new File([blob], fname, {type:"image/jpeg"}); }catch(e){ return null; } })();
+    // 1) téléphone qui sait partager une image : photo + texte d'un coup (choisir WhatsApp)
+    if(file && navigator.canShare && (()=>{ try{ return navigator.canShare({files:[file]}); }catch(e){ return false; } })()){
+      try{ await navigator.share({files:[file], text: txt}); closeModal(); return; }
+      catch(e){ if(e && e.name==="AbortError"){ l.textContent = "WhatsApp avec la photo"; return; } }
+    }
+    // 2) sinon : on enregistre la photo, puis on ouvre WhatsApp avec le texte
+    let saved = false;
+    if(blob){
+      if(downloadsNS){ try{ await downloadsNS.save({filename: fname, data: blob}); saved = true; }catch(e){} }
+      else { const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = fname; document.body.appendChild(a); a.click(); a.remove(); saved = true; }
+    }
+    l.textContent = saved ? "✓ Photo enregistrée" : "WhatsApp avec la photo";
+    next.style.display = "block";
+    next.innerHTML = (saved ? `<p><b>Étape 2 :</b> ouvrez WhatsApp, choisissez le contact, puis touchez <b>📎 → Galerie</b> pour joindre la photo « ${esc(fname)} ».</p>` : `<p>La photo n'a pas pu être enregistrée. Utilisez « Enregistrer la fiche avec photo » ci-dessus.</p>`)
+      + `<a class="share-opt" href="https://wa.me/?text=${enc}" target="_blank" rel="noopener"><span>💬</span>Ouvrir WhatsApp (texte de la recette)</a>`;
+  };
+  cardP.then(blob=>{
+    const prev = document.getElementById("cardPrev"), act = document.getElementById("cardActions");
+    if(!prev || !blob){ if(prev) prev.innerHTML = `<span class="empty">La fiche image n'a pas pu être créée.</span>`; return; }
+    const url = URL.createObjectURL(blob), fname = `recette-${slug(r.titre)}.jpg`;
+    prev.innerHTML = `<img src="${url}" alt="Fiche ${esc(r.titre)}">`;
+    const file = (()=>{ try{ return new File([blob], fname, {type:"image/jpeg"}); }catch(e){ return null; } })();
+    const canFile = file && navigator.canShare && (()=>{ try{ return navigator.canShare({files:[file]}); }catch(e){ return false; } })();
+    let html = "";
+    if(canFile) html += `<button type="button" class="share-opt" id="cardShare"><span>📲</span>Envoyer la fiche avec photo…</button>`;
+    html += `<button type="button" class="share-opt" id="cardSave"><span>🖼️</span><b id="cardSaveLbl" style="font-weight:600">Enregistrer la fiche avec photo</b></button>`;
+    act.innerHTML = html;
+    const cs = document.getElementById("cardShare");
+    if(cs) cs.onclick = async ()=>{ try{ await navigator.share({files:[file], title:r.titre, text:r.titre}); closeModal(); }catch(e){} };
+    document.getElementById("cardSave").onclick = async ()=>{
+      const l = document.getElementById("cardSaveLbl");
+      if(downloadsNS){
+        try{ await downloadsNS.save({filename: fname, data: blob}); l.textContent = "✓ Fiche enregistrée : joignez-la à votre message"; }
+        catch(e){ l.textContent = e && e.code==="declined" ? "Enregistrement annulé" : "Enregistrement impossible ici"; }
+      } else {
+        const a = document.createElement("a"); a.href = url; a.download = fname; document.body.appendChild(a); a.click(); a.remove();
+        l.textContent = "✓ Fiche enregistrée : joignez-la à votre message";
+      }
+    };
+  });
+  const n = document.getElementById("shNative");
+  if(n) n.onclick = async ()=>{ try{ await navigator.share({title:r.titre, text:txt}); closeModal(); }catch(e){ if(e && e.name!=="AbortError") n.style.display="none"; } };
+}
+
+/* --- liste de courses : plats choisis un par un --- */
+const inShop = r => shopDishes.some(d=>recipeKey(d)===recipeKey(r));
+function missingCount(r){ return (r.ingredients||[]).filter(i=>i.quantite && !matchIng(ingredients,i.nom) && !/^(huile|eau|sel|poivre|fleur de sel|glacons)/.test(norm(i.nom))).length; }
+function shopBtnHTML(r,k){
+  if(inShop(r)) return `<button type="button" class="pbtn shop-add in" data-shop="${k}">✓ Dans ma liste · retirer</button>`;
+  const n = missingCount(r);
+  return `<button type="button" class="pbtn shop-add" data-shop="${k}">🛒 Ajouter ${n ? n+" ingrédient"+(n>1?"s":"")+" manquant"+(n>1?"s":"") : "à ma liste"}</button>`;
+}
+function toggleShopDish(r){
+  if(inShop(r)) shopDishes = shopDishes.filter(d=>recipeKey(d)!==recipeKey(r));
+  else shopDishes.push(cleanRecipe(r));
+  savePlan(); renderShop();
+}
+function renderShopDishes(){
+  const box = document.getElementById("shopDishes"); if(!box) return;
+  box.innerHTML = shopDishes.length ? shopDishes.map((d,i)=>`<span class="dish-chip">${esc(d.titre)}<button type="button" data-rmdish="${i}" aria-label="Retirer">×</button></span>`).join("") + `<button type="button" class="ghost" id="shopClearDishes" style="font-size:13px">Vider</button>` : "";
+}
+document.getElementById("shopDishes").onclick = e=>{
+  const b = e.target.closest("[data-rmdish]");
+  if(b){ shopDishes.splice(+b.dataset.rmdish,1); savePlan(); renderShop(); refreshShopBtns(); return; }
+  if(e.target.id==="shopClearDishes"){ shopDishes = []; shopChecked = []; savePlan(); renderShop(); refreshShopBtns(); }
+};
+function refreshShopBtns(){ document.querySelectorAll("#results .shop-add").forEach(b=>{ const k=+b.dataset.shop; if(currentList[k]) b.outerHTML = shopBtnHTML(currentList[k],k); }); }
+document.getElementById("results").addEventListener("click", e=>{
+  const b = e.target.closest(".shop-add"); if(!b) return;
+  const r = currentList[+b.dataset.shop]; if(!r) return;
+  toggleShopDish(r); refreshShopBtns();
+  const note = document.getElementById("shopNote");
+  if(inShop(r)) note.textContent = `« ${r.titre} » ajouté à la liste.`;
+});
+document.getElementById("planToShop").onclick = ()=>{
+  let n = 0;
+  Object.values(plan).forEach(r=>{ if(!inShop(r)){ shopDishes.push(cleanRecipe(r)); n++; } });
+  savePlan(); renderShop(); refreshShopBtns();
+  document.getElementById("planNote").textContent = n ? `${n} plat${n>1?"s":""} ajouté${n>1?"s":""} à la liste de courses.` : (Object.keys(plan).length ? "Ces plats sont déjà dans la liste." : "Aucun repas prévu pour l'instant.");
+};
+
+let placing = null;   // recette à placer
+function openPlaceRecipe(r){
+  if(!r) return;
+  placing = cleanRecipe(r);
+  openModal(`📅 « ${r.titre} »`, `<p class="empty" style="margin:0 0 12px">Choisissez le repas :</p><div class="pm-grid">` +
+    DAYS.map((d,i)=>`<span class="dn">${d}</span>` + MEALS.map(([m,label])=>{
+      const cur = plan[i+"-"+m];
+      return `<button type="button" class="pm-slot${cur?" busy":""}" data-place="${i}-${m}">${label}${cur?` · <small>remplacer</small>`:""}</button>`;
+    }).join("")).join("") + `</div>`);
+}
+let choosingSlot = null;
+function openChooseForSlot(slot){
+  choosingSlot = slot;
+  const [i,m] = slot.split("-");
+  openModal(`${DAYS[+i]} · ${m==="midi"?"Midi":"Soir"}`, `<input type="text" id="pmSearch" placeholder="Chercher une recette ou un ingrédient…" autocomplete="off" style="width:100%">
+    <div class="pm-list" id="pmList"></div>`);
+  const inp = document.getElementById("pmSearch");
+  const draw = ()=>{
+    const q = norm(inp.value||"");
+    const pool = [...saved.values()].map(r=>({r:cleanRecipe(r), fav:true})).concat(
+      BOOK.filter(r=>!r.ing.some(x=>isAvoided(x.nom))).map(r=>({r:cleanRecipe(toCard(r)), fav:false})));
+    const seen = new Set();
+    const list = pool.filter(({r})=>{ const k=recipeKey(r); if(seen.has(k)) return false; seen.add(k);
+        return !q || norm(r.titre).includes(q) || (r.ingredients||[]).some(i=>norm(i.nom).includes(q)); })
+      .map(x=>({...x, miss:(x.r.ingredients||[]).filter(i=>!matchIng(ingredients,i.nom) && i.quantite).length}))
+      .sort((a,b)=> (b.fav-a.fav) || ((a.r.type==="Dessert")-(b.r.type==="Dessert")) || rateOf(b.r)-rateOf(a.r) || a.miss-b.miss || a.r.titre.localeCompare(b.r.titre,"fr")).slice(0,60);
+    window.__pmList = list;
+    document.getElementById("pmList").innerHTML = list.map(({r,fav,miss},k)=>{
+      const em = r.ingredients.map(i=>emojiFor(i.nom)).filter(e=>e!=="🥄").filter((e,j,a)=>a.indexOf(e)===j).slice(0,3).join("");
+      return `<button class="lib-item" type="button" data-pick="${k}"><span class="li-em">${em||"🍽️"}</span><span class="li-t">${fav?"♥ ":""}${esc(r.titre)}<small>${esc(r.type||"")} · ⏱ ${esc(r.temps)} min</small></span>${rateBadge(r)}${ingredients.length?(miss?`<span class="lb">${miss} à acheter</span>`:`<span class="lb ok">✓</span>`):""}</button>`;
+    }).join("") || `<span class="empty">Aucune recette.</span>`;
+  };
+  inp.oninput = draw; draw();
+}
+document.getElementById("pmBody").onclick = e=>{
+  const p = e.target.closest("[data-place]");
+  if(p && placing){ plan[p.dataset.place] = placing; placing = null; savePlan(); renderWeek(); closeModal();
+    document.getElementById("planCard").scrollIntoView({behavior:"smooth",block:"start"}); return; }
+  const k = e.target.closest("[data-pick]");
+  if(k && choosingSlot){ plan[choosingSlot] = window.__pmList[+k.dataset.pick].r; choosingSlot = null; savePlan(); renderWeek(); closeModal(); }
+};
+
+document.getElementById("week").onclick = e=>{
+  const rm = e.target.closest("[data-rm]");
+  if(rm){ delete plan[rm.dataset.rm]; savePlan(); renderWeek(); return; }
+  const s = e.target.closest(".slot"); if(!s) return;
+  const r = plan[s.dataset.slot];
+  if(r){ showRecipes([JSON.parse(JSON.stringify(r))], "plan"); document.getElementById("results").scrollIntoView({behavior:"smooth",block:"start"}); }
+  else openChooseForSlot(s.dataset.slot);
+};
+document.getElementById("week").onkeydown = e=>{ if(e.key==="Enter" && e.target.classList.contains("slot")) e.target.click(); };
+document.getElementById("planPeople").onchange = e=>{ planPeople = +e.target.value; savePlan(); renderShop(); };
+document.getElementById("planClear").onclick = e=>{
+  const b = e.currentTarget;
+  if(b.dataset.confirm!=="1"){ b.dataset.confirm="1"; b.textContent="Confirmer : tout vider ?"; setTimeout(()=>{ b.dataset.confirm=""; b.textContent="Vider la semaine"; },3000); return; }
+  b.dataset.confirm=""; b.textContent="Vider la semaine";
+  plan = {}; shopChecked = []; savePlan(); renderWeek();
+};
+document.getElementById("planAuto").onclick = ()=>{
+  const used = new Set(Object.values(plan).map(r=>recipeKey(r)));
+  const shuffle = a=>{ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+  // plats + soupes (pour le soir) ; d'abord ceux qu'on peut faire sans rien acheter
+  const pool = shuffle(BOOK.filter(r=>(appMode==="otto" ? (r.menu==="sale" && r.cat!=="Pains") : (r.type==="Plat principal" || CATEGORY[r.titre]==="Soupes et veloutés")) && !r.ing.some(x=>isAvoided(x.nom))).map(toCard))
+    .filter(r=>!(rateOf(r) && rateOf(r)<=2))
+    .sort((a,b)=>a.nMiss-b.nMiss || rateOf(b)-rateOf(a));
+  const nOk = pool.filter(r=>r.nMiss===0).length;
+  // varie les bases : pas deux fois la même sous-catégorie à la suite
+  let filled = 0, lastCat = "";
+  for(let i=0;i<7;i++) for(const [m] of MEALS){
+    const slot = i+"-"+m; if(plan[slot]) continue;
+    let k = pool.findIndex(r=>!used.has(recipeKey(r)) && CATEGORY[r.titre]!==lastCat);
+    if(k<0) k = pool.findIndex(r=>!used.has(recipeKey(r)));
+    if(k<0) break;
+    const r = pool.splice(k,1)[0];
+    used.add(recipeKey(r)); lastCat = CATEGORY[r.titre]; plan[slot] = cleanRecipe(r); filled++;
+  }
+  savePlan(); renderWeek();
+  const extra = Object.values(plan).filter(r=>(r.ingredients||[]).some(i=>i.quantite && !matchIng(ingredients,i.nom))).length;
+  document.getElementById("planNote").textContent = !filled ? "Tous les repas sont déjà prévus." :
+    `${filled} repas ajouté${filled>1?"s":""}. ` + (!ingredients.length ? "Ajoutez vos ingrédients (ou le panier malin) pour des repas sans rien acheter." :
+    extra===0 ? "Tous faisables avec vos ingrédients ✓ Touchez × pour en changer." :
+    `${extra} repas demande${extra>1?"nt":""} un petit achat (voir la liste de courses).`);
+};
+
+(async()=>{
+  loadLocalPlan(); renderWeek();
+  let db=null, user=null, uid=null;
+  try{ db = await claude.use("db"); user = await claude.use("user"); uid = user ? await user.id() : null; }catch(e){}
+  if(!db || !uid) return;
+  ratingsDoc = db.doc("data/users/" + uid + "/ratings");
+  let firstR = true;
+  ratingsDoc.onSnapshot(snap=>{
+    if(snap.exists){
+      const d = snap.data()||{};
+      const merged = Object.assign({}, d.ratings||{}, firstR ? ratings : {});   // au 1er chargement on garde aussi les notes de cet appareil
+      const changed = JSON.stringify(merged)!==JSON.stringify(d.ratings||{});
+      ratings = firstR ? merged : JSON.parse(JSON.stringify(d.ratings||{}));
+      try{ localStorage.setItem("frigo-ratings", JSON.stringify(ratings)); }catch(e){}
+      if(firstR && changed && !snap.metadata.fromCache) saveRatings();
+    } else if(firstR && !snap.metadata.fromCache && Object.keys(ratings).length){ saveRatings(); }
+    if(!snap.metadata.fromCache) firstR = false;
+    try{ renderLibrary(); renderSaved(); }catch(e){}
+    document.querySelectorAll("#results .stars").forEach(el=>{ const k = +el.querySelector(".star").dataset.k; if(currentList[k]) el.outerHTML = starsHTML(currentList[k], k); });
+  }, ()=>{ ratingsDoc = null; });
+  planDoc = db.doc("data/users/" + uid + "/planner");
+  let first = true;
+  planDoc.onSnapshot(snap=>{
+    if(snap.exists){
+      const d = snap.data();
+      let localAt = 0; try{ localAt = (JSON.parse(localStorage.getItem("frigo-plan")||"{}")||{}).updatedAt||0; }catch(e){}
+      if(first && !snap.metadata.fromCache && (d.updatedAt||0) < localAt){ first=false; savePlan(); return; }
+      plan = JSON.parse(JSON.stringify(d.plan||{})); shopDishes = JSON.parse(JSON.stringify(d.dishes||[])); shopChecked = [...(d.checked||[])]; planPeople = d.people||2;
+      try{ localStorage.setItem("frigo-plan", JSON.stringify(planSnapshot())); }catch(e){}
+      renderWeek();
+    } else if(first && !snap.metadata.fromCache && Object.keys(plan).length){ savePlan(); }
+    if(!snap.metadata.fromCache) first = false;
+  }, err=>{ planDoc = null; });
+})();
+
 const LOADER_SVG = `<svg viewBox="0 0 300 220" aria-hidden="true">
   <g class="spark"><path d="M40 60l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="var(--amber)"/></g>
   <g class="spark sp2"><path d="M258 50l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="var(--accent)"/></g>
@@ -994,19 +1758,22 @@ document.getElementById("goBtn").onclick = async ()=>{
   const st = document.getElementById("status"), btn = document.getElementById("goBtn");
   if(!ingredients.length){ st.textContent = "Ajoutez d'abord au moins un ingrédient."; return; }
   const $ = id => document.getElementById(id);
-  const opts = { type:$("type").value, time:$("time").value, people:$("people").value, diet:$("diet").value, strict:$("strict").checked };
-  if(sample){
+  const opts = { taste, type:$("type").value, time:$("time").value, people:$("people").value, diet:$("diet").value, strict:$("strict").checked };
+  if(sample && appMode!=="otto"){
     btn.disabled = true;
     st.textContent = "";
     showLoader();
+    lastOpts = opts;
     try{
       const list = await aiSearch(opts);
+      shownTitles = list.map(r=>r.titre);
       hideLoader();
       showRecipes(list, "ai");
       st.textContent = `${list.length} recette${list.length>1?"s":""} créée${list.length>1?"s":""} sur mesure par Claude pour ${opts.people} personne${opts.people>1?"s":""}.`;
     }catch(err){
       hideLoader();
-      const list = localSearch(opts);
+      localAll = localSearchAll(opts); localPage = 0;
+      const list = localAll.slice(0,8);
       showRecipes(list, "local");
       st.textContent = (err && err.code==="rate_limited" ? "Trop de demandes, réessayez dans un instant. " : "Le chef IA n'est pas disponible. ")
         + "Voici des recettes de votre bibliothèque.";
@@ -1016,13 +1783,16 @@ document.getElementById("goBtn").onclick = async ()=>{
     showLoader();
     await wait(1800);
     hideLoader(); btn.disabled = false;
-    const list = localSearch(opts);
+    localAll = localSearchAll(opts); localPage = 0;
+    const list = localAll.slice(0,8);
     showRecipes(list, "local");
-    st.textContent = `${list.length} recette${list.length>1?"s":""} trouvée${list.length>1?"s":""} dans votre bibliothèque.`;
+    st.textContent = !list.length ? (appMode==="otto" ? "Aucune recette du livre Otto ne correspond à vos ingrédients et à vos envies." : "Aucune recette trouvée.")
+      : `${list.length} recette${list.length>1?"s":""} trouvée${list.length>1?"s":""} ${appMode==="otto" ? "dans le livre Otto" : "dans votre bibliothèque"}.`;
   }
 };
 
 load(); render();
+try{ const m = localStorage.getItem("frigo-mode"); if(m==="otto") setMode("otto", true); }catch(e){}
 </script>
 <script>
 if("serviceWorker" in navigator){ window.addEventListener("load", ()=>{ navigator.serviceWorker.register("sw.js").catch(()=>{}); }); }
