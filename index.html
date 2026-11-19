@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mon Frigo Chef</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#c8553d">
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="apple-touch-icon" href="icon-192.png">
-
+<title>Mon Frigo Chef</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20260%20180%22%20aria-hidden%3D%22true%22%3E%20%3Cellipse%20cx%3D%22135%22%20cy%3D%22166%22%20rx%3D%22100%22%20ry%3D%229%22%20fill%3D%22%23ebe2d6%22/%3E%20%3Cpath%20d%3D%22M40%20160c0-18%2020-26%2095-26s95%208%2095%2026c0%206-6%208-12%208H52c-6%200-12-2-12-8z%22%20fill%3D%22%23c8553d%22%20opacity%3D%22.9%22/%3E%20%3Cpath%20d%3D%22M52%20152h166%22%20stroke%3D%22%23fff%22%20stroke-opacity%3D%22.35%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-dasharray%3D%222%208%22/%3E%20%3Cg%20class%3D%22breathe%22%3E%20%3Cellipse%20cx%3D%22148%22%20cy%3D%22128%22%20rx%3D%2274%22%20ry%3D%2236%22%20fill%3D%22%23f2a65a%22/%3E%20%3Cpath%20d%3D%22M150%2094c-4%2010-4%2020%200%2030M175%2096c-4%2010-4%2020%200%2030M200%20104c-3%208-3%2016%200%2024%22%20stroke%3D%22%23d9803a%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%20%3Cpath%20d%3D%22M214%20132c18%2020-10%2034-60%2034-30%200-56-4-70-12%22%20stroke%3D%22%23f2a65a%22%20stroke-width%3D%2215%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%20%3Cpath%20d%3D%22M100%20160c-8-2-14-4-18-6%22%20stroke%3D%22%23d9803a%22%20stroke-width%3D%2215%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%20%3Cellipse%20cx%3D%22112%22%20cy%3D%22150%22%20rx%3D%2217%22%20ry%3D%229%22%20fill%3D%22%23fde6c8%22/%3E%20%3Cpath%20d%3D%22M106%20152v4M112%20153v4M118%20152v4%22%20stroke%3D%22%23d9a878%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22/%3E%20%3Cpath%20d%3D%22M48%20112l-12-32%2030%2012z%22%20fill%3D%22%23f2a65a%22/%3E%20%3Cpath%20d%3D%22M50%20106l-7-18%2015%207z%22%20fill%3D%22%23f7c6b0%22/%3E%20%3Cpath%20d%3D%22M110%20104l6-29-28%2012z%22%20fill%3D%22%23f2a65a%22/%3E%20%3Cpath%20d%3D%22M106%2099l3-14-13%206z%22%20fill%3D%22%23f7c6b0%22/%3E%20%3Cellipse%20cx%3D%2280%22%20cy%3D%22122%22%20rx%3D%2238%22%20ry%3D%2232%22%20fill%3D%22%23f2a65a%22/%3E%20%3Cpath%20d%3D%22M70%2092c2%206%202%2010%200%2014M82%2091c1%206%201%2010%200%2014%22%20stroke%3D%22%23d9803a%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22/%3E%20%3Cellipse%20cx%3D%2280%22%20cy%3D%22136%22%20rx%3D%2222%22%20ry%3D%2214%22%20fill%3D%22%23fde6c8%22/%3E%20%3Cpath%20d%3D%22M58%20122q7%206%2014%200M88%20122q7%206%2014%200%22%20stroke%3D%22%233b2a20%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%20%3Cellipse%20cx%3D%2257%22%20cy%3D%22133%22%20rx%3D%226%22%20ry%3D%223.5%22%20fill%3D%22%23f7a8a0%22%20opacity%3D%22.7%22/%3E%20%3Cellipse%20cx%3D%22103%22%20cy%3D%22133%22%20rx%3D%226%22%20ry%3D%223.5%22%20fill%3D%22%23f7a8a0%22%20opacity%3D%22.7%22/%3E%20%3Cpath%20d%3D%22M76%20130h8l-4%204z%22%20fill%3D%22%23e57a7a%22/%3E%20%3Cpath%20d%3D%22M80%20134q-3%204-7%202M80%20134q3%204%207%202%22%20stroke%3D%22%233b2a20%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%20%3Cpath%20d%3D%22M46%20132l-18-3M46%20137l-18%202M114%20132l18-3M114%20137l18%202%22%20stroke%3D%22%233b2a20%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.55%22/%3E%20%3Cg%20transform%3D%22translate%289%207%29%20rotate%28-8%2080%2086%29%20scale%28.9%29%22%20style%3D%22transform-box%3Aview-box%22%3E%20%3Crect%20x%3D%2256%22%20y%3D%2280%22%20width%3D%2248%22%20height%3D%2216%22%20rx%3D%224%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%23e3d8c8%22%20stroke-width%3D%222%22/%3E%20%3Cpath%20d%3D%22M62%2086v6M71%2086v6M80%2086v6M89%2086v6M98%2086v6%22%20stroke%3D%22%23ebe2d6%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22/%3E%20%3Cpath%20d%3D%22M56%2082c-12-2-16-16-6-24%202-12%2018-16%2026-8%206-10%2024-10%2028%202%2012-2%2020%2012%2010%2022-2%204-6%207-10%208z%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%23e3d8c8%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22/%3E%20%3Cpath%20d%3D%22M70%2062c2%206%201%2012-2%2016M88%2060c2%206%202%2012%200%2018%22%20stroke%3D%22%23ebe2d6%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%20%3C/g%3E%20%3C/g%3E%20%3Cg%20font-family%3D%22Fraunces%2C%20Georgia%2C%20serif%22%20font-weight%3D%22700%22%20fill%3D%22%237a6e64%22%3E%20%3Ctext%20class%3D%22zz%20z1%22%20x%3D%22128%22%20y%3D%2278%22%20font-size%3D%2218%22%3Ez%3C/text%3E%20%3Ctext%20class%3D%22zz%20z2%22%20x%3D%22144%22%20y%3D%2260%22%20font-size%3D%2224%22%3Ez%3C/text%3E%20%3Ctext%20class%3D%22zz%20z3%22%20x%3D%22164%22%20y%3D%2238%22%20font-size%3D%2230%22%3EZ%3C/text%3E%20%3C/g%3E%20%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -22,16 +21,17 @@
       --accent:#e07a5f; --accent-soft:#3d2a24; --green:#8cbf85; --green-soft:#253323; --amber:#e3b05c; --amber-soft:#3a2f1c; }
   }
   body.otto{
-    --bg:#121110; --card:#1c1a17; --ink:#f2ece3; --muted:#a39a8f; --line:#34302a;
-    --accent:#e39b3a; --accent-soft:#3a2c17; --green:#9ccf8f; --green-soft:#22301f; --amber:#e8b45f; --amber-soft:#3a2f1c;
+    --bg:#1b1030; --card:#271a42; --ink:#fbf4ff; --muted:#bda9d6; --line:#3e2c63;
+    --accent:#ff6fae; --accent-soft:#4a2347; --green:#7ee0b5; --green-soft:#1d3a35; --amber:#ffd166; --amber-soft:#4a3a1c;
   }
+  body.otto .hero h1 span{background:linear-gradient(90deg,#ff6fae,#ffd166,#7ee0b5);-webkit-background-clip:text;background-clip:text;color:transparent}
   .mode-switch{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:5px;margin:0 0 22px}
   .mode-switch button{background:transparent;color:var(--muted);font:600 15px Inter,sans-serif;padding:12px 8px;border-radius:12px}
   .mode-switch button.on{background:var(--accent);color:#fff}
-  body.otto .mode-switch button.on{color:#1a140c}
+  body.otto .mode-switch button.on{color:#1b1030}
   .photo-banner{position:relative;cursor:pointer;padding:12px;background:var(--bg)}
   .photo-banner img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;border-radius:6px;border:6px solid #f4efe6;box-shadow:0 6px 18px rgba(0,0,0,.35)}
-  body.otto .photo-banner img{border-color:#2a2622}
+  body.otto .photo-banner img{border-color:#3e2c63}
   .photo-banner .tag{position:absolute;left:26px;top:26px;background:rgba(255,255,255,.92);color:#2b2420;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px}
   .li-em img.thumb{width:44px;height:44px;object-fit:cover;border-radius:8px;display:block}
   *{box-sizing:border-box}
@@ -205,13 +205,16 @@
   .dish-chip{display:inline-flex;align-items:center;gap:4px;background:var(--accent-soft);border-radius:999px;padding:5px 6px 5px 12px;font-size:13px;color:var(--ink)}
   .dish-chip button{background:none;padding:0 5px;color:var(--muted);font-size:15px}
   .pbtn.shop-add{background:var(--accent);color:#fff;border-color:var(--accent)}
-  body.otto .pbtn.shop-add{color:#1a140c}
+  body.otto .pbtn.shop-add{color:#1b1030}
   .pbtn.shop-add.in{background:var(--green-soft);color:var(--green);border-color:transparent}
   .card-prev{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:8px;margin-bottom:10px;text-align:center;max-height:260px;overflow:hidden}
   .card-prev img{max-width:100%;max-height:240px;border-radius:8px;display:block;margin:0 auto}
   .wa-next{background:var(--green-soft);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--ink)}
   .wa-next p{margin:0 0 8px}
   .ing .em{width:22px;text-align:center}
+  .fun-io{text-align:center;margin:10px 0 30px;font-size:14px;color:var(--muted)}
+  .fun-io button{border:1px dashed var(--line);border-radius:12px;padding:10px 14px;margin:4px}
+  .fun-io p{margin:6px 0 0}
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:20px}
   h2{font-family:Fraunces,serif;font-size:20px;margin:0 0 14px}
   .row{display:flex;gap:10px}
@@ -323,7 +326,7 @@
   </header>
   <div class="mode-switch" id="modeSwitch" role="tablist" aria-label="Mode">
     <button type="button" data-mode="frigo" class="on" role="tab">🐱 Frigo Chef</button>
-    <button type="button" data-mode="otto" role="tab">📖 Otto</button>
+    <button type="button" data-mode="otto" role="tab">🎉 Fun</button>
   </div>
 
   <div class="card">
@@ -430,6 +433,13 @@
   </div>
 
   <div class="recipes" id="results"></div>
+
+  <div class="fun-io" id="funIO" hidden>
+    <button class="ghost" type="button" id="funImport">🎉 Importer mes fiches Fun</button>
+    <button class="ghost" type="button" id="funRemove" hidden>Retirer les fiches Fun</button>
+    <input type="file" id="funFile" hidden>
+    <p id="funMsg"></p>
+  </div>
 
   <div class="modal" id="planModal" hidden>
     <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="pmTitle">
@@ -871,8 +881,11 @@ function buildBook(raw){
 
 const FRIGO_BOOK = buildBook(RAW100.concat(DESSERTS100));
 let BOOK = FRIGO_BOOK;
-const OTTO_RAW = [];
-const OTTO_PHOTOS = {};
+let OTTO_RAW = [];
+let OTTO_PHOTOS = {};
+const FUN_EMBEDDED = OTTO_RAW.length>0;
+let FUN_PACK = false;
+if(!FUN_EMBEDDED){ try{ const pk = JSON.parse(localStorage.getItem("frigo-fun-pack")||"null"); if(pk && Array.isArray(pk.raw) && pk.raw.length){ OTTO_RAW = pk.raw; OTTO_PHOTOS = pk.photos||{}; FUN_PACK = true; } }catch(e){} }
 const OTTO_BOOK = buildBook(OTTO_RAW).map((r,i)=>Object.assign(r, {menu:"sale"}, OTTO_RAW[i][7]||{}));
 
 /* Correspondance tolérante : pluriels, accents et petites fautes de frappe */
@@ -936,8 +949,8 @@ const FRIGO_CATEGORY = {"Salade de tomates au basilic":"Salades et entrées","Sa
 let CATEGORY = FRIGO_CATEGORY;
 const OTTO_CATEGORY = Object.fromEntries(OTTO_BOOK.map(r=>[r.titre, r.cat]));
 const OTTO_SUBCATS = {
-  sale: [["Mezze et légumineuses","🫘"],["Salades","🥗"],["Soupes","🍜"],["Plats","🍲"],["Pains","🫓"],["En-cas","🍟"],["Petit-déjeuner","🥣"]],
-  sucre: [["Desserts","🍰"],["Biscuits","🍪"],["Pains sucrés","🍞"]]
+  sale: [["Mezze et dips","🫘"],["Plats","🍲"],["Œufs","🍳"],["Pains","🫓"]],
+  sucre: [["Desserts","🍰"]]
 };
 const FRIGO_SUBCATS = {
   sale: [["Salades et entrées","🥗"],["Soupes et veloutés","🍲"],["Œufs","🥚"],["Riz","🍚"],["Pâtes","🍝"],["Pommes de terre","🥔"],["Patates douces et butternut","🎃"],["Légumes","🥕"],["Apéro et snacks","🫒"],["Petit-déjeuner","🍳"]],
@@ -994,7 +1007,7 @@ function renderLibrary(){
   box.innerHTML = html || `<span class="empty">Aucune recette ne correspond.</span>`;
   document.getElementById("libInfo").textContent = `${shown} recette${shown>1?"s":""} affichée${shown>1?"s":""}` + (hidden ? ` · ${hidden} masquée${hidden>1?"s":""} (ingrédients à éviter)` : "");
 }
-/* ---------- Modes : Frigo Chef / Otto ---------- */
+/* ---------- Modes : Frigo Chef / Fun ---------- */
 let appMode = "frigo";
 function setMode(m, quiet){
   if(m==="otto" && !OTTO_BOOK.length) m = "frigo";
@@ -1007,17 +1020,17 @@ function setMode(m, quiet){
   SUBCATS = otto ? OTTO_SUBCATS : FRIGO_SUBCATS;
   libSub = ""; openSecs.clear();
   document.querySelectorAll("#modeSwitch button").forEach(b=>{ const on = b.dataset.mode===m; b.classList.toggle("on",on); b.setAttribute("aria-selected",on); });
-  document.getElementById("heroTitle").innerHTML = otto ? `Mode <span>Otto</span>` : `Mon Frigo <span>Chef</span>`;
-  document.getElementById("heroSub").textContent = otto ? "Les recettes du livre, simplifiées. Dites ce que vous avez, on cherche dans le livre." : "Ajoutez ce que vous avez sous la main, on s'occupe du menu.";
+  document.getElementById("heroTitle").innerHTML = otto ? `Mode <span>Fun</span>` : `Mon Frigo <span>Chef</span>`;
+  document.getElementById("heroSub").textContent = otto ? "Vos fiches maison. Dites ce que vous avez, on cherche dans vos recettes Fun." : "Ajoutez ce que vous avez sous la main, on s'occupe du menu.";
   const nSale = BOOK.filter(r=>r.menu!=="sucre").length, nSucre = BOOK.length - nSale;
   document.getElementById("libCount").textContent = BOOK.length;
   document.getElementById("libIntro").textContent = otto
-    ? `${BOOK.length} recettes du livre Otto (${nSale} salées, ${nSucre} sucrée${nSucre>1?"s":""}), réécrites en version simple, avec leur photo.`
+    ? `${BOOK.length} fiches recettes maison${nSucre?` (${nSale} salées, ${nSucre} sucrée${nSucre>1?"s":""})`:""}, avec leur photo.`
     : "200 recettes rangées en deux menus, salé et sucré, consultables même sans Claude.";
   const bb = document.getElementById("basketBtn"); if(bb) bb.style.display = otto ? "none" : "";
   if(!quiet){
     document.getElementById("results").innerHTML = "";
-    document.getElementById("status").textContent = otto ? "Mode Otto : la recherche se fait dans les recettes du livre." : "";
+    document.getElementById("status").textContent = otto ? "Mode Fun : la recherche se fait dans vos fiches recettes." : "";
   }
   if(libMenu==="sucre" && !nSucre) libMenu = "sale";
   renderLibrary();
@@ -1425,7 +1438,7 @@ async function recipeCardBlob(r){
   try{ await document.fonts.ready; }catch(e){}
   const W = 1080, P = 64, ctx0 = document.createElement("canvas").getContext("2d");
   const otto = document.body.classList.contains("otto");
-  const C = otto ? {bg:"#161412", card:"#201d1a", ink:"#f2ece3", muted:"#a39a8f", acc:"#e39b3a", line:"#3a342e"}
+  const C = otto ? {bg:"#1b1030", card:"#271a42", ink:"#fbf4ff", muted:"#bda9d6", acc:"#ff6fae", line:"#3e2c63"}
                  : {bg:"#faf6ef", card:"#ffffff", ink:"#2b2420", muted:"#7a6e64", acc:"#c8553d", line:"#ebe2d6"};
   const wrap = (txt, font, maxW) => { ctx0.font = font; const out=[]; let line="";
     for(const w of String(txt).split(/\s+/)){ const t = line ? line+" "+w : w; if(ctx0.measureText(t).width > maxW && line){ out.push(line); line = w; } else line = t; }
@@ -1475,7 +1488,7 @@ async function recipeCardBlob(r){
   steps.forEach(lines=>{ lines.forEach(l=>{ c.fillText(l, P, y); y += 42; }); y += 14; });
   if(tip.length){
     y += 10; const bh = tip.length*36 + 34;
-    c.fillStyle = otto ? "#3a2c17" : "#f6e0d9"; c.beginPath(); c.roundRect ? c.roundRect(P, y-6, tW, bh, 18) : c.rect(P, y-6, tW, bh); c.fill();
+    c.fillStyle = otto ? "#4a2347" : "#f6e0d9"; c.beginPath(); c.roundRect ? c.roundRect(P, y-6, tW, bh, 18) : c.rect(P, y-6, tW, bh); c.fill();
     c.fillStyle = C.ink; c.font = fS; let yy = y + 32; tip.forEach(l=>{ c.fillText(l, P+20, yy); yy += 36; }); y += bh + 24;
   }
   c.fillStyle = C.muted; c.font = fS; c.textAlign = "right"; c.fillText("Mon Frigo Chef 🐱", W - P, H - 44);
@@ -1513,6 +1526,23 @@ function openShare(r){
   const cardP = recipeCardBlob(r);
   document.getElementById("shWa").onclick = async ()=>{
     const l = document.getElementById("shWaLbl"), next = document.getElementById("shWaNext");
+    const isDesktop = !/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+    // PC : on copie la photo dans le presse-papiers, puis on la colle dans WhatsApp (Ctrl+V)
+    if(isDesktop && window.ClipboardItem && navigator.clipboard && navigator.clipboard.write){
+      l.textContent = "Copie de la photo…";
+      const pngP = cardP.then(b=>new Promise((res,rej)=>{ if(!b) return rej(); const i = new Image();
+        i.onload=()=>{ const c = document.createElement("canvas"); c.width=i.width; c.height=i.height; c.getContext("2d").drawImage(i,0,0); c.toBlob(res,"image/png"); };
+        i.onerror=rej; i.src = URL.createObjectURL(b); }));
+      try{
+        await navigator.clipboard.write([new ClipboardItem({"image/png": pngP})]);
+        l.textContent = "✓ Photo copiée";
+        next.style.display = "block";
+        next.innerHTML = `<p><b>Étape 2 :</b> ouvrez WhatsApp ci-dessous, choisissez le contact, cliquez dans la zone de message puis faites <b>Ctrl + V</b> : la photo apparaît, la recette en légende. Cliquez sur Envoyer.</p>
+          <a class="share-opt" href="https://wa.me/?text=${enc}" target="_blank" rel="noopener"><span>💬</span>Ouvrir WhatsApp</a>
+          <p style="margin:8px 0 0">Si WhatsApp ne s'ouvre pas, allez sur <b>web.whatsapp.com</b> et faites Ctrl + V dans la conversation.</p>`;
+        return;
+      }catch(e){ /* on passe à l'enregistrement */ }
+    }
     l.textContent = "Préparation de la photo…";
     const blob = await cardP, fname = `recette-${slug(r.titre)}.jpg`;
     const file = blob && (()=>{ try{ return new File([blob], fname, {type:"image/jpeg"}); }catch(e){ return null; } })();
@@ -1786,13 +1816,35 @@ document.getElementById("goBtn").onclick = async ()=>{
     localAll = localSearchAll(opts); localPage = 0;
     const list = localAll.slice(0,8);
     showRecipes(list, "local");
-    st.textContent = !list.length ? (appMode==="otto" ? "Aucune recette du livre Otto ne correspond à vos ingrédients et à vos envies." : "Aucune recette trouvée.")
-      : `${list.length} recette${list.length>1?"s":""} trouvée${list.length>1?"s":""} ${appMode==="otto" ? "dans le livre Otto" : "dans votre bibliothèque"}.`;
+    st.textContent = !list.length ? (appMode==="otto" ? "Aucune recette Fun ne correspond à vos ingrédients et à vos envies." : "Aucune recette trouvée.")
+      : `${list.length} recette${list.length>1?"s":""} trouvée${list.length>1?"s":""} ${appMode==="otto" ? "dans vos recettes Fun" : "dans votre bibliothèque"}.`;
   }
 };
 
 load(); render();
 try{ const m = localStorage.getItem("frigo-mode"); if(m==="otto") setMode("otto", true); }catch(e){}
+
+/* ---------- Import privé des fiches Fun (fichier .json gardé sur l'appareil) ---------- */
+(function(){
+  const box = document.getElementById("funIO"); if(FUN_EMBEDDED || !box) return;
+  box.hidden = false;
+  const msg = document.getElementById("funMsg"), file = document.getElementById("funFile"), rm = document.getElementById("funRemove");
+  if(FUN_PACK){ rm.hidden = false; document.getElementById("funImport").textContent = "🎉 Mettre à jour mes fiches Fun"; msg.textContent = OTTO_RAW.length + " fiches Fun enregistrées sur cet appareil."; }
+  document.getElementById("funImport").onclick = ()=>file.click();
+  file.onchange = async ()=>{
+    const f = file.files[0]; if(!f) return;
+    try{
+      const pk = JSON.parse(await f.text());
+      if(!pk || !Array.isArray(pk.raw) || !pk.raw.length) throw new Error("format");
+      localStorage.setItem("frigo-fun-pack", JSON.stringify({raw:pk.raw, photos:pk.photos||{}}));
+      try{ localStorage.setItem("frigo-mode","otto"); }catch(e){}
+      msg.textContent = "✅ " + pk.raw.length + " fiches importées ! Ouverture du mode Fun…";
+      setTimeout(()=>location.reload(), 700);
+    }catch(e){ msg.textContent = e && e.name==="QuotaExceededError" ? "❌ Fichier trop gros pour cet appareil." : "❌ Ce fichier n'est pas un fichier de fiches Fun (Mes-fiches-Fun.json)."; }
+    file.value = "";
+  };
+  rm.onclick = ()=>{ try{ localStorage.removeItem("frigo-fun-pack"); localStorage.setItem("frigo-mode","frigo"); }catch(e){} location.reload(); };
+})();
 </script>
 <script>
 if("serviceWorker" in navigator){ window.addEventListener("load", ()=>{ navigator.serviceWorker.register("sw.js").catch(()=>{}); }); }
